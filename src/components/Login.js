@@ -1,10 +1,11 @@
 import React from 'react'
+import Form from './Form'
 
 class Login extends React.Component{
 
     render(){
         return(
-            <div>Login Page</div>
+            <div><Form/></div>
         )
     }
 }
