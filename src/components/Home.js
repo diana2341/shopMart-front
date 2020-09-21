@@ -8,12 +8,12 @@ componentDidMount(){
 }
 renderProducts=()=>{
     return this.props.products.map(product=>{
-    return(<div key={product.id}>{product.category}</div>)
+    return(<div key={product.id}>{product.categories}</div>)
     })
 }
     render(){
         return(
-            <div>Home?</div>
+        <div>{this.renderProducts()}</div>
         )
     }
 }
