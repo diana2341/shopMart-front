@@ -17,9 +17,7 @@ export const signOut=()=>{
 
 export const fetchProducts=()=>{
 return async (dispatch)=>{
-const response = await axios.create({
-baseURL:'http://localhost:3001'
-}).get('/products')
+const response = await api.get('/products')
 dispatch({type:'FETCH_PRODUCTS', payload:response.data})
 }
 

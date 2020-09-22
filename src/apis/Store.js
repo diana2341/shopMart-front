@@ -1,5 +1,5 @@
 import axios from 'axios'
 
-export default axios.ceate({
+export default axios.create({
     baseURL:'http://localhost:3001'
 })
