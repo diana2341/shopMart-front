@@ -13,6 +13,7 @@ export const signOut=()=>{
     return{
         type:'SIGN_OUT'
     }
+}
 
 export const fetchProducts=()=>{
 return async (dispatch)=>{
