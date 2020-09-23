@@ -4,9 +4,10 @@ import { Route, Switch } from "react-router";
 import Home from './components/Home'
 import Navbar from './components/Navabar'
 import Login from './components/Login'
+import ProductPage from './components/productPage'
 
-import{createStore,combineReducers} from 'redux'
-import{Provider,connect} from 'react-redux'
+
+
 
 import Cart from './components/Cart'
 
@@ -15,9 +16,11 @@ function App() {
     <Router>
       <Navbar/>
       <Switch>
-        <Route exact path='/'><Home/></Route>
+      <Route exact path='/' render={(routerprops)=><Home routerProps={routerprops}/>}/>
         <Route exact path='/login'><Login/></Route>
         <Route exact path='/cart'><Cart/></Route>
+        <Route exact path='/:id' render={(routerprops)=><ProductPage routerProps={routerprops}/>}/>
+
       </Switch>
     </Router>
   );
