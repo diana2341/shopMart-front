@@ -1,6 +1,6 @@
 
 import api from '../apis/Store'
-import history from '../history.js'
+import history from '../history'
 
 export const signIn=(userId)=>{
     return{
@@ -22,10 +22,11 @@ dispatch({type:'FETCH_PRODUCTS', payload:response.data})
 }
 
 }
-export const fetchProduct=(id)=>{
-    console.log(id)
+export const pruductShow=(id)=>{
     history.push(`/${id}`)
 
+}
+export const fetchProduct=(id)=>{
     return async (dispatch)=>{
      const response = await api.get(`/products/${id}`)
         dispatch({type:'FETCH_PRODUCT',payload:response.data})

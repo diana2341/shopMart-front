@@ -16,10 +16,10 @@ function App() {
     <Router>
       <Navbar/>
       <Switch>
-        <Route exact path='/'><Home/></Route>
+      <Route exact path='/' render={(routerprops)=><Home routerProps={routerprops}/>}/>
         <Route exact path='/login'><Login/></Route>
         <Route exact path='/cart'><Cart/></Route>
-        <Route exact path='/:id'><ProductPage/></Route>
+        <Route exact path='/:id' render={(routerprops)=><ProductPage routerProps={routerprops}/>}/>
 
       </Switch>
     </Router>

@@ -1,7 +1,6 @@
 import React from 'react'
 import {fetchProducts} from '../actions/index'
-import {fetchProduct} from '../actions/index'
-
+import {pruductShow} from '../actions/index'
 import {connect} from 'react-redux'
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
@@ -57,7 +56,7 @@ renderProducts=()=>{
           add to cart
         </Button>
         <Button 
-        onClick={()=>fetchProduct(product.id)}
+        onClick={()=>pruductShow(product.id)}
         size="small" 
         variant="outlined"
         color="primary">
@@ -79,4 +78,4 @@ const mapStateToProps=(state)=>{
 
 }
 
-export default connect(mapStateToProps,{fetchProducts,fetchProduct})(Home) 
+export default connect(mapStateToProps,{fetchProducts,pruductShow})(Home) 
