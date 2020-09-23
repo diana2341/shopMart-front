@@ -1,12 +1,23 @@
-
-import axios from 'axios'
 import api from '../apis/Store'
 
-export const signIn=(userId)=>{
-    return{
-        type:'SIGN_IN',
-        payload:userId
+
+// export const createStream=(formValues)=>{
+//     return async (dispatch, getState)=>{
+//         const {userId} = getState().auth
+//        const response = await streams.post('/streams', {...formValues, userId })
+//        dispatch({type:CREATE_STREAM, payload:response.data})
+//         history.push('/')
+//     }
+// }
+
+export const signUp=(formValues)=>{
+    return async (dispatch)=>{
+        const response = await api.post('/users',{...formValues})
+        dispatch({type:'SIGN_IN',payload:response.data},
+        localStorage.setItem("token",response.data.jwt)
+    )
     }
+
 }
 
 export const signOut=()=>{
@@ -14,6 +25,9 @@ export const signOut=()=>{
         type:'SIGN_OUT'
     }
 }
+
+
+
 
 export const fetchProducts=()=>{
 return async (dispatch)=>{
