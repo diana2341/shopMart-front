@@ -1,5 +1,7 @@
 import React from 'react'
 import {fetchProducts} from '../actions/index'
+import {fetchProduct} from '../actions/index'
+
 import {connect} from 'react-redux'
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
@@ -37,7 +39,7 @@ renderProducts=()=>{
 
     return(
     <React.Fragment key={product.id}>
-  <Card style={cardStyle}>
+  <Card style={cardStyle} >
         <CardHeader
         title={product.name}
       />
@@ -54,7 +56,11 @@ renderProducts=()=>{
         <Button variant="outlined" color="primary"size="small" >
           add to cart
         </Button>
-        <Button size="small" variant="outlined" color="primary">
+        <Button 
+        onClick={()=>fetchProduct(product.id)}
+        size="small" 
+        variant="outlined"
+        color="primary">
           see details
         </Button>
       </CardActions>
@@ -73,4 +79,4 @@ const mapStateToProps=(state)=>{
 
 }
 
-export default connect(mapStateToProps,{fetchProducts})(Home) 
+export default connect(mapStateToProps,{fetchProducts,fetchProduct})(Home) 
