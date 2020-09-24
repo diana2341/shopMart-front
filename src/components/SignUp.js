@@ -34,8 +34,8 @@ class SignUp extends React.Component{
     }
 
     onSubmit=(formValues)=>{
-        // this.props.signUp(formValues)
-        console.log(formValues)
+        this.props.signUp(formValues)
+        // console.log(formValues)
 
     }
     render(){

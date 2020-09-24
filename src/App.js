@@ -5,10 +5,6 @@ import Home from './components/Home'
 import Navbar from './components/Navabar'
 import Login from './components/Login'
 import ProductPage from './components/productPage'
-
-
-
-
 import Cart from './components/Cart'
 import SignUp from './components/SignUp';
 
