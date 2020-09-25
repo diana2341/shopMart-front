@@ -50,3 +50,13 @@ export const fetchProduct=(id)=>{
     }
 
 }
+
+export const addCart=(id)=>{
+    // return async (dispatch)=>{
+    //  const response = await api.get(`/products/${id}`)
+    //     dispatch({type:'ADD_CART',payload:response.data})
+        
+return console.log(id)
+    // }
+
+}
