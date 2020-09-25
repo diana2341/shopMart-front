@@ -1,13 +1,23 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import {connect} from 'react-redux'
+import {signOut} from '../actions'
 class Navabar extends React.Component{
 
+    handleLogOut=()=>{
+        this.props.signOut()
+    }
 render(){
+    console.log(this.props.currentUser)
     return(
         <nav>
         <ul className='navUl'>
         <li><Link to='/'>Home</Link></li> 
-        <li><Link to='/login'>Login</Link></li> 
+       
+        {this.props.currentUser.user?
+        <li onClick={this.handleLogOut}>Log Out</li>: 
+        <li><Link to='/login'>Login</Link></li>} 
+        
         <li><Link to='/cart'>Cart</Link></li> 
         <li><Link to=''/></li> 
         </ul>
@@ -16,6 +26,9 @@ render(){
 }
 }
 
+const mapStateToProps=(state)=>{
+    return ({currentUser:state.auth})
+}
 
 
-export default Navabar
+export default connect(mapStateToProps,{signOut})(Navabar)
