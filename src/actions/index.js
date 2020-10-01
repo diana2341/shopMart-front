@@ -1,5 +1,6 @@
 import api from '../apis/Store'
 import history from '../history'
+import { formValues } from 'redux-form'
 
 
 export const autoLogin=()=>{
@@ -12,10 +13,18 @@ export const autoLogin=()=>{
   }
 }
 
+export const login=(formValues)=>{
+    return async (dispatch)=>{
+        const response = await api.post('/login',{...formValues})
+        dispatch({type:'LOGIN', payload:response.data})
+        localStorage.setItem("token", response.data.jwt)
+    }
+}
+
 export const signUp=(formValues)=>{
     return async (dispatch)=>{
         const response = await api.post('/users',{...formValues})
-        dispatch({type:'SIGN_IN',payload:response.data},
+        dispatch({type:'SIGN_UP',payload:response.data},
         localStorage.setItem("token",response.data.jwt)
     )
   }

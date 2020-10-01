@@ -8,14 +8,18 @@ class Navabar extends React.Component{
         this.props.signOut()
     }
 render(){
-    console.log(this.props.currentUser)
+    console.log(this.props.currentUser.user)
     return(
         <nav>
         <ul className='navUl'>
         <li><Link to='/'>Home</Link></li> 
        
         {this.props.currentUser.user?
-        <li onClick={this.handleLogOut}>Log Out</li>: 
+        <>
+        <li>Hello {this.props.currentUser.user.first_name}</li>
+        <li onClick={this.handleLogOut}>Log Out</li>
+        </>
+        : 
         <li><Link to='/login'>Login</Link></li>} 
         
         <li><Link to='/cart'>Cart</Link></li> 
