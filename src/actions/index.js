@@ -59,6 +59,7 @@ export const addCart = (userId,itemId) => {
 }
             
 export const searchProduct = value => dispatch => {
+    console.log(value)
     dispatch({
       type: 'SEARCH',
       payload: value

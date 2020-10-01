@@ -92,4 +92,4 @@ const mapStateToProps=(state)=>{
 
 }
 
-export default connect(mapStateToProps,{fetchProducts,pruductShow})(Home) 
+export default connect(mapStateToProps,{fetchProducts,pruductShow,searchProduct})(Home) 
