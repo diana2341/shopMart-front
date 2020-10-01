@@ -19,7 +19,7 @@ class ProductPage extends React.Component{
     <p>{this.props.products.color}</p>
     <p>{this.props.products.size}</p>
     <h3>{this.props.products.description}</h3>
-    <Button variant="contained" onClick={()=>addCart(this.props.products.id)}>add to cart</Button>
+    <Button variant="contained" onClick={()=>addCart(10,this.props.products.id)}>add to cart</Button>
 
     
 
