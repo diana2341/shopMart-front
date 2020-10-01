@@ -68,11 +68,20 @@ export const addCart = (userId,itemId) => {
     }
 }
             
-export const searchProduct = value => dispatch => {
-    console.log(value)
+export const searchProduct = (product,size) => dispatch => {
+    console.log(size)
     dispatch({
-      type: 'SEARCH',
-      payload: value
-    });
+        type: 'SEARCH',
+        payload: {
+          size: size,
+          products:
+            size === ""
+              ? product
+              : product.filter(
+                (x) => x.size.indexOf(size.toUpperCase()) >= 0
+              )
+                ,
+        },
+      });
   };
   

@@ -75,12 +75,33 @@ renderProducts=()=>{
 }
     render(){
         return(
+          
         <div>
-          <input 
-          type="text" 
-          onChange={this.onChange}
-
-          />
+          {console.log('llllll',this.props.products)}
+          <div className="col-md-4">
+          <label>
+            {" "}
+            Filter Size
+            <select
+              className="form-control"
+              value={this.props.size}
+              onChange={(event) => {
+                this.props.searchProduct(
+                  this.props.products,
+                  event.target.value
+                );
+              }}
+            >
+              <option value="">ALL</option>
+              <option value="x">XS</option>
+              <option value="s">S</option>
+              <option value="m">M</option>
+              <option value="l">L</option>
+              <option value="xl">XL</option>
+              <option value="xxl">XXL</option>
+            </select>
+          </label>
+        </div>
           {this.renderProducts()}
         </div>
         )
@@ -88,7 +109,15 @@ renderProducts=()=>{
 }
 
 const mapStateToProps=(state)=>{
-   return{ products:Object.values(state.products)}
+   return{
+      products:state.products.filteredProducts,
+      value: state.products.value,
+      products: state.products.products,
+      filteredProducts: state.products.filteredItems,
+      size: state.products.size,
+
+
+  }
 
 }
 

@@ -2,7 +2,8 @@
 const initialState = {
  products:[],
   cart: [],
-  value:''
+  size:'',
+  filteredProducts:[]
 }
 
 export default (state=initialState,action)=>{
@@ -10,20 +11,21 @@ export default (state=initialState,action)=>{
 
     switch(action.type){
         case 'FETCH_PRODUCTS':
-            return{...state,...action.payload}
-        case 'FETCH_PRODUCT':
+                        return {...state, products:action.payload,filteredProducts:action.payload}
+            case 'FETCH_PRODUCT':
             return {...state, [action.payload.id]:action.payload}
-        case 'ADD_CART':
-            cart.push(action.payload);
+        // case 'ADD_CART':
+        //     cart.push(action.payload);
  
-            return {
-                ...state,
-                cart: cart
-            }; 
+        //     return {
+        //         ...state,
+        //         cart: cart
+        //     }; 
             case 'SEARCH':
                 return {
                   ...state,
-                  value: action.payload,
+                  filteredProducts: action.payload.products,
+                  size:action.payload.size
                 };
 
         default:
