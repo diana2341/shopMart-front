@@ -1,29 +1,39 @@
 import api from '../apis/Store'
 import history from '../history'
+import { formValues } from 'redux-form'
 
 
-// export const createStream=(formValues)=>{
-//     return async (dispatch, getState)=>{
-//         const {userId} = getState().auth
-//        const response = await streams.post('/streams', {...formValues, userId })
-//        dispatch({type:CREATE_STREAM, payload:response.data})
-//         history.push('/')
-//     }
-// }
+export const autoLogin=()=>{
+    return async (dispatch)=>{
+    const token = localStorage.getItem('token')
+    if(token){
+      const response = await api.get('/auto_login',{headers:{Authorization:`Bearer ${token}`}})
+      dispatch({type:'AUTO_SIGNIN', payload:response.data})
+    }
+  }
+}
+
+export const login=(formValues)=>{
+    return async (dispatch)=>{
+        const response = await api.post('/login',{...formValues})
+        dispatch({type:'LOGIN', payload:response.data})
+        localStorage.setItem("token", response.data.jwt)
+    }
+}
 
 export const signUp=(formValues)=>{
     return async (dispatch)=>{
         const response = await api.post('/users',{...formValues})
-        dispatch({type:'SIGN_IN',payload:response.data},
+        dispatch({type:'SIGN_UP',payload:response.data},
         localStorage.setItem("token",response.data.jwt)
     )
-    }
-
+  }
 }
 
 export const signOut=()=>{
-    return{
-        type:'SIGN_OUT'
+    return(dispatch)=>{
+        dispatch({type:'SIGN_OUT'})
+        localStorage.clear();
     }
 }
 
