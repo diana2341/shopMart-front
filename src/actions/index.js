@@ -58,3 +58,10 @@ export const addCart = (userId,itemId) => {
     }
 }
             
+export const searchProduct = value => dispatch => {
+    dispatch({
+      type: 'SEARCH',
+      payload: value
+    });
+  };
+  

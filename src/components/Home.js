@@ -1,6 +1,8 @@
 import React from 'react'
 import {fetchProducts} from '../actions/index'
 import {pruductShow} from '../actions/index'
+import {searchProduct} from '../actions/index'
+
 import {connect} from 'react-redux'
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
@@ -13,6 +15,9 @@ import Button from '@material-ui/core/Button';
 
 
 class Home extends React.Component{
+  onChange = e => {
+    this.props.searchProduct(e.target.value);
+  };
 componentDidMount(){
    this.props.fetchProducts()
 }
@@ -32,6 +37,7 @@ renderProducts=()=>{
         transitionDuration: '0.3s',
         height: '35vw'
     }
+    
     
 
     return this.props.products.map(product=>{
@@ -69,10 +75,18 @@ renderProducts=()=>{
 }
     render(){
         return(
-        <div>{this.renderProducts()}</div>
+        <div>
+          <input 
+          type="text" 
+          onChange={this.onChange}
+
+          />
+          {this.renderProducts()}
+        </div>
         )
     }
 }
+
 const mapStateToProps=(state)=>{
    return{ products:Object.values(state.products)}
 

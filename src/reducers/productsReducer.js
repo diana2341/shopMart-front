@@ -1,6 +1,8 @@
 
 const initialState = {
-  cart: []
+ products:[],
+  cart: [],
+  value:''
 }
 
 export default (state=initialState,action)=>{
@@ -17,8 +19,15 @@ export default (state=initialState,action)=>{
             return {
                 ...state,
                 cart: cart
-            };            
+            }; 
+            case 'SEARCH':
+                return {
+                  ...state,
+                  value: action.payload,
+                };
+
         default:
             return state
     }
 }
+
