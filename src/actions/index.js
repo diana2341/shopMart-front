@@ -71,10 +71,9 @@ export const addCart = (userId,itemId) => {
 }
             
 
-  export const searchProduct = (products, size) => (dispatch) => {
-      console.log('resultsss',products,size)
+  export const searchSize = (products, size) => (dispatch) => {
     dispatch({
-    type: 'SEARCH',
+    type: 'SEARCH_SIZE',
       payload: {
         size: size,
         products:
@@ -86,3 +85,26 @@ export const addCart = (userId,itemId) => {
       },
     });
   };
+  export const sortProducts = (items, sort) => (dispatch) => {
+    const products = items.slice();
+    if (sort !== "") {
+      products.sort((a, b) =>
+        sort === "lowestprice"
+          ? a.price > b.price
+            ? 1
+            : -1
+          : a.price < b.price
+          ? 1
+          : -1
+      );
+    } else {
+      products.sort((a, b) => (a.id > b.id ? 1 : -1));
+    }
+    dispatch({
+        type: 'ORDER_PRODUCTS_BY_PRICE',
+        payload: {
+          sort: sort,
+          items: products,
+        },
+      });
+    };

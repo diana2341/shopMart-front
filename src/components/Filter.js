@@ -1,11 +1,33 @@
 import React from 'react'
-import {searchProduct} from '../actions/index'
+import {searchSize} from '../actions/index'
+import {sortProducts} from '../actions/index'
+
 
 import {connect} from 'react-redux'
 class Filter extends React.Component{
     render(){
         return(
-            <div className="col-md-4">
+            <>
+        <div>
+            <label>
+            Order by
+            <select
+              className="form-control"
+              value={this.props.sort}
+              onChange={(event) => {
+                this.props.sortProducts(
+                  this.props.filteredProducts,
+                  event.target.value
+                );
+              }}
+            >
+              <option value="">Select</option>
+              <option value="lowestprice">Lowest to highest</option>
+              <option value="highestprice">Highest to lowest</option>
+            </select>
+          </label>
+        </div>
+            <div >
             <label>
               {" "}
               Filter Size
@@ -13,14 +35,14 @@ class Filter extends React.Component{
                 className="form-control"
                 value={this.props.size}
                 onChange={(event) => {
-                  this.props.searchProduct(
+                  this.props.searchSize(
                     this.props.products,
                     event.target.value
                   );
                 }}
               >
                 <option value="">ALL</option>
-                <option value="x">XS</option>
+                <option value="xs">XS</option>
                 <option value="s">S</option>
                 <option value="m">M</option>
                 <option value="l">L</option>
@@ -29,6 +51,7 @@ class Filter extends React.Component{
               </select>
             </label>
           </div>
+          </>
         )
     }
 }
@@ -37,6 +60,6 @@ const mapStateToProps = (state) => ({
     filteredProducts: state.products.filteredProducts,
     size: state.products.products.size,
   });
-  export default connect(mapStateToProps, {  searchProduct })(
+  export default connect(mapStateToProps, {  searchSize,sortProducts })(
     Filter
   );
