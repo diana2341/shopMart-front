@@ -44,7 +44,9 @@ export const fetchProducts=()=>{
 return async (dispatch)=>{
 const response = await api.get('/products')
 dispatch({type:'FETCH_PRODUCTS', payload:response.data})
+
 }
+
 
 }
 export const pruductShow=(id)=>{
@@ -68,20 +70,19 @@ export const addCart = (userId,itemId) => {
     }
 }
             
-export const searchProduct = (product,size) => dispatch => {
-    console.log(size)
+
+  export const searchProduct = (products, size) => (dispatch) => {
+      console.log('resultsss',products,size)
     dispatch({
-        type: 'SEARCH',
-        payload: {
-          size: size,
-          products:
-            size === ""
-              ? product
-              : product.filter(
-                (x) => x.size.indexOf(size.toUpperCase()) >= 0
-              )
-                ,
-        },
-      });
+    type: 'SEARCH',
+      payload: {
+        size: size,
+        products:
+          size === ""
+            ? products
+            : products.filter(
+                (x) => x.size.indexOf(size) >= 0
+              ),
+      },
+    });
   };
-  
