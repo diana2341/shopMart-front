@@ -2,6 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {signOut} from '../actions'
+import '../App.css'
 class Navabar extends React.Component{
 
     handleLogOut=()=>{
@@ -11,7 +12,8 @@ render(){
     console.log(this.props.currentUser.user)
     return(
         <nav>
-        <ul className='navUl'>
+            <h3 className='logo'>ShopMart</h3>
+        <ul className='navLinks'>
         <li><Link to='/'>Home</Link></li> 
        
         {this.props.currentUser.user?
