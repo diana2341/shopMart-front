@@ -21,18 +21,18 @@ componentDidMount(){
 renderProducts=()=>{
     const styles = {
         card: {
-          maxWidth: 345,
+          maxWidth: 355,
         },
         media: {
-          height: 0,
+          height: '15rem',
           paddingTop: '56.25%', // 16:9
         },
       };
       var cardStyle = {
         display: 'block',
-        width: '30vw',
+        width: '30rem',
         transitionDuration: '0.3s',
-        height: '35vw'
+        height: '30rem'
     }
     
     
