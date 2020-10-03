@@ -6,6 +6,8 @@
 
 li,a{
   text-decoration: none;
+  color: black;
+
 }
 
 nav{
@@ -26,12 +28,15 @@ nav{
 .navLinks li{
   display: inline-block;
   padding: 0px 20px;
+  cursor: pointer;
+  font-weight: bolder;
 }
 
-.navLinks li a{
+.navLinks li {
 transition: all 0.3s ease 0s;
 }
 
-.navLinks li a:hover{
-  color:blue
+.navLinks li:hover{
+  color:rgb(33, 140, 182);
+text-decoration: underline;
 }

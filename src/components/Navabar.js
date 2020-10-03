@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {signOut} from '../actions'
 import '../App.css'
+import {BiShoppingBag} from 'react-icons/bi'
 class Navabar extends React.Component{
 
     handleLogOut=()=>{
@@ -15,7 +16,12 @@ render(){
             <h3 className='logo'>ShopMart</h3>
         <ul className='navLinks'>
         <li><Link to='/'>Home</Link></li> 
-       
+        <li><Link to=''/>Women</li> 
+        <li><Link to=''/>Men</li> 
+        <li><Link to=''/>Kids</li> 
+
+        <li><Link to='/cart'><BiShoppingBag size={22}/></Link></li> 
+
         {this.props.currentUser.user?
         <>
         <li>Hello {this.props.currentUser.user.first_name}</li>
@@ -24,8 +30,6 @@ render(){
         : 
         <li><Link to='/login'>Login</Link></li>} 
         
-        <li><Link to='/cart'>Cart</Link></li> 
-        <li><Link to=''/></li> 
         </ul>
         </nav>
     )
