@@ -75,8 +75,11 @@ renderProducts=()=>{
     render(){
         return(
           
-        <div>
-          <Filter/>
+        <div >
+          <div className='filter-row'>
+            <Filter/>
+          </div>
+          
           <div className='row'>
            {this.renderProducts()} 
           </div>
