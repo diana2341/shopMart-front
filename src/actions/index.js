@@ -44,7 +44,9 @@ export const fetchProducts=()=>{
 return async (dispatch)=>{
 const response = await api.get('/products')
 dispatch({type:'FETCH_PRODUCTS', payload:response.data})
+
 }
+
 
 }
 export const pruductShow=(id)=>{
@@ -68,20 +70,41 @@ export const addCart = (userId,itemId) => {
     }
 }
             
-export const searchProduct = (product,size) => dispatch => {
-    console.log(size)
+
+  export const searchSize = (products, size) => (dispatch) => {
     dispatch({
-        type: 'SEARCH',
+    type: 'SEARCH_SIZE',
+      payload: {
+        size: size,
+        products:
+          size === ""
+            ? products
+            : products.filter(
+                (x) => x.size.indexOf(size) >= 0
+              ),
+      },
+    });
+  };
+  export const sortProducts = (items, sort) => (dispatch) => {
+    const products = items.slice();
+    if (sort !== "") {
+      products.sort((a, b) =>
+        sort === "lowestprice"
+          ? a.price > b.price
+            ? 1
+            : -1
+          : a.price < b.price
+          ? 1
+          : -1
+      );
+    } else {
+      products.sort((a, b) => (a.id > b.id ? 1 : -1));
+    }
+    dispatch({
+        type: 'ORDER_PRODUCTS_BY_PRICE',
         payload: {
-          size: size,
-          products:
-            size === ""
-              ? product
-              : product.filter(
-                (x) => x.size.indexOf(size.toUpperCase()) >= 0
-              )
-                ,
+          sort: sort,
+          items: products,
         },
       });
-  };
-  
+    };

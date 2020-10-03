@@ -3,7 +3,8 @@ const initialState = {
  products:[],
   cart: [],
   size:'',
-  filteredProducts:[]
+  filteredProducts:[],
+  sort:''
 }
 
 export default (state=initialState,action)=>{
@@ -21,12 +22,19 @@ export default (state=initialState,action)=>{
         //         ...state,
         //         cart: cart
         //     }; 
-            case 'SEARCH':
+            case 'SEARCH_SIZE':
                 return {
                   ...state,
                   filteredProducts: action.payload.products,
                   size:action.payload.size
                 };
+                case 'ORDER_PRODUCTS_BY_PRICE':
+      return {
+        ...state,
+        filteredProducts: action.payload.items,
+        sort: action.payload.sort,
+      };
+
 
         default:
             return state

@@ -1,8 +1,7 @@
 import React from 'react'
 import {fetchProducts} from '../actions/index'
 import {pruductShow} from '../actions/index'
-import {searchProduct} from '../actions/index'
-
+import Filter from '../components/Filter'
 import {connect} from 'react-redux'
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
@@ -15,9 +14,7 @@ import Button from '@material-ui/core/Button';
 
 
 class Home extends React.Component{
-  onChange = e => {
-    this.props.searchProduct(e.target.value);
-  };
+ 
 componentDidMount(){
    this.props.fetchProducts()
 }
@@ -77,31 +74,7 @@ renderProducts=()=>{
         return(
           
         <div>
-          {console.log('llllll',this.props.products)}
-          <div className="col-md-4">
-          <label>
-            {" "}
-            Filter Size
-            <select
-              className="form-control"
-              value={this.props.size}
-              onChange={(event) => {
-                this.props.searchProduct(
-                  this.props.products,
-                  event.target.value
-                );
-              }}
-            >
-              <option value="">ALL</option>
-              <option value="x">XS</option>
-              <option value="s">S</option>
-              <option value="m">M</option>
-              <option value="l">L</option>
-              <option value="xl">XL</option>
-              <option value="xxl">XXL</option>
-            </select>
-          </label>
-        </div>
+          <Filter/>
           {this.renderProducts()}
         </div>
         )
@@ -111,14 +84,10 @@ renderProducts=()=>{
 const mapStateToProps=(state)=>{
    return{
       products:state.products.filteredProducts,
-      value: state.products.value,
-      products: state.products.products,
-      filteredProducts: state.products.filteredItems,
-      size: state.products.size,
 
 
   }
 
 }
 
-export default connect(mapStateToProps,{fetchProducts,pruductShow,searchProduct})(Home) 
+export default connect(mapStateToProps,{fetchProducts,pruductShow})(Home) 
