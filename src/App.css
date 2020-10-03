@@ -128,3 +128,8 @@ text-decoration: underline;
 .nav-active{
   transform: translateX(0%);
 }
+.row{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding-top: 5rem;
+}

@@ -41,6 +41,7 @@ renderProducts=()=>{
 
     return(
     <React.Fragment key={product.id}>
+
   <Card style={cardStyle} >
         <CardHeader
         title={product.name}
@@ -67,6 +68,7 @@ renderProducts=()=>{
         </Button>
       </CardActions>
         </Card>
+
     </React.Fragment>)
     })
 }
@@ -75,7 +77,11 @@ renderProducts=()=>{
           
         <div>
           <Filter/>
-          {this.renderProducts()}
+          <div className='row'>
+           {this.renderProducts()} 
+          </div>
+          
+
         </div>
         )
     }
