@@ -13,23 +13,32 @@ render(){
     console.log(this.props.currentUser.user)
     return(
         <nav>
-            <h3 className='logo'>ShopMart</h3>
+            <h3 className='logo'><Link to='/'>ShopMart</Link></h3>
         <ul className='navLinks'>
         <li><Link to='/'>Home</Link></li> 
         <li><Link to=''/>Women</li> 
         <li><Link to=''/>Men</li> 
         <li><Link to=''/>Kids</li> 
 
-        <li><Link to='/cart'><BiShoppingBag size={22}/></Link></li> 
 
         {this.props.currentUser.user?
         <>
-        <li>Hello {this.props.currentUser.user.first_name}</li>
-        <li onClick={this.handleLogOut}>Log Out</li>
+        <div className='right-menu'>
+        <li className='menu-button'>Hello {this.props.currentUser.user.first_name}</li>
+        <div className='dropdown-menu'>
+
+        <li >Edit Profile</li>
+
+        <li>WishList</li>
+
+        <li  onClick={this.handleLogOut}>Log Out</li>
+        </div>
+        </div>
         </>
         : 
         <li><Link to='/login'>Login</Link></li>} 
-        
+        <li><Link to='/cart'><BiShoppingBag size={22}/></Link></li> 
+
         </ul>
         </nav>
     )
