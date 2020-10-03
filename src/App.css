@@ -132,6 +132,8 @@ text-decoration: underline;
   display: grid;
   grid-template-columns: auto auto auto;
   padding-top: 5rem;
+  grid-row-gap: 5rem;
+
 }
 .filter-row{
   padding-top: 2rem;
