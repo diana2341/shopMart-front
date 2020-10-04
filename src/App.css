@@ -89,6 +89,12 @@ text-decoration: underline;
    min-width: 350px; 
    right: 10px;
 }
+#lingerie,#hair,#beauty,#kids-menu{
+  display: none;
+}
+#hats,#bags,#toys,#cologne{
+  display: none;
+}
 
 .arrow{
   display: none;

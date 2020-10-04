@@ -20,7 +20,50 @@ class Navabar extends React.Component{
     toggle=()=>{
         this.setState({active:!this.state.active})
     }
+    
+    renderList=(e)=>{
+        if(e.target.id==='women'){
+        document.getElementById('lingerie').style.display='block'
+        document.getElementById('beauty').style.display='block'
+        document.getElementById('hair').style.display='block'
+
+        document.getElementById('hats').style.display='none'
+        document.getElementById('cologne').style.display='none'
+        document.getElementById('bags').style.display='none'
+
+        document.getElementById('kids-menu').style.display='none'
+        document.getElementById('adults').style.display='block'
+
+
+
+        }
+        if(e.target.id==='men'){
+            document.getElementById('hats').style.display='block'
+            document.getElementById('cologne').style.display='block'
+            document.getElementById('bags').style.display='block'
+            document.getElementById('lingerie').style.display='none'
+            document.getElementById('beauty').style.display='none'
+            document.getElementById('hair').style.display='none'
+    
+            document.getElementById('kids-menu').style.display='none'
+            document.getElementById('adults').style.display='block'
+
+
+    
+            }
+         if(e.target.id==='kids'){
+            document.getElementById('kids-menu').style.display='block'
+
+            document.getElementById('adults').style.display='none'
+        
+           
+    
+            }
+
+    }
   
+   
+
 render(){
     console.log(this.props.currentUser.user)
     return(
@@ -33,33 +76,68 @@ render(){
         <li><Link to='/'>Home <IoIosArrowForward size={30} className='arrow one'/></Link></li> 
         <div className='right-menu two'>
 
-        <li  className='menu-button'><Link to=''/>Women  <IoIosArrowForward size={30} className='arrow two'/></li> 
-        <li  className='menu-button'><Link to=''/>Men  <IoIosArrowForward size={30} className='arrow three'/></li> 
-        <li  className='menu-button'><Link to=''/>Kids  <IoIosArrowForward size={30} className='arrow four'/></li> 
+        <li  onMouseOver={this.renderList}id='women'className='menu-button women'><Link to=''/>Women  <IoIosArrowForward size={30} className='arrow two'/></li> 
+        <li  onMouseOver={this.renderList}id='men'className='menu-button'><Link to=''/>Men  <IoIosArrowForward size={30} className='arrow three'/></li> 
+        <li  onMouseOver={this.renderList}id='kids'className='menu-button'><Link to=''/>Kids  <IoIosArrowForward size={30} className='arrow four'/></li> 
         
         <div className='dropdown-menu two'>
             {/* you can change anything form here */}
-        <ul>
+        <ul id='adults'>
             <label>
             <b>Clothing</b>
-        <li>Tops</li>
-        <li>Jackets & Outerwear</li>
-        <li>Jeans</li>
-        <li>SportsWear</li>
-        <li>Lingerie & Sleep</li>
+            <li>Tops</li>
+            <li>Jackets & Outerwear</li>
+            <li>Jeans</li>
+            <li>SportsWear</li>
+            <li id='lingerie'>Lingerie & Sleep</li>  
+            </label>       
+            <label><b>Shoes & Accessories</b>
+            <li>Jewerly</li>
+            {/* women */}
+            <li id='hair'>Hair Accessories</li>
+            <li id='beauty'>Beauty</li>
+            {/* women */}
 
-        </label>
-       
-        
-        <label><b>Shoes & Accessories</b>
-        <li>Jewerly</li>
-        <li>Hair Accessories</li>
-        <li>Beauty</li>
-        <li>Shoes</li>
-        <li>Socks</li>
-        </label>
-        {/* to hereeeee */}
+            {/* men */}
+            <li id='hats'>Hats & Beanies</li>
+            <li id='bags'>Bags</li>
+            <li id='cologne'>Cologne</li>
+            {/* men */}
+            <li>Shoes</li>
+            <li>Socks</li>
+            </label>     
         </ul>
+
+
+        <ul id='kids-menu'>
+            <label>
+            <b>Boys</b>
+            <li>Tops</li>
+            <li>Jackets & Outerwear</li>
+            <li>Jeans</li>
+            <li>SportsWear</li>
+            <li>Shoes</li>
+            <li>Socks</li>
+            <li >Toys</li>
+            <li>Hats & Beanies</li>
+            </label> 
+
+            <label><b>Girls</b>
+            <li>Tops</li>
+            <li>Jackets & Outerwear</li>
+            <li>Jeans</li>
+            <li>SportsWear</li>
+            <li>Dresses</li>
+            <li>Jewerly</li>
+            <li >Hair Accessories</li>
+            <li >Bags</li>
+            <li >Toys</li>
+            <li>Shoes</li>
+            <li>Socks</li>
+            </label>     
+        </ul>
+
+
         </div>
         </div>
         {this.props.currentUser.user?
