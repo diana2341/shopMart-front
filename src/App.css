@@ -89,6 +89,12 @@ text-decoration: underline;
    min-width: 350px; 
    right: 10px;
 }
+#lingerie,#hair,#beauty,#kids-menu{
+  display: none;
+}
+#hats,#bags,#toys,#cologne{
+  display: none;
+}
 
 .arrow{
   display: none;
@@ -106,6 +112,19 @@ text-decoration: underline;
   height:2px;
   background-color: rgb(0, 204, 255);
   margin: 7px;
+}
+/* CARDS */
+.row{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding-top: 5rem;
+  grid-row-gap: 5rem;
+
+}
+.filter-row{
+  padding-top: 2rem;
+  display: grid;
+  grid-template-columns: auto auto auto;
 }
 
 
@@ -188,6 +207,11 @@ text-decoration: underline;
   /* .nav-active{
     transform: translateX(0%);
   } */
+
+
+.nav-active{
+  transform: translateX(0%);
+}
 
   .right-menu:hover .dropdown-menu{
     display: none;
