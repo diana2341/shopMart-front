@@ -2,6 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {signOut} from '../actions'
+import NavFilter from './NavFilter'
 import '../App.css'
 import {BiShoppingBag} from 'react-icons/bi'
 import logo from '../img/LogoMakr_4bjfzb.png'
@@ -19,19 +20,48 @@ class Navabar extends React.Component{
     toggle=()=>{
         this.setState({active:!this.state.active})
     }
+  
 render(){
     console.log(this.props.currentUser.user)
     return(
+        <>
         <nav>
         <div className='logo'><Link to='/'><img  className='logoImg' src={logo}/></Link></div>
         <ul className={this.state.active?'navLinks nav-active':'navLinks'} >
         <li><input className='search' type='text' placeholder='Search...'/></li> 
+        
         <li><Link to='/'>Home <IoIosArrowForward size={30} className='arrow one'/></Link></li> 
-        <li><Link to=''/>Women  <IoIosArrowForward size={30} className='arrow two'/></li> 
-        <li><Link to=''/>Men  <IoIosArrowForward size={30} className='arrow three'/></li> 
-        <li><Link to=''/>Kids  <IoIosArrowForward size={30} className='arrow four'/></li> 
+        <div className='right-menu two'>
 
+        <li  className='menu-button'><Link to=''/>Women  <IoIosArrowForward size={30} className='arrow two'/></li> 
+        <li  className='menu-button'><Link to=''/>Men  <IoIosArrowForward size={30} className='arrow three'/></li> 
+        <li  className='menu-button'><Link to=''/>Kids  <IoIosArrowForward size={30} className='arrow four'/></li> 
+        
+        <div className='dropdown-menu two'>
+            {/* you can change anything form here */}
+        <ul>
+            <label>
+            <b>Clothing</b>
+        <li>Tops</li>
+        <li>Jackets & Outerwear</li>
+        <li>Jeans</li>
+        <li>SportsWear</li>
+        <li>Lingerie & Sleep</li>
 
+        </label>
+       
+        
+        <label><b>Shoes & Accessories</b>
+        <li>Jewerly</li>
+        <li>Hair Accessories</li>
+        <li>Beauty</li>
+        <li>Shoes</li>
+        <li>Socks</li>
+        </label>
+        {/* to hereeeee */}
+        </ul>
+        </div>
+        </div>
         {this.props.currentUser.user?
         <>
         <div className='right-menu'>
@@ -57,9 +87,15 @@ render(){
                 <div className='line3'></div>
             </div>
         </nav>
+    </>
     )
+  }
 }
-}
+
+
+
+
+
 
 const mapStateToProps=(state)=>{
     return ({currentUser:state.auth})
