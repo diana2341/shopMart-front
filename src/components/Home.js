@@ -3,20 +3,16 @@ import {fetchProducts} from '../actions/index'
 import {pruductShow} from '../actions/index'
 import Filter from '../components/Filter'
 import {connect} from 'react-redux'
-import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
-import { CardMedia } from '@material-ui/core';
-import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
+
 
 
 
 class Home extends React.Component{
+
  
 componentDidMount(){
    this.props.fetchProducts()
+  
 }
 renderProducts=()=>{
   
