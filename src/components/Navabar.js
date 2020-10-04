@@ -5,6 +5,7 @@ import {signOut} from '../actions'
 import '../App.css'
 import {BiShoppingBag} from 'react-icons/bi'
 import logo from '../img/LogoMakr_4bjfzb.png'
+import {IoIosArrowForward} from 'react-icons/io'
 
 class Navabar extends React.Component{
 
@@ -24,17 +25,17 @@ render(){
         <nav>
         <div className='logo'><Link to='/'><img  className='logoImg' src={logo}/></Link></div>
         <ul className={this.state.active?'navLinks nav-active':'navLinks'} >
-        <li><Link to=''/><input className='search' type='text' placeholder='Search...'/></li> 
-        <li><Link to='/'>Home</Link></li> 
-        <li><Link to=''/>Women</li> 
-        <li><Link to=''/>Men</li> 
-        <li><Link to=''/>Kids</li> 
+        <li><input className='search' type='text' placeholder='Search...'/></li> 
+        <li><Link to='/'>Home <IoIosArrowForward size={30} className='arrow one'/></Link></li> 
+        <li><Link to=''/>Women  <IoIosArrowForward size={30} className='arrow two'/></li> 
+        <li><Link to=''/>Men  <IoIosArrowForward size={30} className='arrow three'/></li> 
+        <li><Link to=''/>Kids  <IoIosArrowForward size={30} className='arrow four'/></li> 
 
 
         {this.props.currentUser.user?
         <>
         <div className='right-menu'>
-        <li className='menu-button'>Hello {this.props.currentUser.user.first_name}</li>
+        <li className='menu-button'>Hello {this.props.currentUser.user.first_name} <IoIosArrowForward size={30} className='arrow five'/></li>
         <div className='dropdown-menu'>
 
         <li >Edit Profile</li>
@@ -47,7 +48,7 @@ render(){
         </>
         : 
         <li><Link to='/login'>Login</Link></li>} 
-        <li><Link to='/cart'><BiShoppingBag size={22}/></Link></li> 
+        <li><Link to='/cart'><BiShoppingBag size={22}/> <IoIosArrowForward size={30} className='arrow six'/></Link></li> 
         </ul>
 
             <div onClick={this.toggle}  className='burger'>
