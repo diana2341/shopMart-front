@@ -21,18 +21,18 @@ componentDidMount(){
 renderProducts=()=>{
     const styles = {
         card: {
-          maxWidth: 345,
+          maxWidth: 355,
         },
         media: {
-          height: 0,
+          height: '15rem',
           paddingTop: '56.25%', // 16:9
         },
       };
       var cardStyle = {
         display: 'block',
-        width: '30vw',
+        width: '30rem',
         transitionDuration: '0.3s',
-        height: '35vw'
+        height: '30rem'
     }
     
     
@@ -41,6 +41,7 @@ renderProducts=()=>{
 
     return(
     <React.Fragment key={product.id}>
+
   <Card style={cardStyle} >
         <CardHeader
         title={product.name}
@@ -67,15 +68,23 @@ renderProducts=()=>{
         </Button>
       </CardActions>
         </Card>
+
     </React.Fragment>)
     })
 }
     render(){
         return(
           
-        <div>
-          <Filter/>
-          {this.renderProducts()}
+        <div >
+          <div className='filter-row'>
+            <Filter/>
+          </div>
+          
+          <div className='row'>
+           {this.renderProducts()} 
+          </div>
+          
+
         </div>
         )
     }
