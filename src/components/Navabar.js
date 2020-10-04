@@ -14,11 +14,28 @@ class Navabar extends React.Component{
         active:false
     }
 
+ 
+
     handleLogOut=()=>{
         this.props.signOut()
     }
     toggle=()=>{
-        this.setState({active:!this.state.active})
+        if(!this.state.active ){
+            this.setState({active:!this.state.active})
+            document.querySelector('.navLinks').style.right='0'
+        }else{
+            this.setState({active:!this.state.active})
+
+            document.querySelector('.navLinks').style.right='-100%'
+        }
+    
+    }
+    handleSelect=(e)=>{
+    
+        if(e.target.className==='home'|| e.target.className.baseVal==='home arrow one' ){
+            document.querySelector('.navLinks').style.right='-100%'
+            this.setState({active:!this.state.active})
+        }
     }
   
 render(){
@@ -27,15 +44,15 @@ render(){
         <>
         <nav>
         <div className='logo'><Link to='/'><img  className='logoImg' src={logo}/></Link></div>
-        <ul className={this.state.active?'navLinks nav-active':'navLinks'} >
+        <ul className='navLinks' >
         <li><input className='search' type='text' placeholder='Search...'/></li> 
         
-        <li><Link to='/'>Home <IoIosArrowForward size={30} className='arrow one'/></Link></li> 
+        <li onClick={this.handleSelect} className='home'><Link className='home' to='/'>Home <IoIosArrowForward size={30} className='home arrow one'/></Link></li> 
         <div className='right-menu two'>
 
-        <li  className='menu-button'><Link to=''/>Women  <IoIosArrowForward size={30} className='arrow two'/></li> 
-        <li  className='menu-button'><Link to=''/>Men  <IoIosArrowForward size={30} className='arrow three'/></li> 
-        <li  className='menu-button'><Link to=''/>Kids  <IoIosArrowForward size={30} className='arrow four'/></li> 
+        <li  className='menu-button women'><Link to=''/>Women  <IoIosArrowForward size={30} className='arrow two'/></li> 
+        <li  className='menu-button men'><Link to=''/>Men  <IoIosArrowForward size={30} className='arrow three'/></li> 
+        <li  className='menu-button kids'><Link to=''/>Kids  <IoIosArrowForward size={30} className='arrow four'/></li> 
         
         <div className='dropdown-menu two'>
             {/* you can change anything form here */}
