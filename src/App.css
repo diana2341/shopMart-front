@@ -208,6 +208,11 @@ text-decoration: underline;
     transform: translateX(0%);
   } */
 
+
+.nav-active{
+  transform: translateX(0%);
+}
+
   .right-menu:hover .dropdown-menu{
     display: none;
   }
