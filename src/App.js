@@ -6,6 +6,8 @@ import Navbar from './components/Navabar'
 
 import Login from './components/Login'
 import ProductPage from './components/productPage'
+import Product from './components/Products'
+
 import Cart from './components/Cart'
 import SignUp from './components/SignUp';
 import {autoLogin} from './actions'
@@ -24,6 +26,7 @@ function App(props) {
       <Route exact path='/' render={(routerprops)=><Home routerProps={routerprops}/>}/>
         <Route exact path='/login'><Login/></Route>
         <Route exact path='/signup'><SignUp/></Route>
+        <Route exact path='/:product' render={(routerprops)=><Product routerProps={routerprops}/>}/>
 
         <Route exact path='/cart'><Cart/></Route>
         <Route exact path='/:id' render={(routerprops)=><ProductPage routerProps={routerprops}/>}/>

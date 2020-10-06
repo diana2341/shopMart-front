@@ -114,6 +114,7 @@ text-decoration: underline;
   margin: 7px;
 }
 /* CARDS */
+
 .row{
   display: grid;
   grid-template-columns: auto auto auto;

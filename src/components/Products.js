@@ -13,50 +13,30 @@ import Button from '@material-ui/core/Button';
 
 class Product extends React.Component {
 	componentDidMount() {
-		this.props.fetchProducts();
+		this.props.fetchProducts(this.props.routerProps.match.params.product);
+		
 	}
 	renderProducts = () => {
-		const styles = {
-			card: {
-				maxWidth: 355,
-			},
-			media: {
-				height: '15rem',
-				paddingTop: '56.25%', // 16:9
-			},
-		};
-		var cardStyle = {
-			display: 'block',
-			width: '30rem',
-			transitionDuration: '0.3s',
-			height: '30rem',
-		};
+		
 
 		return this.props.products.map((product) => {
 			return (
 				<React.Fragment key={product.id}>
-					<Card style={cardStyle}>
-						<CardHeader title={product.name} />
-						<CardMedia style={styles.media} image={product.images} />
-						<CardContent>
-							<Typography variant="h4" color="primary" component="p">
-								${product.price}
-							</Typography>
-						</CardContent>
-						<CardActions>
-							<Button variant="outlined" color="primary" size="small">
-								add to cart
-							</Button>
-							<Button
-								onClick={() => pruductShow(product.id)}
-								size="small"
-								variant="outlined"
-								color="primary"
-							>
-								see details
-							</Button>
-						</CardActions>
-					</Card>
+					<div className='card'  >
+					<div className=''>{product.name}</div>
+					<div className='card-image'>
+					<img src={product.images}/>
+					</div>
+					<div className='card-content'>
+					<div className='card-text'>${product.price}</div>
+					<button>add to cart</button>
+					<button
+					onClick={()=>pruductShow(product.id)}>
+					
+					see details
+					</button>
+					</div>
+					</div>
 				</React.Fragment>
 			);
 		});

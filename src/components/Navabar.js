@@ -3,6 +3,8 @@ import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {signOut} from '../actions'
 import NavFilter from './NavFilter'
+import { fetchCategory } from '../actions/index';
+
 import '../App.css'
 import {BiShoppingBag} from 'react-icons/bi'
 import logo from '../img/LogoMakr_4bjfzb.png'
@@ -93,9 +95,9 @@ render(){
         <li onClick={this.handleSelect} className='home'><Link className='home' to='/'>Home <IoIosArrowForward size={30} className='home arrow one'/></Link></li> 
         <div className='right-menu two'>
 
-        <li  onMouseOver={this.renderList}id='women'className='menu-button women'><Link to=''/>Women  <IoIosArrowForward size={30} className='arrow two'/></li> 
-        <li  onMouseOver={this.renderList}id='men'className='menu-button men'><Link to=''/>Men  <IoIosArrowForward size={30} className='arrow three'/></li> 
-        <li  onMouseOver={this.renderList}id='kids'className='menu-button kids'><Link to=''/>Kids  <IoIosArrowForward size={30} className='arrow four'/></li> 
+        <li  onClick={()=>this.props.fetchCategory('women')}onMouseOver={this.renderList}id='women'className='menu-button women'><Link to=''/>Women  <IoIosArrowForward size={30} className='arrow two'/></li> 
+        <li  onClick={()=>this.props.fetchCategory('men')}onMouseOver={this.renderList}id='men'className='menu-button men'><Link to=''/>Men  <IoIosArrowForward size={30} className='arrow three'/></li> 
+        <li  onClick={()=>this.props.fetchCategory('kids')}onMouseOver={this.renderList}id='kids'className='menu-button kids'><Link to=''/>Kids  <IoIosArrowForward size={30} className='arrow four'/></li> 
         
         <div className='dropdown-menu two'>
             {/* you can change anything form here */}
@@ -196,4 +198,4 @@ const mapStateToProps = (state) => {
 	return { currentUser: state.auth };
 };
 
-export default connect(mapStateToProps, { signOut })(Navabar);
+export default connect(mapStateToProps, { signOut,fetchCategory })(Navabar);
