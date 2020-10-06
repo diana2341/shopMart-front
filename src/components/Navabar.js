@@ -6,7 +6,7 @@ import NavFilter from './NavFilter'
 import '../App.css'
 import {BiShoppingBag} from 'react-icons/bi'
 import logo from '../img/LogoMakr_4bjfzb.png'
-import {IoIosArrowForward} from 'react-icons/io'
+import {MdKeyboardArrowLeft} from 'react-icons/md'
 
 class Navabar extends React.Component{
 
@@ -31,10 +31,21 @@ class Navabar extends React.Component{
     
     }
     handleSelect=(e)=>{
-    
-        if(e.target.className==='home'|| e.target.className.baseVal==='home arrow one' ){
+        console.log('class',e.target.className)
+        if(window.innerWidth <1000 && e.target.className==='home'|| e.target.className.baseVal==='home arrow one' ){
             document.querySelector('.navLinks').style.right='-100%'
             this.setState({active:!this.state.active})
+        }
+        if(window.innerWidth < 1000 && e.target.className !=='home' && e.target.className.baseVal !=='home arrow one' && e.target.className.baseVal !==''){
+            this.renderList(e)
+            document.querySelector('.dropdown-menu').style.display='flex'
+            document.querySelector('.search').style.display = 'none'
+            document.querySelectorAll('.all').forEach(all=>all.style.setProperty('display', 'flex', 'important'))
+        }
+        if(e.target.className === 'all'){
+            document.querySelector('.dropdown-menu').style.display='none'
+            document.querySelector('.search').style.display = 'block'
+            document.querySelectorAll('.all').forEach(all=>all.style.setProperty('display', 'none', 'important'))
         }
     }
     
@@ -76,9 +87,13 @@ class Navabar extends React.Component{
            
     
             }
-
     }
   
+    handleSideNav=()=>{
+        if(window.innerWidth < 1000){
+            console.log('kkkk')
+        }
+    }
    
 
 render(){
@@ -88,14 +103,17 @@ render(){
         <nav>
         <div className='logo'><Link to='/'><img  className='logoImg' src={logo}/></Link></div>
         <ul className='navLinks' >
+           <li onClick={this.handleSelect} className='all'><MdKeyboardArrowLeft onClick={this.handleSelect} className='all' siz={30}/> All</li>
         <li><input className='search' type='text' placeholder='Search...'/></li> 
         
-        <li onClick={this.handleSelect} className='home'><Link className='home' to='/'>Home <IoIosArrowForward size={30} className='home arrow one'/></Link></li> 
+        <li onClick={this.handleSelect} className='home'><Link className='home' to='/'> <MdKeyboardArrowLeft onClick={this.handleSelect} className='home arrow one' size={35}/>Home </Link></li> 
         <div className='right-menu two'>
 
-        <li  onMouseOver={this.renderList}id='women'className='menu-button women'><Link to=''/>Women  <IoIosArrowForward size={30} className='arrow two'/></li> 
-        <li  onMouseOver={this.renderList}id='men'className='menu-button men'><Link to=''/>Men  <IoIosArrowForward size={30} className='arrow three'/></li> 
-        <li  onMouseOver={this.renderList}id='kids'className='menu-button kids'><Link to=''/>Kids  <IoIosArrowForward size={30} className='arrow four'/></li> 
+        <li onClick={this.handleSelect} onMouseOver={this.renderList}id='women'className='menu-button women'><Link to=''/><MdKeyboardArrowLeft onClick={this.handleSelect} className='arrow two' size={35}/> Women </li> 
+
+
+        <li onClick={this.handleSelect} onMouseOver={this.renderList}id='men'className='menu-button men'><Link to=''/><MdKeyboardArrowLeft onClick={this.handleSelect} className='arrow three' size={35}/> Men  </li> 
+        <li onClick={this.handleSelect} onMouseOver={this.renderList}id='kids'className='menu-button kids'><Link to=''/><MdKeyboardArrowLeft onClick={this.handleSelect} className='arrow four' size={35}/> Kids  </li> 
         
         <div className='dropdown-menu two'>
             {/* you can change anything form here */}
@@ -160,7 +178,7 @@ render(){
         {this.props.currentUser.user?
         <>
         <div className='right-menu'>
-        <li className='menu-button'>Hello {this.props.currentUser.user.first_name} <IoIosArrowForward size={30} className='arrow five'/></li>
+        <li className='menu-button'><MdKeyboardArrowLeft className='arrow five' size={35}/> Hello {this.props.currentUser.user.first_name} </li>
         <div className='dropdown-menu'>
 
         <li >Edit Profile</li>
@@ -173,7 +191,7 @@ render(){
         </>
         : 
         <li><Link to='/login'>Login</Link></li>} 
-        <li><Link to='/cart'><BiShoppingBag size={22}/> <IoIosArrowForward size={30} className='arrow six'/></Link></li> 
+        <li className='cart'><Link to='/cart'><MdKeyboardArrowLeft className='arrow six' size={35}/> <BiShoppingBag size={22}/> </Link></li> 
         </ul>
 
             <div onClick={this.toggle}  className='burger'>
