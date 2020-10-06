@@ -9,22 +9,26 @@ import Button from '@material-ui/core/Button';
 class ProductPage extends React.Component{
     componentDidMount(){
         this.props.fetchProduct(this.props.routerProps.match.params.id)
+        console.log('here???!!!')
     }
     renderProduct=()=>{
     return this.props.products?
-    <>
-    <h1>{this.props.products.name}</h1>
-    <img src={this.props.products.images}/>
-    <hr/>
-    <p>{this.props.products.color}</p>
-    <p>{this.props.products.size}</p>
-    <h3>{this.props.products.description}</h3>
-    <Button variant="contained" onClick={()=>addCart(10,this.props.products.id)}>add to cart</Button>
+    <div>
+     <img className='show-product-pic'src={this.props.products.images}/>
+   
+    <div className='show-container'>
+        <h1 className='show-product-name'>{this.props.products.name}</h1>
+        <label >Color: <span>{this.props.products.color}</span></label><br/>
+        <label >Size: <p className='show-product-size'>{this.props.products.size}</p></label>
+        <h3>{this.props.products.description}</h3>
+        <Button variant="contained" onClick={()=>addCart(10,this.props.products.id)}>add to cart</Button>
+    </div>
+  
 
     
 
 
-    </>
+    </div>
     
     :null
     }

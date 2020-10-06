@@ -63,10 +63,13 @@ if(category==='kids'){
 
 }
 export const pruductShow=(id)=>{
-    history.push(`/${id}`)
+  console.log('id')
+
+    history.push(`/product/${id}`)
 
 }
 export const fetchProduct=(id)=>{
+  console.log(id)
     return async (dispatch)=>{
      const response = await api.get(`/products/${id}`)
         dispatch({type:'FETCH_PRODUCT',payload:response.data
