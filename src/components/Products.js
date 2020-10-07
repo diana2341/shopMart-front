@@ -23,18 +23,25 @@ class Product extends React.Component {
 			return (
 				<React.Fragment key={product.id}>
 					<div className='card'  >
-					<div className=''>{product.name}</div>
-					<div className='card-image'>
-					<img src={product.images}/>
-					</div>
+					
+					{/* <div > */}
+					<img className='card-image'src={product.images}/>
+					{/* </div> */}
 					<div className='card-content'>
+					<div className=''>{product.name}</div>
 					<div className='card-text'>${product.price}</div>
-					<button>add to cart</button>
+					<div className='btn-row'>
 					<button
+					className='btn-shop'
+					>add to cart</button>
+					<button
+					className='btn-shop'
 					onClick={()=>pruductShow(product.id)}>
 					
 					see details
-					</button>
+					</button>	
+					</div>
+					
 					</div>
 					</div>
 				</React.Fragment>
