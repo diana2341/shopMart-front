@@ -16,13 +16,14 @@ class Product extends React.Component {
 		this.props.fetchProducts(this.props.routerProps.match.params.product);
 		
 	}
+
 	renderProducts = () => {
 		
 
 		return this.props.products.map((product) => {
 			return (
 				<React.Fragment key={product.id}>
-					<div className='card'  >
+					<div  onClick={()=>pruductShow(product.id)} className='card'  >
 					
 					{/* <div > */}
 					<img className='card-image'src={product.images}/>
@@ -32,14 +33,14 @@ class Product extends React.Component {
 					<div className='card-text'>${product.price}</div>
 					<div className='btn-row'>
 					<button
-					className='btn-shop'
+					className='btn-shop add'
 					>add to cart</button>
-					<button
-					className='btn-shop'
+					{/* <button
+					className='btn-shop details'
 					onClick={()=>pruductShow(product.id)}>
 					
 					see details
-					</button>	
+					</button>	 */}
 					</div>
 					
 					</div>
