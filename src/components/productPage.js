@@ -15,14 +15,16 @@ class ProductPage extends React.Component{
     renderProduct=()=>{
     return this.props.products?
     <div>
+    <span className='show-product-pic'>
+
      {/* <img className='show-product-pic'src={this.props.products.images}/> */}
-     {/* <CursorZoom
+     <CursorZoom
                 image={{
                     className:'show-product-pic',
 
                     src: this.props.products.images,
-                    width: 500,
-                    height: 700
+                    width: 400,
+                    height: 600
                 }}
                 zoomImage={{
                     src: this.props.products.images,
@@ -30,9 +32,9 @@ class ProductPage extends React.Component{
                     height: 1200
                 }}
                 cursorOffset={{ x: 10, y: 0 }}
-            /> */}
-            <span className='show-product-pic'>
-               <Zoom
+            />
+            {/* <span className='show-product-pic'> */}
+               {/* <Zoom
             
                 img={this.props.products.images}
                 zoomScale={3}
@@ -40,7 +42,7 @@ class ProductPage extends React.Component{
                 height={600}
                 transitionTime={0.5}
 
-            />  
+            />   */}
             </span>
         <p className='location'> <a href='/'>Home&nbsp;</a> / <a href={`/${this.props.products.categories}`}>&nbsp; {this.props.products.categories}</a></p>
     
