@@ -5,10 +5,11 @@ import Filter from '../components/Filter';
 import { connect } from 'react-redux';
 
 
+
 class Product extends React.Component {
 	componentDidMount() {
 		this.props.fetchProducts(this.props.routerProps.match.params.product);
-		
+
 	}
 
 	renderProducts = () => {
@@ -24,11 +25,12 @@ class Product extends React.Component {
 					{/* </div> */}
 					<div className='card-content'>
 					<div className=''>{product.name}</div>
-					<div className='card-text'>${product.price}</div>
+					<div className='card-text'>${product.price % 1 === 0?product.price +'.00': product.price}</div>
+					
 					<div className='btn-row'>
 					<button
 					className='btn-shop add'
-					>add to cart</button>
+					>+ add to bag</button>
 					{/* <button
 					className='btn-shop details'
 					onClick={()=>pruductShow(product.id)}>
