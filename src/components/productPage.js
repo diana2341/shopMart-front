@@ -12,7 +12,7 @@ class ProductPage extends React.Component{
         console.log('here???!!!')
 
     }
-    renderProduct=(userId)=>{
+    renderProduct=(user)=>{
     return this.props.products?
     <div>
      <img className='show-product-pic'src={this.props.products.images}/>
@@ -22,7 +22,7 @@ class ProductPage extends React.Component{
         <label >Color: <span>{this.props.products.color}</span></label><br/>
         <label >Size: <p className='show-product-size'>{this.props.products.size}</p></label>
         <h3>{this.props.products.description}</h3>
-        <Button variant="contained" onClick={()=>this.props.addCart(userId,this.props.products.id)}>add to cart</Button>
+        <Button variant="contained" onClick={()=>this.props.addCart(user,this.props.products.id)}>add to cart</Button>
     </div>
   
 
@@ -34,12 +34,12 @@ class ProductPage extends React.Component{
     :null
     }
     render(){
-        let userId=this.props.currentUser.user? this.props.currentUser.user.id: null
+        let user=this.props.currentUser.user
 
-        console.log('show',userId)
+        console.log('show',this.props.currentUser.user)
         return(
             <>
-            <div>{this.renderProduct(userId)}</div>
+            <div>{this.renderProduct(user)}</div>
             </>
         )
     }

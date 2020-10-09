@@ -121,70 +121,106 @@ text-decoration: underline;
 .all{
   display:none !important;
 }
-
+.title{
+  margin-left: 1rem;
+}
 /* CARDS */
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  width: 70%;
+  width: 25rem;
   padding: 10px 16px;
 
 }
 
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
 .card-image{
   position: relative;
   width:100%;
+  cursor: pointer;
+
 }
 .btn-row{
-  display: grid;
+  /* display: grid;
   grid-template-columns: auto auto ;
-  grid-column-gap: .4rem;
+  grid-column-gap: .4rem; */
 
   
 }
 .btn-shop{
-  border:1.5px solid rgb(0, 204, 255);
-  border-radius: 20px;
-  padding: 2px;
-  background-color: transparent;
-  color: rgb(0, 204, 255) ;
-  
+  border:1.5px solid  rgba(255, 255, 255, 0.692);
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.692);
+  color: rgb(15, 15, 15) ;
+  text-transform: uppercase;
 
+
+}
+.btn-shop.add{
+  position: relative;
+  top: -15rem;
+  left: 6rem;
+  cursor: pointer;
+  width: 50%;
+  transition: .5s ease;
+  opacity: 0;
+}
+.card:hover .add {
+  opacity: 1;
 }
 .card-content{
-  text-align: center;
-  color: rgb(0, 204, 255) ;
-  font-weight: 800;
+  /* text-align: center; */
+  /* color: rgb(0, 204, 255) ; */
+  font-weight: 500;
+  font-size: 16px;
+  text-transform: uppercase;
+
 
 }
+.card-text{
+
+font-weight: bold;}
 
 
 
 .row{
   position: relative;
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto auto auto;
   padding-top: 5rem;
   grid-row-gap: 4rem;
-  left: 7rem;
 
 
 }
 .filter-row{
+  
   position: relative;
-  padding-top: 2rem;
-  display: grid;
-  grid-template-columns: auto auto auto;
-  left: 7rem;
+  /* padding-top: 1rem; */
+  display: flex;  
+  /* grid-template-columns: auto auto ; */
+  left: 40rem;
 
+}
 
+.filter-row > div
+{
+  text-align:center;
+
+  margin:15px;  /* and that, will result in a 10px gap */
+}
+select{
+padding: 1rem;
+width: 10rem;
 }
 /* CARDS ENDSS */
 
 /* SHOW PAGEEE */
+
+.banner{
+  position: relative;
+  left: 5rem;
+  width: 90%;
+  height: 350px;
+  object-fit: cover;
+
+}
 .show-product-pic{
   position: relative;
   width: 30%;
@@ -199,7 +235,7 @@ text-decoration: underline;
   left: -0.1rem; 
   border: solid black;
   width: 55px;
-  border-radius: 15git add 0px;
+  border-radius: 150px;
   text-align: center;
 }
 .show-container{

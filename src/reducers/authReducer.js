@@ -17,7 +17,10 @@ export default (state=INITIAL_STATE,action)=>{
                 return {...state, isSignedIn:false, userId:null, user:null}
                 case 'AUTO_SIGNIN':
                     return {...state, user:action.payload}
-                default:
-                    return state
+                     
+                     case 'UPDATE_CURRENT_USER':
+                         return {...state, userUpdate:action.current_user}
+                      default:
+                         return state
     }
 }

@@ -81,15 +81,27 @@ export const fetchProduct=(id)=>{
 
 
 
-export const addCart = (user_id,product_id) => {
-  console.log('cart')
+export const addCart = (user,product_id) => {
+  console.log('cart??', user.current_order)
+  let currentOrder = user.current_order
+  if (currentOrder === null) {
+
     return async (dispatch)=>{
-       const response = await api.post(`/carts`,{
-         user_id, product_id
+       const response = await api.post(`/orders/neworder`,{
+         user_id:user.id, product_id
        })
-        dispatch({type:'ADD_TO_CART', payload:response.data})
-        console.log(response)
+        dispatch({type:'UPDATE_CURRENT_USER', payload:response.data})
       }
+    }else{
+
+      return async (dispatch)=>{
+        const response = await api.post(`/order_items`,{
+          order_id: currentOrder, product_id
+        })
+         dispatch({type:'UPDATE_CURRENT_USER', payload:response.data})
+       }
+
+    }
 }
 
 
