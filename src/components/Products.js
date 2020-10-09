@@ -3,13 +3,7 @@ import { fetchProducts } from '../actions/index';
 import { pruductShow } from '../actions/index';
 import Filter from '../components/Filter';
 import { connect } from 'react-redux';
-import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
-import { CardMedia } from '@material-ui/core';
-import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
+
 
 class Product extends React.Component {
 	componentDidMount() {
@@ -52,9 +46,27 @@ class Product extends React.Component {
 	render() {
 		return (
 			<div>
+				<br/>
+				{this.props.routerProps.match.params.product==='women'?
+				<img className='banner' src={require('../img/womens.png')}/>:
+				this.props.routerProps.match.params.product==='men'?
+				<img className='banner' src={require('../img/Men.png')}/>:
+				this.props.routerProps.match.params.product==='kids'?
+				<img className='banner' src={require('../img/kids.png')}/>:''
+				}
+				<br/>
+				{this.props.routerProps.match.params.product==='women'?
+				<h1 className='title'>Women's clothing & Accessories</h1>:
+				this.props.routerProps.match.params.product==='men'?
+				<h1 className='title'>men's clothing & Accessories</h1>:
+				this.props.routerProps.match.params.product==='kids'?
+				<h1 className='title'>kids clothing & Accessories</h1>:''				
+				}
 				<div className="filter-row">
 					<Filter />
 				</div>
+	
+				
 
 				<div className="row">{this.renderProducts()}</div>
 			</div>

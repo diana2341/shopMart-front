@@ -121,7 +121,9 @@ text-decoration: underline;
 .all{
   display:none !important;
 }
-
+.title{
+  margin-left: 1rem;
+}
 /* CARDS */
 .card {
   width: 25rem;
@@ -143,11 +145,12 @@ text-decoration: underline;
   
 }
 .btn-shop{
-  border:1.5px solid rgb(252, 253, 253);
-  padding: 5px;
-  /* background-color: transparent; */
-  color: rgb(0, 204, 255) ;
-  
+  border:1.5px solid  rgba(255, 255, 255, 0.692);
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.692);
+  color: rgb(15, 15, 15) ;
+  text-transform: uppercase;
+
 
 }
 .btn-shop.add{
@@ -164,10 +167,16 @@ text-decoration: underline;
 }
 .card-content{
   /* text-align: center; */
-  color: rgb(0, 204, 255) ;
-  font-weight: 800;
+  /* color: rgb(0, 204, 255) ; */
+  font-weight: 500;
+  font-size: 16px;
+  text-transform: uppercase;
+
 
 }
+.card-text{
+
+font-weight: bold;}
 
 
 
@@ -181,17 +190,37 @@ text-decoration: underline;
 
 }
 .filter-row{
+  
   position: relative;
-  padding-top: 2rem;
-  display: grid;
-  grid-template-columns: auto auto auto;
-  left: 7rem;
+  /* padding-top: 1rem; */
+  display: flex;  
+  /* grid-template-columns: auto auto ; */
+  left: 40rem;
 
+}
 
+.filter-row > div
+{
+  text-align:center;
+
+  margin:15px;  /* and that, will result in a 10px gap */
+}
+select{
+padding: 1rem;
+width: 10rem;
 }
 /* CARDS ENDSS */
 
 /* SHOW PAGEEE */
+
+.banner{
+  position: relative;
+  left: 5rem;
+  width: 90%;
+  height: 350px;
+  object-fit: cover;
+
+}
 .show-product-pic{
   position: relative;
   width: 30%;
