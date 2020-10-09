@@ -72,21 +72,29 @@ export const fetchProduct=(id)=>{
   console.log(id)
     return async (dispatch)=>{
      const response = await api.get(`/products/${id}`)
-        dispatch({type:'FETCH_PRODUCT',payload:response.data
-       
-    })
-        
-
+        dispatch({type:'FETCH_PRODUCT',payload:response.data })
     }
-
 }
-export const addCart = (userId,itemId) => {
+
+
+
+
+
+
+export const addCart = (user_id,product_id) => {
+  console.log('cart')
     return async (dispatch)=>{
-        await api.patch(`/carts/${userId}`)
-        dispatch({type:'ADD_CART', payload:itemId})
-
-    }
+       const response = await api.post(`/carts`,{
+         user_id, product_id
+       })
+        dispatch({type:'ADD_TO_CART', payload:response.data})
+        console.log(response)
+      }
 }
+
+
+
+
             
 
   export const searchSize = (products, size) => (dispatch) => {

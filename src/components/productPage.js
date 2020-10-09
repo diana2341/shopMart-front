@@ -10,8 +10,9 @@ class ProductPage extends React.Component{
     componentDidMount(){
         this.props.fetchProduct(this.props.routerProps.match.params.id)
         console.log('here???!!!')
+
     }
-    renderProduct=()=>{
+    renderProduct=(userId)=>{
     return this.props.products?
     <div>
      <img className='show-product-pic'src={this.props.products.images}/>
@@ -21,7 +22,7 @@ class ProductPage extends React.Component{
         <label >Color: <span>{this.props.products.color}</span></label><br/>
         <label >Size: <p className='show-product-size'>{this.props.products.size}</p></label>
         <h3>{this.props.products.description}</h3>
-        <Button variant="contained" onClick={()=>addCart(10,this.props.products.id)}>add to cart</Button>
+        <Button variant="contained" onClick={()=>this.props.addCart(userId,this.props.products.id)}>add to cart</Button>
     </div>
   
 
@@ -33,15 +34,22 @@ class ProductPage extends React.Component{
     :null
     }
     render(){
+        let userId=this.props.currentUser.user? this.props.currentUser.user.id: null
+
+        console.log('show',userId)
         return(
             <>
-            <div>{this.renderProduct()}</div>
+            <div>{this.renderProduct(userId)}</div>
             </>
         )
     }
 }
 const mapStateToProps=(state,ownProps)=>{
-    return{ products:state.products[ownProps.routerProps.match.params.id]}
+    return{
+         products:state.products[ownProps.routerProps.match.params.id],
+         currentUser: state.auth
+        }
 
 }
+
 export default connect(mapStateToProps,{fetchProduct,addCart})(ProductPage)

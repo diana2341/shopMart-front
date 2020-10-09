@@ -31,6 +31,7 @@ class Product extends React.Component {
 					<div className=''>{product.name}</div>
 					<div className='card-text'>${product.price}</div>
 					<div className='btn-row'>
+						
 					<button
 					className='btn-shop'
 					>add to cart</button>

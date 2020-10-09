@@ -15,13 +15,6 @@ export default (state=initialState,action)=>{
                         return {...state, products:action.payload,filteredProducts:action.payload}
             case 'FETCH_PRODUCT':
             return {...state, [action.payload.id]:action.payload}
-        // case 'ADD_CART':
-        //     cart.push(action.payload);
- 
-        //     return {
-        //         ...state,
-        //         cart: cart
-        //     }; 
             case 'SEARCH_SIZE':
                 return {
                   ...state,
