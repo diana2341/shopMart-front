@@ -9,8 +9,8 @@ class Filter extends React.Component{
         return(
             <>
         <div>
-            <label>
-            Order by
+            {/* <label>
+            Order by */}
             <select
               className="form-control"
               value={this.props.sort}
@@ -25,12 +25,12 @@ class Filter extends React.Component{
               <option value="lowestprice">Lowest to highest</option>
               <option value="highestprice">Highest to lowest</option>
             </select>
-          </label>
+          {/* </label> */}
         </div>
             <div >
-            <label>
+            {/* <label> */}
               {" "}
-              Filter Size
+              {/* Filter Size */}
               <select
                 className="form-control"
                 value={this.props.size}
@@ -41,6 +41,7 @@ class Filter extends React.Component{
                   );
                 }}
               >
+                <option >select size</option>
                 <option value="">ALL</option>
                 <option value="xs">XS</option>
                 <option value="s">S</option>
@@ -49,7 +50,7 @@ class Filter extends React.Component{
                 <option value="xl">XL</option>
                 <option value="xxl">XXL</option>
               </select>
-            </label>
+            {/* </label> */}
           </div>
           </>
         )

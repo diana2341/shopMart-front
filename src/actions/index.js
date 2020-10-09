@@ -81,6 +81,7 @@ export const fetchProduct=(id)=>{
 
 }
 export const addCart = (userId,itemId) => {
+  console.log(userId,itemId)
     return async (dispatch)=>{
         await api.patch(`/carts/${userId}`)
         dispatch({type:'ADD_CART', payload:itemId})
