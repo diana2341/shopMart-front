@@ -226,7 +226,7 @@ width: 10rem;
 .show-product-pic{
   position: relative;
   width: 30%;
-  left: 5rem;
+  left: 12rem;
   top: 7rem;
   cursor: zoom-in;
 }
@@ -255,10 +255,11 @@ width: 10rem;
 }
 .check-btn{
   position: relative;
-  top: 5rem;
+  top: 4rem;
   border-color: transparent;
   background-color: black;
   width: 70%;
+  padding: 8px;
   font-size: 20px;
   color: white;
   font-weight: 900;
