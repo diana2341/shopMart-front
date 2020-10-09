@@ -1,6 +1,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
 *{
+  text-transform: capitalize;
+
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -224,8 +226,9 @@ width: 10rem;
 .show-product-pic{
   position: relative;
   width: 30%;
-  left: 10rem;
-  top: 10rem;
+  left: 5rem;
+  top: 7rem;
+  cursor: zoom-in;
 }
 
 .show-product-size{
@@ -233,15 +236,51 @@ width: 10rem;
   /* top: -36rem;
   left: 60rem; */
   left: -0.1rem; 
-  border: solid black;
-  width: 55px;
-  border-radius: 150px;
+  border: solid 1px black;
+  width: 35px;
+  /* border-radius: 150px; */
   text-align: center;
+  font-size: 16px;
+  /* border-radius: 200px 200px 200px 200px; */
+
+}
+.show-product-name{
+  font-weight: lighter;
+}
+.location{
+  position: relative;
+  top: -40rem;
+  left: 12rem;
+  color: grey;
+}
+.check-btn{
+  position: relative;
+  top: 5rem;
+  border-color: transparent;
+  background-color: black;
+  width: 70%;
+  font-size: 20px;
+  color: white;
+  font-weight: 900;
+  text-transform: capitalize;
+  
+
+}
+.check-btn:hover{
+  background-color: gray;
+  cursor: pointer;
+
+}
+.box{
+  border: solid  rgb(226, 224, 224);
+  width: 5%;
+  height: 35px;
+  border-radius: 50%;
 }
 .show-container{
   position: relative;
   width: 50%;
-  top: -35rem;
+  top: -40rem;
   left: 50rem;
   
 }
