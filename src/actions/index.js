@@ -57,6 +57,22 @@ return async (dispatch)=>{
             if(category==='kids'){
                 return x.categories==='girls' | x.categories==='boys'
             }
+            if(category==='shoes'){
+              return x.kind==='shoes' 
+          }
+          if(category==='jackets'){
+            return x.kind==='jackets' 
+        }
+
+          if(category==='jeans'){
+            return x.kind==='jeans' 
+        }
+        if(category==='sportswear'){
+          return x.kind==='sportswear' 
+        }
+      if(category==='beauty'){
+        return x.kind==='beauty' 
+      }
             
     })
 
@@ -112,7 +128,6 @@ export const pruductShow=(id)=>{
 
 }
 export const fetchProduct=(id)=>{
-  console.log(id)
     return async (dispatch)=>{
      const response = await api.get(`/products/${id}`)
         dispatch({type:'FETCH_PRODUCT',payload:response.data
