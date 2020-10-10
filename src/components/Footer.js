@@ -4,7 +4,7 @@ import PaymentIcon from 'react-payment-icons';
 class Footer extends React.Component{
     render(){
         return(
-            <div class="footer">
+            <div className="footer">
                 <div className='con'>
                     <ul>
                     <p>The Company</p>

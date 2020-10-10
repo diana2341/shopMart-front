@@ -27,10 +27,9 @@ function App(props) {
       <Route exact path='/' render={(routerprops)=><Home routerProps={routerprops}/>}/>
         <Route exact path='/login'><Login/></Route>
         <Route exact path='/signup'><SignUp/></Route>
+        <Route exact path='/cart'><Cart/></Route>
         <Route exact path='/:product' render={(routerprops)=><Product routerProps={routerprops}/>}/>
         <Route exact path='/:product/:id' render={(routerprops)=><ProductPage routerProps={routerprops}/>}/>
-
-        <Route exact path='/cart'><Cart/></Route>
 
       </Switch>
       <br/> <br/> <br/> <br/> <br/> <br/>
