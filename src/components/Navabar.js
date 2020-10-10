@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import {signOut} from '../actions'
 import NavFilter from './NavFilter'
 import { fetchCategory } from '../actions/index';
+import { fetchProductsForNav } from '../actions/index';
 
 import '../App.css'
 import {BiShoppingBag} from 'react-icons/bi'
@@ -50,9 +51,10 @@ class Navabar extends React.Component{
             document.querySelectorAll('.all').forEach(all=>all.style.setProperty('display', 'none', 'important'))
         }
     }
-    
+    category=undefined
     renderList=(e)=>{
         if(e.target.id==='women'){
+            this.category='women'
         document.getElementById('lingerie').style.display='block'
         document.getElementById('beauty').style.display='block'
         document.getElementById('hair').style.display='block'
@@ -68,6 +70,8 @@ class Navabar extends React.Component{
 
         }
         if(e.target.id==='men'){
+            this.category='men'
+
             document.getElementById('hats').style.display='block'
             document.getElementById('cologne').style.display='block'
             document.getElementById('bags').style.display='block'
@@ -124,26 +128,26 @@ render(){
         <ul id='adults'>
             <label>
             <b>Clothing</b>
-            <li>Tops</li>
-            <li>Jackets & Outerwear</li>
-            <li>Jeans</li>
-            <li>SportsWear</li>
-            <li id='lingerie'>Lingerie & Sleep</li>  
+            <li onClick={()=>this.props.fetchProductsForNav(this.category,'tops')}>Tops</li>
+            <li onClick={()=>this.props.fetchProductsForNav(this.category,'jackets')}>Jackets & Outerwear</li>
+            <li onClick={()=>this.props.fetchProductsForNav(this.category,'jeans')}>Jeans</li>
+            <li onClick={()=>this.props.fetchProductsForNav(this.category,'sportswear')}>SportsWear</li>
+            <li onClick={()=>this.props.fetchProductsForNav('women','sleep')}id='lingerie'>Lingerie & Sleep</li>  
             </label>       
             <label><b>Shoes & Accessories</b>
-            <li>Jewerly</li>
+            <li onClick={()=>this.props.fetchProductsForNav(this.category,'jewlery')}>Jewerly</li>
             {/* women */}
-            <li id='hair'>Hair Accessories</li>
-            <li id='beauty'>Beauty</li>
+            <li onClick={()=>this.props.fetchProductsForNav('women','hair')}id='hair'>Hair Accessories</li>
+            <li onClick={()=>this.props.fetchProductsForNav('women','beauty')}id='beauty'>Beauty</li>
             {/* women */}
 
             {/* men */}
-            <li id='hats'>Hats & Beanies</li>
-            <li id='bags'>Bags</li>
-            <li id='cologne'>Cologne</li>
+            <li onClick={()=>this.props.fetchProductsForNav('men','hats')}id='hats'>Hats & Beanies</li>
+            <li onClick={()=>this.props.fetchProductsForNav('men','bags')}id='bags'>Bags</li>
+            <li onClick={()=>this.props.fetchProductsForNav('men','cologne')}id='cologne'>Cologne</li>
             {/* men */}
-            <li>Shoes</li>
-            <li>Socks</li>
+            <li onClick={()=>this.props.fetchProductsForNav(this.category,'shoes')}>Shoes</li>
+            <li onClick={()=>this.props.fetchProductsForNav(this.category,'socks')}>Socks</li>
             </label>     
         </ul>
 
@@ -151,28 +155,28 @@ render(){
         <ul id='kids-menu'>
             <label>
             <b>Boys</b>
-            <li>Tops</li>
-            <li>Jackets & Outerwear</li>
-            <li>Jeans</li>
-            <li>SportsWear</li>
-            <li>Shoes</li>
-            <li>Socks</li>
-            <li >Toys</li>
-            <li>Hats & Beanies</li>
+            <li onClick={()=>this.props.fetchProductsForNav('boys','tops')}>Tops</li>
+            <li onClick={()=>this.props.fetchProductsForNav('boys','jackets')}>Jackets & Outerwear</li>
+            <li onClick={()=>this.props.fetchProductsForNav('boys','jeans')}>Jeans</li>
+            <li onClick={()=>this.props.fetchProductsForNav('boys','sportswear')}>SportsWear</li>
+            <li onClick={()=>this.props.fetchProductsForNav('boys','shoes')}>Shoes</li>
+            <li onClick={()=>this.props.fetchProductsForNav('boys','socks')}>Socks</li>
+            <li onClick={()=>this.props.fetchProductsForNav('boys','toys')}>Toys</li>
+            <li onClick={()=>this.props.fetchProductsForNav('boys','hats')}>Hats & Beanies</li>
             </label> 
 
             <label><b>Girls</b>
-            <li>Tops</li>
-            <li>Jackets & Outerwear</li>
-            <li>Jeans</li>
-            <li>SportsWear</li>
-            <li>Dresses</li>
-            <li>Jewerly</li>
-            <li >Hair Accessories</li>
-            <li >Bags</li>
-            <li >Toys</li>
-            <li>Shoes</li>
-            <li>Socks</li>
+            <li onClick={()=>this.props.fetchProductsForNav('girls','tops')}>Tops</li>
+            <li onClick={()=>this.props.fetchProductsForNav('girls','jackets')}>Jackets & Outerwear</li>
+            <li onClick={()=>this.props.fetchProductsForNav('girls','jeans')}>Jeans</li>
+            <li onClick={()=>this.props.fetchProductsForNav('girls','sportswear')}>SportsWear</li>
+            <li onClick={()=>this.props.fetchProductsForNav('girls','dresses')}>Dresses</li>
+            <li onClick={()=>this.props.fetchProductsForNav('girls','jewlery')}>Jewerly</li>
+            <li onClick={()=>this.props.fetchProductsForNav('girls','hair')} >Hair Accessories</li>
+            <li onClick={()=>this.props.fetchProductsForNav('girls','bags')} >Bags</li>
+            <li onClick={()=>this.props.fetchProductsForNav('girls','toys')} >Toys</li>
+            <li onClick={()=>this.props.fetchProductsForNav('girls','shoes')}>Shoes</li>
+            <li onClick={()=>this.props.fetchProductsForNav('girls','socks')}>Socks</li>
             </label>     
         </ul>
 
@@ -218,4 +222,4 @@ const mapStateToProps = (state) => {
 	return { currentUser: state.auth };
 };
 
-export default connect(mapStateToProps, { signOut,fetchCategory })(Navabar);
+export default connect(mapStateToProps, { signOut,fetchCategory,fetchProductsForNav })(Navabar);
