@@ -5,7 +5,7 @@ import { fetchCategory } from '../actions/index';
 class Home extends React.Component{
 
   render(){
-    let choices=['shoes','jackets','jeans','sportswear']
+    let choices=['shoes','jeans','sportswear','jackets']
     return(
       <div>
         <br/>
@@ -13,11 +13,11 @@ class Home extends React.Component{
        <p className='wow'><i className='w'>WOW!</i> Finds in Store</p>
 
        <div className='category'>
-         {choices.map(choice=>{
+         {choices.map((choice,index)=>{
           return (
-            <>
+            <React.Fragment key={index}>
             <img onClick={()=>this.props.fetchCategory(choice)}className={`choose ${choice}`} src={require(`../img/${choice}.png`)}/>
-            </>
+            </React.Fragment>
 
           )
 
