@@ -28,6 +28,7 @@ class Product extends React.Component {
 					<div className='card-text'>${product.price % 1 === 0?product.price +'.00': product.price}</div>
 					
 					<div className='btn-row'>
+						
 					<button
 					className='btn-shop add'
 					>+ add to bag</button>

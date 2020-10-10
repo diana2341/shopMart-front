@@ -72,22 +72,41 @@ export const fetchProduct=(id)=>{
   console.log(id)
     return async (dispatch)=>{
      const response = await api.get(`/products/${id}`)
-        dispatch({type:'FETCH_PRODUCT',payload:response.data
-       
-    })
-        
-
+        dispatch({type:'FETCH_PRODUCT',payload:response.data })
     }
-
 }
-export const addCart = (userId,itemId) => {
-  console.log(userId,itemId)
+
+
+
+
+
+
+export const addCart = (user,product, quantity) => {
+  let currentOrder = user.current_order
+  console.log('cart??!!', currentOrder)
+  if (currentOrder === null) {
+
     return async (dispatch)=>{
-        await api.patch(`/carts/${userId}`)
-        dispatch({type:'ADD_CART', payload:itemId})
+       const response = await api.post(`/orders/neworder`,{
+         user_id:user.id, product_id:product.id, quantity: quantity
+       })
+        dispatch({type:'UPDATE_CURRENT_USER', payload:response.data})
+      }
+    }else{
+
+      return async (dispatch)=>{
+        const response = await api.post(`/order_items`,{
+          order_id: currentOrder, product_id:product.id,quantity: quantity, item_price:product.price
+        })
+         dispatch({type:'UPDATE_CURRENT_USER', payload:response.data})
+       }
 
     }
 }
+
+
+
+
             
 
   export const searchSize = (products, size) => (dispatch) => {

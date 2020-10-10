@@ -12,7 +12,7 @@ class ProductPage extends React.Component{
     componentDidMount(){
         this.props.fetchProduct(this.props.routerProps.match.params.id)
     }
-    renderProduct=()=>{
+    renderProduct=(user)=>{
     return this.props.products?
     <div>
     <span className='show-product-pic'>
@@ -63,7 +63,7 @@ class ProductPage extends React.Component{
         <label style={{fontWeight: 'bolder',fontSize:16}}>Product Details</label>
         <br/><br/>
         <p>{this.props.products.description}</p>
-        <button className='check-btn' onClick={()=>addCart(10,this.props.products.id)}>add to cart</button>
+        <button className='check-btn' onClick={()=>this.props.addCart(user,this.props.products,1)}>add to cart</button>
     </div>
   
 
@@ -75,15 +75,22 @@ class ProductPage extends React.Component{
     :null
     }
     render(){
+        let user=this.props.currentUser.user
+
+        console.log('show',this.props.currentUser.user)
         return(
             <>
-            <div>{this.renderProduct()}</div>
+            <div>{this.renderProduct(user)}</div>
             </>
         )
     }
 }
 const mapStateToProps=(state,ownProps)=>{
-    return{ products:state.products[ownProps.routerProps.match.params.id]}
+    return{
+         products:state.products[ownProps.routerProps.match.params.id],
+         currentUser: state.auth
+        }
 
 }
+
 export default connect(mapStateToProps,{fetchProduct,addCart})(ProductPage)
