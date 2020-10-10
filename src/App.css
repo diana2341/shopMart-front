@@ -1,7 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
 *{
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
 
   box-sizing: border-box;
   margin: 0;
