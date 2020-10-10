@@ -22,7 +22,7 @@ class Footer extends React.Component{
                 </ul>  
                 </div>
               <div className='pay-card'>
-            <p className='card'>WE ACCEPT:</p>
+            <p className='c-card'>WE ACCEPT:</p>
               <div className='payments'>
                     <div className='pay'>
                     <span>
