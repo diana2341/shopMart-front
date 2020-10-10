@@ -3,13 +3,12 @@ import {connect} from 'react-redux'
 import {fetchProduct} from '../actions/index'
 import {addCart} from '../actions/index'
 import CursorZoom from 'react-cursor-zoom';
-import Zoom from 'react-img-zoom'
 
-import Button from '@material-ui/core/Button';
 
 
 class ProductPage extends React.Component{
     componentDidMount(){
+        console.log('product pagsss')
         this.props.fetchProduct(this.props.routerProps.match.params.id)
     }
     renderProduct=(user)=>{
@@ -72,7 +71,7 @@ class ProductPage extends React.Component{
 
     </div>
     
-    :null
+    :<h1>Error</h1>
     }
     render(){
         let user=this.props.currentUser.user

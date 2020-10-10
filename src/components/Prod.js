@@ -1,5 +1,5 @@
 import React from 'react';
-import { fetchProducts } from '../actions/index';
+import { fetchProductsFilter } from '../actions/index';
 import { pruductShow } from '../actions/index';
 import Filter from '../components/Filter';
 import { connect } from 'react-redux';
@@ -8,8 +8,7 @@ import { connect } from 'react-redux';
 
 class Product extends React.Component {
 	componentDidMount() {
-		this.props.fetchProducts(this.props.routerProps.match.params.product);
-
+		this.props.fetchProductsFilter(this.props.routerProps.match.params.product,this.props.routerProps.match.params.kind);
 	}
 
 	renderProducts = () => {
@@ -54,6 +53,10 @@ class Product extends React.Component {
 				this.props.routerProps.match.params.product==='men'?
 				<img className='banner' src={require('../img/Men.png')}/>:
 				this.props.routerProps.match.params.product==='kids'?
+                <img className='banner' src={require('../img/kids.png')}/>:
+                this.props.routerProps.match.params.product==='boys'?
+                <img className='banner' src={require('../img/kids.png')}/>:
+                this.props.routerProps.match.params.product==='girls'?
 				<img className='banner' src={require('../img/kids.png')}/>:''
 				}
 				<br/>
@@ -82,4 +85,4 @@ const mapStateToProps = (state) => {
 	};
 };
 
-export default connect(mapStateToProps, { fetchProducts, pruductShow })(Product);
+export default connect(mapStateToProps, { fetchProductsFilter, pruductShow })(Product);

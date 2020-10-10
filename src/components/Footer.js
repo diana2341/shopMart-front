@@ -8,17 +8,17 @@ class Footer extends React.Component{
                 <div className='con'>
                     <ul>
                     <p>The Company</p>
-                    <li>About us</li> 
-                    <li>Return Poilicy</li>
-                    <li>FAQ</li>
+                    <a href='/'><li>About us</li></a> 
+                    <a href='/'><li>Return Poilicy</li></a>
+                    <a href='/'><li>FAQ</li></a>
                 </ul>
 
-                <ul>
+                <ul className='departments'>
                     <p>Shop Departments</p>
-                    <li>Women</li>
-                    <li>Girls</li>
-                    <li>Boys</li>
-                    <li>Men</li>
+                    <a href='/women'><li>Women</li></a>
+                    <a href='/girls'><li>Girls</li></a>
+                    <a href='/boys'><li>Boys</li></a>
+                    <a href='/men'><li>Men</li></a>
                 </ul>  
                 </div>
               <div className='pay-card'>

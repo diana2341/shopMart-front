@@ -63,7 +63,7 @@ return async (dispatch)=>{
           if(category==='jackets'){
             return x.kind==='jackets' 
         }
-        
+
           if(category==='jeans'){
             return x.kind==='jeans' 
         }
@@ -73,6 +73,7 @@ return async (dispatch)=>{
       if(category==='beauty'){
         return x.kind==='beauty' 
       }
+            
     })
 
   })
@@ -80,13 +81,30 @@ return async (dispatch)=>{
 
 
 }
+export const fetchProductsFilter=(category,kind)=>{
+    
+  return async (dispatch)=>{
+          const response = await api.get('/products')
+          dispatch({type:'FETCH_PRODUCTS', payload:response.data.filter((x) => {if(x.categories===category&&x.kind===kind ){
+           return x.categories===category && x.kind===kind
+          }
+              if(category==='kids'){
+                  return x.categories==='girls' | x.categories==='boys'
+              }
+              
+      })
+  
+    })
+   }
+  
+  
+  }
 
 
 export const fetchProductsForNav=(category,kind)=>{
  
-
   return async (dispatch)=>{
-    
+   history.push(`/${category}/${kind}`)
           const response = await api.get('/products')
           dispatch({type:'FETCH_PRODUCTS', payload:response.data.filter((x) => {if(x.categories===category&&x.kind===kind ){
               return (
@@ -109,8 +127,8 @@ export const pruductShow=(id)=>{
     history.push(`/product/${id}`)
 
 }
+
 export const fetchProduct=(id)=>{
-  console.log(id)
     return async (dispatch)=>{
      const response = await api.get(`/products/${id}`)
         dispatch({type:'FETCH_PRODUCT',payload:response.data })

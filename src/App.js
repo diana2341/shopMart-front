@@ -9,6 +9,7 @@ import Login from './components/Login'
 import ProductPage from './components/productPage'
 import Product from './components/Products'
 import Prod from './components/Prod'
+import Banner from './components/Banner'
 
 
 import Cart from './components/Cart'
@@ -25,6 +26,7 @@ function App(props) {
   return (
     <Router>
       <Navbar/>
+      <Banner/>
       <Switch>
       <Route exact path='/' render={(routerprops)=><Home routerProps={routerprops}/>}/>
 
@@ -32,9 +34,9 @@ function App(props) {
         <Route exact path='/signup'><SignUp/></Route>
         <Route exact path='/cart'><Cart/></Route>
         <Route exact path='/:product' render={(routerprops)=><Product routerProps={routerprops}/>}/>
-        <Route exact path='/:product/:kind' render={(routerprops)=><Prod routerProps={routerprops}/>}/>
 
-        <Route exact path='/:product/:id' render={(routerprops)=><ProductPage routerProps={routerprops}/>}/>
+        <Route exact path='/product/:id' render={(routerprops)=><ProductPage routerProps={routerprops}/>}/>
+        <Route exact path='/:product/:kind' render={(routerprops)=><Prod routerProps={routerprops}/>}/>
 
       </Switch>
       <br/> <br/> <br/> <br/> <br/> <br/>
