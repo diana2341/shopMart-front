@@ -63,7 +63,7 @@ class ProductPage extends React.Component{
         <label style={{fontWeight: 'bolder',fontSize:16}}>Product Details</label>
         <br/><br/>
         <p>{this.props.products.description}</p>
-        <button className='check-btn' onClick={()=>this.props.addCart(user,this.props.products.id)}>add to cart</button>
+        <button className='check-btn' onClick={()=>this.props.addCart(user,this.props.products,1)}>add to cart</button>
     </div>
   
 

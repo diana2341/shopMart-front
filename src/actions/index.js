@@ -81,14 +81,14 @@ export const fetchProduct=(id)=>{
 
 
 
-export const addCart = (user,product_id) => {
-  console.log('cart??', user.current_order)
+export const addCart = (user,product, quantity) => {
   let currentOrder = user.current_order
+  console.log('cart??!!', currentOrder)
   if (currentOrder === null) {
 
     return async (dispatch)=>{
        const response = await api.post(`/orders/neworder`,{
-         user_id:user.id, product_id
+         user_id:user.id, product_id:product.id, quantity: quantity
        })
         dispatch({type:'UPDATE_CURRENT_USER', payload:response.data})
       }
@@ -96,7 +96,7 @@ export const addCart = (user,product_id) => {
 
       return async (dispatch)=>{
         const response = await api.post(`/order_items`,{
-          order_id: currentOrder, product_id
+          order_id: currentOrder, product_id:product.id,quantity: quantity, item_price:product.price
         })
          dispatch({type:'UPDATE_CURRENT_USER', payload:response.data})
        }
