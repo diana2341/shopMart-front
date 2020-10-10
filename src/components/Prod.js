@@ -53,6 +53,10 @@ class Product extends React.Component {
 				this.props.routerProps.match.params.product==='men'?
 				<img className='banner' src={require('../img/Men.png')}/>:
 				this.props.routerProps.match.params.product==='kids'?
+                <img className='banner' src={require('../img/kids.png')}/>:
+                this.props.routerProps.match.params.product==='boys'?
+                <img className='banner' src={require('../img/kids.png')}/>:
+                this.props.routerProps.match.params.product==='girls'?
 				<img className='banner' src={require('../img/kids.png')}/>:''
 				}
 				<br/>
