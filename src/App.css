@@ -383,9 +383,18 @@ font-weight: 700;
   
   position: relative;
   top: 2rem;
-display:flex
+display:flex;
+z-index: 999;
 
 }
+a > li{
+  text-decoration: none;
+  color: black;
+}
+a > li:hover{
+  color: rgb(0, 174, 255);
+}
+
 .con > ul
 {
   
@@ -418,7 +427,7 @@ ul > p{
 }
 .c-card{
   position: relative;
-  top: -10rem;
+  top: -8.5rem;
   left: 17rem;
   text-decoration: underline;
   font-size: 16px;

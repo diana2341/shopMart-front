@@ -1,20 +1,22 @@
 import React from 'react'
+import {connect} from 'react-redux'
+import { fetchCategory } from '../actions/index';
 
 class Home extends React.Component{
 
   render(){
-    let choices=['shoes','sweaters','jeans','sports']
+    let choices=['shoes','jackets','jeans','sportswear']
     return(
       <div>
         <br/>
-       <img className='banner' src={require('../img/logo2.png')}/>
+       <a href='/'><img className='banner' src={require('../img/logo2.png')}/></a>
        <p className='wow'><i className='w'>WOW!</i> Finds in Store</p>
 
        <div className='category'>
          {choices.map(choice=>{
           return (
             <>
-            <img className={`choose ${choice}`} src={require(`../img/${choice}.png`)}/>
+            <img onClick={()=>this.props.fetchCategory(choice)}className={`choose ${choice}`} src={require(`../img/${choice}.png`)}/>
             </>
 
           )
@@ -22,7 +24,7 @@ class Home extends React.Component{
          })}
          <p className='b-b'>Shop <span className='w'>Beauty</span> products </p>
    
-         <img className='beauty banner' src={require(`../img/beauty.png`)}/>
+         <img onClick={()=>this.props.fetchCategory('beauty')}className='beauty banner' src={require(`../img/beauty.png`)}/>
 
 
 
@@ -34,5 +36,9 @@ class Home extends React.Component{
     )
   }
 }
-
-export default Home
+const mapStateToProps = (state) => {
+	return {
+		products: state.products.filteredProducts,
+	};
+};
+export default connect(mapStateToProps, { fetchCategory })(Home);
