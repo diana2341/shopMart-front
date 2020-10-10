@@ -2,6 +2,12 @@ import React from 'react'
 import {Field, reduxForm} from 'redux-form'
 import {connect} from 'react-redux'
 import {signUp} from '../actions'
+import {BiShoppingBag} from 'react-icons/bi'
+import {BsClock} from 'react-icons/bs'
+import {BsStar} from 'react-icons/bs'
+
+
+
 
 class SignUp extends React.Component{
 
@@ -40,7 +46,9 @@ class SignUp extends React.Component{
     }
     render(){
         return(
-            <form className='ui form error' onSubmit={this.props.handleSubmit(this.onSubmit)}>
+            <>
+            <form className='ui form error sec' onSubmit={this.props.handleSubmit(this.onSubmit)}>
+                <p className='form-title'>Create Account</p>
                 <Field
                 name='first_name'
                 component={this.renderInput}
@@ -82,8 +90,16 @@ class SignUp extends React.Component{
                 label={'Enter zip code'}
                 />
 
-                <button className='ui button primary'>Submit</button>
+                <button className='ui button primary sign-in'>Submit</button>
+                <div className='log-sign'>
+                    <span><BiShoppingBag size={22}/> Log in from anywhere to see what’s in your bag</span>
+                    <span><BsClock size={22}/>  Quick and easy checkout.</span>
+                    <span><BsStar size={22}/>   Get the inside scoop on trend and private sales.</span>
+                </div>
             </form>
+           
+
+            </>
         )
     }
 }

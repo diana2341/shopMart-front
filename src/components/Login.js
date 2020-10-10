@@ -3,6 +3,9 @@ import {Field, reduxForm} from 'redux-form'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {login} from '../actions'
+import {BiShoppingBag} from 'react-icons/bi'
+import {BsClock} from 'react-icons/bs'
+import {BsStar} from 'react-icons/bs'
 class Login extends React.Component{
 
     renderError=({error,touched})=>{
@@ -38,21 +41,30 @@ class Login extends React.Component{
         return(
             <>
             <form className='ui form error' onSubmit={this.props.handleSubmit(this.onSubmit)}>
-                <Field
+                <p className='form-title'>LogIn</p>
+                <Field 
+                className='input'
                 name='email'
                 component={this.renderInput}
                 label={'Enter Email'}
                 />
-                <Field
+                <Field 
+                className='input'
                 name='password'
                 component={this.renderInput}
                 label={'Enter password'}
                 />
 
-                <button className='ui button primary'>Submit</button>
-            </form>
-            <div>Don't have and account?</div>
+                <button className='ui button primary sign-in'>Submit</button>
+                <div>Don't have and account?</div>
             <Link to='/signup'>Sign Up</Link>
+            <div className='log-sign'>
+                    <span><BiShoppingBag size={22}/> Log in from anywhere to see what’s in your bag</span>
+                    <span><BsClock size={22}/>  Quick and easy checkout.</span>
+                    <span><BsStar size={22}/>   Get the inside scoop on trend and private sales.</span>
+                </div>
+            </form>
+            
             </>
         )
     }
