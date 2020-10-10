@@ -9,6 +9,7 @@ import Login from './components/Login'
 import ProductPage from './components/productPage'
 import Product from './components/Products'
 import Prod from './components/Prod'
+import Banner from './components/Banner'
 
 
 import Cart from './components/Cart'
@@ -25,6 +26,7 @@ function App(props) {
   return (
     <Router>
       <Navbar/>
+      <Banner/>
       <Switch>
       <Route exact path='/' render={(routerprops)=><Home routerProps={routerprops}/>}/>
 
