@@ -57,22 +57,7 @@ return async (dispatch)=>{
             if(category==='kids'){
                 return x.categories==='girls' | x.categories==='boys'
             }
-            if(category==='shoes'){
-              return x.kind==='shoes' 
-          }
-          if(category==='jackets'){
-            return x.kind==='jackets' 
-        }
-        
-          if(category==='jeans'){
-            return x.kind==='jeans' 
-        }
-        if(category==='sportswear'){
-          return x.kind==='sportswear' 
-        }
-      if(category==='beauty'){
-        return x.kind==='beauty' 
-      }
+            
     })
 
   })
@@ -80,13 +65,30 @@ return async (dispatch)=>{
 
 
 }
+export const fetchProductsFilter=(category,kind)=>{
+    
+  return async (dispatch)=>{
+          const response = await api.get('/products')
+          dispatch({type:'FETCH_PRODUCTS', payload:response.data.filter((x) => {if(x.categories===category&&x.kind===kind ){
+           return x.categories===category && x.kind===kind
+          }
+              if(category==='kids'){
+                  return x.categories==='girls' | x.categories==='boys'
+              }
+              
+      })
+  
+    })
+   }
+  
+  
+  }
 
 
 export const fetchProductsForNav=(category,kind)=>{
  
-
   return async (dispatch)=>{
-    
+   history.push(`/${category}/${kind}`)
           const response = await api.get('/products')
           dispatch({type:'FETCH_PRODUCTS', payload:response.data.filter((x) => {if(x.categories===category&&x.kind===kind ){
               return (

@@ -9,6 +9,7 @@ import { connect } from 'react-redux';
 class Product extends React.Component {
 	componentDidMount() {
 		this.props.fetchProducts(this.props.routerProps.match.params.product);
+		console.log(this.props.routerProps)
 
 	}
 
