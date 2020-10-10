@@ -230,7 +230,75 @@ width: 10rem;
   top: 7rem;
   cursor: zoom-in;
 }
+.category{
+position: relative;
+/* display: flex; */
+left: 5rem;
+top: 7rem;
+flex-wrap: wrap;
+cursor: pointer;
 
+
+}
+
+.shop{
+position: relative;
+}
+/* home page buttons */
+
+/* home page buttons enddd */
+
+.category > img
+{
+  flex: 0 50%;
+
+  margin:35px;  /* and that, will result in a 10px gap */
+}
+.choose{
+  position: relative;
+  /* top: 10rem;
+  left: 5rem; */
+  width: 40%;
+  box-shadow: 2px 3px 5px 1px rgba(0,0,0,0.47);
+
+}
+.choose:hover{
+  box-shadow: 2px 3px 5px 3px rgba(0,0,0,0.47);
+
+}
+.b-b{
+  position: relative;
+  font-size: 40px;
+  font-weight: lighter;
+  text-transform: uppercase;
+  left: 35%;
+  text-decoration:  rgb(0, 174, 255) underline ;
+}
+.wow{
+  position: relative;
+  left: 40%;
+  text-transform: uppercase;
+  top: 4rem;
+  font-size: 40px;
+  text-decoration:  rgb(0, 174, 255) underline ;
+}
+.w{
+color: rgb(0, 174, 255);
+}
+.beauty{
+  position: relative;
+  left: -2rem;
+}
+.butn{
+  position: relative;
+  border: none;
+  padding: 15px;
+  width: 10%;
+  background-color: white;
+  text-transform: capitalize;
+  box-shadow: 3px 13px 5px 0px rgba(0,0,0,0.47);
+
+}
 .show-product-size{
   position: relative;
   /* top: -36rem;
@@ -289,7 +357,78 @@ width: 10rem;
 
 
 
+/* footerrr */
+.footer {
+  /* position: fixed; */
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 250px;
+  background-color: rgba(34, 33, 33, 0.096);
+  color:  black;;
+  text-align: center;
+font-weight: 700;
+  bottom: 0;
+  width: 100%;
+}
+.pay-card{
+  height: 0;
+}
+.rights{
+  position: relative;
+  top: 4rem;
+  left: 22rem;
+}
+.con{
+  
+  position: relative;
+  top: 2rem;
+display:flex
 
+}
+.con > ul
+{
+  
+  font-size: 20px;
+  flex: 0 30%;
+  list-style-type: none;
+  font-weight: lighter;
+  
+
+}
+ul>li{
+  margin: 0 0 10px 0;
+  color:  black;;
+
+}
+ul > p{
+  text-decoration:  underline;
+
+}
+.payments{
+  position: relative;
+  flex-wrap: wrap;
+  left: 25rem;
+  top: -10rem;
+
+}
+.pay{
+  position: relative;
+  left: 1.8rem;
+}
+.card{
+  position: relative;
+  top: -10rem;
+  left: 55rem;
+  text-decoration: underline;
+  font-size: 16px;
+}
+.payments > span{
+  flex: 0 50%;
+
+  margin:10px;  
+}
+/* end footerrrr */
 
 
 
