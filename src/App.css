@@ -416,10 +416,10 @@ ul > p{
   position: relative;
   left: 1.8rem;
 }
-.card{
+.c-card{
   position: relative;
   top: -10rem;
-  left: 55rem;
+  left: 17rem;
   text-decoration: underline;
   font-size: 16px;
 }
