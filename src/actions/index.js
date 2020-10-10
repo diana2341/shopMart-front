@@ -190,10 +190,10 @@ export const addCart = (user,product, quantity) => {
 
 
     export const fetchUserCart=()=>{
+   
       return async (dispatch)=>{
         const response = await api.get('/order_items')
         dispatch({type:'GET_CART', payload:response.data})
-        console.log('cart',response)
       }
       // GET_CART
     }
