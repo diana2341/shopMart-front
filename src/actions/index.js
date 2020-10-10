@@ -215,3 +215,17 @@ export const addCart = (user,product, quantity) => {
       }
       // GET_CART
     }
+
+    export const fetchProductInCart=(id)=>{
+      return async (dispatch)=>{
+        const response = await api.get(`/products/${id}`)
+           dispatch({type:'GET_PRODUCTS_IN_CART',payload:response.data })
+       }
+    }
+
+    export const orders=()=>{
+      return async (dispatch)=>{
+        let response = await api.get('/orders')
+        dispatch({type:'GET_ORDERS', payload:response.data})
+      }
+    }

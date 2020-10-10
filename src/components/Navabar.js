@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {signOut} from '../actions'
 import NavFilter from './NavFilter'
-import { fetchCategory } from '../actions/index';
+import { fetchCategory,orders } from '../actions/index';
 import { fetchProductsForNav } from '../actions/index';
 
 import '../App.css'
@@ -17,6 +17,9 @@ class Navabar extends React.Component{
         active:false
     }
 
+    componentDidMount=()=>{
+        this.props.orders()
+    }
  
 
     handleLogOut=()=>{
@@ -103,7 +106,13 @@ class Navabar extends React.Component{
    
 
 render(){
+    let userId = this.props.currentUser.user? this.props.currentUser.user.id : null
+    let totalAmount = this.props.cart.order? this.props.cart.order.filter((o)=>{
+        if(o.user_id === userId){
+        return (o.total_qty)
+    }}):null
     console.log(this.props.currentUser.user)
+    let total = totalAmount?totalAmount.map(order=>order.total_qty):null
     return(
         <>
         <nav>
@@ -199,7 +208,7 @@ render(){
         </>
         : 
         <li><Link to='/login'>Login</Link></li>} 
-        <li className='cart'><Link to='/cart'><MdKeyboardArrowLeft className='arrow six' size={35}/> <BiShoppingBag size={22}/> </Link></li> 
+        <li className='cart'><Link to='/cart'><MdKeyboardArrowLeft className='arrow six' size={35}/> <BiShoppingBag size={22}/>({total >0? total:0}) </Link></li> 
         </ul>
 
             <div onClick={this.toggle}  className='burger'>
@@ -219,7 +228,7 @@ render(){
 
 
 const mapStateToProps = (state) => {
-	return { currentUser: state.auth };
+	return { currentUser: state.auth,cart:state.cart };
 };
 
-export default connect(mapStateToProps, { signOut,fetchCategory,fetchProductsForNav })(Navabar);
+export default connect(mapStateToProps, { signOut,fetchCategory,fetchProductsForNav,orders })(Navabar);
