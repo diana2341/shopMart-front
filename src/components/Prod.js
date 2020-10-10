@@ -1,5 +1,5 @@
 import React from 'react';
-import { fetchProducts } from '../actions/index';
+import { fetchProductsFilter } from '../actions/index';
 import { pruductShow } from '../actions/index';
 import Filter from '../components/Filter';
 import { connect } from 'react-redux';
@@ -8,8 +8,7 @@ import { connect } from 'react-redux';
 
 class Product extends React.Component {
 	componentDidMount() {
-		this.props.fetchProducts(this.props.routerProps.match.params.product);
-
+		this.props.fetchProductsFilter(this.props.routerProps.match.params.product,this.props.routerProps.match.params.kind);
 	}
 
 	renderProducts = () => {
@@ -82,4 +81,4 @@ const mapStateToProps = (state) => {
 	};
 };
 
-export default connect(mapStateToProps, { fetchProducts, pruductShow })(Product);
+export default connect(mapStateToProps, { fetchProductsFilter, pruductShow })(Product);
