@@ -127,6 +127,7 @@ export const pruductShow=(id)=>{
     history.push(`/product/${id}`)
 
 }
+
 export const fetchProduct=(id)=>{
     return async (dispatch)=>{
      const response = await api.get(`/products/${id}`)
