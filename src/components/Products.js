@@ -3,6 +3,7 @@ import { fetchProducts,addCart } from '../actions/index';
 import { pruductShow } from '../actions/index';
 import Filter from '../components/Filter';
 import { connect } from 'react-redux';
+import history from '../history'
 
 
 
