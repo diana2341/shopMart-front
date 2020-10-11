@@ -519,6 +519,7 @@ grid-row-gap: 20px;
 hr{
   width: 65%;
   border: 0.1px solid rgba(173, 173, 173, 0.39);
+  margin-top: -50px;
 }
 
 .orderList{
@@ -530,9 +531,23 @@ hr{
 }
 .mybag{
   margin-left: 15%;
-
 }
-
+.cartItem{
+  position: relative;
+  left: 13%;
+  top: -150px;
+  font-size: 18px;
+  padding-bottom: 10px;
+}
+.delete{
+  position: relative;
+  left: 50%;
+  top: 20px;
+  background-color: transparent;
+  border: transparent;
+  cursor: pointer;
+  z-index: 5;
+}
 
 
 

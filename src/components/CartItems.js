@@ -1,5 +1,5 @@
 import React from 'react'
-import {fetchProductInCart} from '../actions'
+import {fetchProductInCart,deleteItem} from '../actions'
 import {connect} from 'react-redux'
 
 
@@ -15,10 +15,12 @@ class CartItems extends React.Component{
             {this.props.product?
             <ul className='orderList'>
             <li>
+            <button className='delete' onClick={()=>this.props.deleteItem(this.props.orderId)}>X</button>
+
             <div>{<img className='cart-img' src={this.props.product.images}/>}</div>
-            <div> <b>{this.props.product.name}</b></div>
-            <div>{this.props.product.color}</div>
-            <div>{this.props.product.price}</div>
+            <div className='cartItem name'> <b>{this.props.product.name}</b></div>
+            <div className='cartItem color'>{this.props.product.color}</div>
+            <div className='cartItem price'>${this.props.product.price}</div>
             </li>
            <hr/>
             </ul>
@@ -36,4 +38,4 @@ const mapStateToProps=(state,ownProps)=>{
     }
 }
 
-export default connect(mapStateToProps,{fetchProductInCart})(CartItems)
+export default connect(mapStateToProps,{fetchProductInCart,deleteItem})(CartItems)

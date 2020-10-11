@@ -19,7 +19,7 @@ class Cart extends React.Component{
             {this.props.items.items?this.props.items.items.map(element => {
                 if(element.order_id === userCart){
                     console.log(element)
-                 return <CartItems itemsId={element.product_id}/>
+                 return <CartItems orderId={element.id} itemsId={element.product_id}/>
 
                 //  this.props.fetchProduct(element.product_id) 
                 // this.props.fetchProduct(element.product_id) 
