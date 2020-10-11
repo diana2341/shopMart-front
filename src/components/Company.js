@@ -100,7 +100,7 @@ class Company extends React.Component{
             <div id='faq'>
                 <p>
                 <h3>What method of payments do you accept?</h3>
-                    We accept PayPal, Visa, MasterCard, American Express, Discover, and Rainbow Gift Cards.
+                    We accept PayPal, Visa, MasterCard, American Express, Discover, and Shopmart Gift Cards.
                 </p>
                 <p>
                 <h3>Do you offer gift receipts?</h3>
@@ -116,7 +116,7 @@ class Company extends React.Component{
                 <p>
                 <h3>How do I contact customer service?</h3>
                 You may reach our Customer Care Center at 1-8888-5SHOPMART Monday - Friday 8:30 am to 8:00 pm ET and Saturday - Sunday 10:00 am - 6:00 pm ET. You may also contact Customer Service via email at 
-                customerservice@rainbowshops.com.
+                customerservice@shopmart.com.
                 </p>
                 <p>
                 <h3>Do you ship to APO/FPO addresses?</h3>

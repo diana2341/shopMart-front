@@ -16,10 +16,10 @@ class Footer extends React.Component{
 
                 <ul className='departments'>
                     <p>Shop Departments</p>
-                    <a href='/women'><li>Women</li></a>
-                    <a href='/girls'><li>Girls</li></a>
-                    <a href='/boys'><li>Boys</li></a>
-                    <a href='/men'><li>Men</li></a>
+                    <li className='li' onClick={()=>{history.push(`/women`)}}>Women</li>
+                    <li className='li' onClick={()=>{history.push(`/girls`)}}>Girls</li>
+                    <li className='li' onClick={()=>{history.push(`/boys`)}}>Boys</li>
+                    <li className='li' onClick={()=>{history.push(`/men`)}}>Men</li>
                 </ul>  
                 </div>
               <div className='pay-card'>
