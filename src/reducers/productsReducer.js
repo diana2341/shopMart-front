@@ -4,7 +4,8 @@ const initialState = {
   cart: [],
   size:'',
   filteredProducts:[],
-  sort:''
+  sort:'',
+  categories:''
 }
 
 export default (state=initialState,action)=>{
@@ -21,12 +22,18 @@ export default (state=initialState,action)=>{
                   filteredProducts: action.payload.products,
                   size:action.payload.size
                 };
-                case 'ORDER_PRODUCTS_BY_PRICE':
-      return {
-        ...state,
-        filteredProducts: action.payload.items,
-        sort: action.payload.sort,
-      };
+            case 'ORDER_PRODUCTS_BY_PRICE':
+              return {
+                ...state,
+                filteredProducts: action.payload.items,
+                sort: action.payload.sort,
+              };
+            case 'SORT_BY_CATEGORY':
+              return {
+                ...state,
+                filteredProducts: action.payload.products,
+                categories: action.payload.categories,
+              };
 
 
         default:

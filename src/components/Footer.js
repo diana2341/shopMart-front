@@ -1,5 +1,6 @@
 import React from 'react'
 import PaymentIcon from 'react-payment-icons';
+import history from '../history'
 
 class Footer extends React.Component{
     render(){
@@ -7,18 +8,18 @@ class Footer extends React.Component{
             <div className="footer">
                 <div className='con'>
                     <ul>
-                    <p>The Company</p>
-                    <a href='/'><li>About us</li></a> 
-                    <a href='/'><li>Return Poilicy</li></a>
-                    <a href='/'><li>FAQ</li></a>
+                    <p >The Company</p>
+                    <li className='li' onClick={()=>{history.push(`/the-company/${'about'}`)}}>About us</li> 
+                    <li className='li' onClick={()=>{history.push(`/the-company/${'returns'}`)}}>Return Poilicy</li>
+                    <li className='li' onClick={()=>{history.push(`/the-company/${'faq'}`)}}>FAQ</li>
                 </ul>
 
                 <ul className='departments'>
                     <p>Shop Departments</p>
-                    <a href='/women'><li>Women</li></a>
-                    <a href='/girls'><li>Girls</li></a>
-                    <a href='/boys'><li>Boys</li></a>
-                    <a href='/men'><li>Men</li></a>
+                    <li className='li' onClick={()=>{history.push(`/women`)}}>Women</li>
+                    <li className='li' onClick={()=>{history.push(`/girls`)}}>Girls</li>
+                    <li className='li' onClick={()=>{history.push(`/boys`)}}>Boys</li>
+                    <li className='li' onClick={()=>{history.push(`/men`)}}>Men</li>
                 </ul>  
                 </div>
               <div className='pay-card'>
