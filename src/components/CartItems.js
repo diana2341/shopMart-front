@@ -1,15 +1,19 @@
 import React from 'react'
-import {fetchProductInCart,deleteItem} from '../actions'
+import {fetchProductInCart,deleteItem,orders} from '../actions'
 import {connect} from 'react-redux'
 
 
 class CartItems extends React.Component{
     componentDidMount=()=>{
         this.props.fetchProductInCart(this.props.itemsId)
+        this.props.orders()
     }
 
     render(){
-        console.log('pleaseee',this.props.product?this.props.product:null)
+        // console.log('the user',this.props.currentUser?this.props.currentUser.user.id:null)
+        // console.log('the order',this.props.carts.order)
+       
+       
         return(
             <>
             {this.props.product?
@@ -27,15 +31,18 @@ class CartItems extends React.Component{
             
             :
             'Cart is Empty'}
-            </>
+          </>
+            
         )
     }
 }
 
 const mapStateToProps=(state,ownProps)=>{
     return {
-        product:state.cart[ownProps.itemsId]
+        product:state.cart[ownProps.itemsId],
+        currentUser: state.auth,
+        carts:state.cart
     }
 }
 
-export default connect(mapStateToProps,{fetchProductInCart,deleteItem})(CartItems)
+export default connect(mapStateToProps,{fetchProductInCart,deleteItem,orders})(CartItems)

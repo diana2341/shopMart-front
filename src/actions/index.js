@@ -122,7 +122,6 @@ export const fetchProductsForNav=(category,kind)=>{
   
   }
 export const pruductShow=(id)=>{
-  console.log('id')
 
     history.push(`/product/${id}`)
 
@@ -175,7 +174,6 @@ export const fetchProduct=(id)=>{
               ),
       },
     });
-    console.log(products,categories)
 
   };
   export const sortProducts = (items, sort) => (dispatch) => {
@@ -231,7 +229,6 @@ export const fetchProduct=(id)=>{
 
     export const addCart = (user,product, quantity) => {
       let currentOrder = user.current_order
-      console.log('cart??!!', currentOrder)
       if (currentOrder === null) {
     
         return async (dispatch)=>{

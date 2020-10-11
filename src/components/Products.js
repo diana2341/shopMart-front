@@ -1,5 +1,5 @@
 import React from 'react';
-import { fetchProducts,addCart } from '../actions/index';
+import { fetchProducts,addCart,orders } from '../actions/index';
 import { pruductShow } from '../actions/index';
 import Filter from '../components/Filter';
 import { connect } from 'react-redux';
@@ -10,7 +10,6 @@ import history from '../history'
 class Product extends React.Component {
 	componentDidMount() {
 		this.props.fetchProducts(this.props.routerProps.match.params.product);
-		console.log(this.props.routerProps)
 
 	}
 
@@ -31,7 +30,7 @@ class Product extends React.Component {
 					
 					<div className='btn-row'>
 						
-					<button className='btn-shop add' onClick={()=>this.props.addCart(user,product, 1)}>+ add to bag</button>
+					<button className='btn-shop add' onClick={()=>{this.props.addCart(user,product, 1);  this.props.orders()}}>+ add to bag</button>
 					{/* <button
 					className='btn-shop details'
 					onClick={()=>pruductShow(product.id)}>
@@ -86,4 +85,4 @@ const mapStateToProps = (state) => {
 	};
 };
 
-export default connect(mapStateToProps, { fetchProducts, pruductShow,addCart })(Product);
+export default connect(mapStateToProps, { fetchProducts, pruductShow,addCart,orders })(Product);

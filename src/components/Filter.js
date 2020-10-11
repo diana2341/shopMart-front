@@ -15,7 +15,6 @@ class Filter extends React.Component{
         return(
             <>
         <div>
-          {console.log(history)}
             {/* <label>
             Order by */}
             <select

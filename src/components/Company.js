@@ -4,7 +4,7 @@ import history from '../history'
 
 class Company extends React.Component{
     componentDidMount(){
-        console.log(history.location.pathname)
+        // console.log(history.location.pathname)
     }
     render(){
         let path=history.location.pathname
