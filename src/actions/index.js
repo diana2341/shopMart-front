@@ -131,22 +131,20 @@ export const pruductShow=(id)=>{
 export const fetchProduct=(id)=>{
     return async (dispatch)=>{
      const response = await api.get(`/products/${id}`)
-        dispatch({type:'FETCH_PRODUCT',payload:response.data
-       
-    })
-        
-
-    }
-
-}
-export const addCart = (userId,itemId) => {
-  console.log(userId,itemId)
-    return async (dispatch)=>{
-        await api.patch(`/carts/${userId}`)
-        dispatch({type:'ADD_CART', payload:itemId})
-
+        dispatch({type:'FETCH_PRODUCT',payload:response.data })
     }
 }
+
+
+
+
+
+
+
+
+
+
+
             
 
   export const searchSize = (products, size) => (dispatch) => {
@@ -203,3 +201,64 @@ export const addCart = (userId,itemId) => {
         },
       });
     };
+
+
+
+
+
+    export const fetchUserCart=()=>{
+   
+      return async (dispatch)=>{
+        const response = await api.get('/order_items')
+        dispatch({type:'GET_CART', payload:response.data})
+      }
+      // GET_CART
+    }
+
+    export const fetchProductInCart=(id)=>{
+      return async (dispatch)=>{
+        const response = await api.get(`/products/${id}`)
+           dispatch({type:'GET_PRODUCTS_IN_CART',payload:response.data })
+       }
+    }
+
+    export const orders=()=>{
+      return async (dispatch)=>{
+        let response = await api.get('/orders')
+        dispatch({type:'GET_ORDERS', payload:response.data})
+      }
+    }
+
+    export const addCart = (user,product, quantity) => {
+      let currentOrder = user.current_order
+      console.log('cart??!!', currentOrder)
+      if (currentOrder === null) {
+    
+        return async (dispatch)=>{
+           const response = await api.post(`/orders/neworder`,{
+             user_id:user.id, product_id:product.id, quantity: quantity
+           })
+            dispatch({type:'UPDATE_CURRENT_USER', payload:response.data})
+          }
+        }else{
+    
+          return async (dispatch)=>{
+            const response = await api.post(`/order_items`,{
+              order_id: currentOrder, product_id:product.id,quantity: quantity, item_price:product.price
+            })
+             dispatch({type:'UPDATE_CURRENT_USER', payload:response.data})
+           }
+    
+        }
+    }
+
+    export const deleteItem=(id)=>{
+      return async (dispatch)=>{
+        const token = localStorage.getItem('token')
+    if(token){
+        const response = await api.delete(`/order_items/${id}`,{headers:{Authorization:`Bearer ${token}`}})
+
+        dispatch({type:'DELETE_ITEM', payload:id})
+        }
+      }
+    }
