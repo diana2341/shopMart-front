@@ -197,7 +197,7 @@ font-weight: bold;}
   /* padding-top: 1rem; */
   display: flex;  
   /* grid-template-columns: auto auto ; */
-  left: 40rem;
+  left: 30rem;
 
 }
 
@@ -391,8 +391,14 @@ a > li{
   text-decoration: none;
   color: black;
 }
-a > li:hover{
+a  > li:hover{
+  color: #00aeff;
+}
+.li:hover{
   color: rgb(0, 174, 255);
+}
+.li{
+  cursor: pointer;
 }
 
 .con > ul
@@ -455,6 +461,7 @@ ul > p{
   font-size: 20px;
   font-weight: 900;
 }
+
 @keyframes free{
   from{
     color: black;
@@ -508,7 +515,22 @@ left: 10rem;
 top: 1rem;
 grid-row-gap: 20px;
 }
-
+.about-banner{
+  position: relative;
+  top: 1rem;
+  left: 5rem;
+  width: 90%;
+  height: 250px;
+  object-fit: cover;
+}
+.about-content,#return,#faq{
+  position: relative;
+  text-align: center;
+  font-size: 16px;
+  width: 50%;
+  left: 25rem;
+  top: 4rem;
+}
 
 
 

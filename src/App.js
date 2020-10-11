@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router";
 import Home from './components/Home'
 import Navbar from './components/Navabar'
 import Footer from './components/Footer'
+import Company from './components/Company'
 
 import Login from './components/Login'
 import ProductPage from './components/productPage'
@@ -31,6 +32,8 @@ function App(props) {
       <Route exact path='/' render={(routerprops)=><Home routerProps={routerprops}/>}/>
 
         <Route exact path='/login'><Login/></Route>
+        <Route exact path='/the-company/:section'><Company/></Route>
+
         <Route exact path='/signup'><SignUp/></Route>
         <Route exact path='/:product' render={(routerprops)=><Product routerProps={routerprops}/>}/>
 
@@ -38,6 +41,7 @@ function App(props) {
         <Route exact path='/:product/:kind' render={(routerprops)=><Prod routerProps={routerprops}/>}/>
 
         <Route exact path='/cart'><Cart/></Route>
+
 
       </Switch>
       <br/> <br/> <br/> <br/> <br/> <br/>

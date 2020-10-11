@@ -163,6 +163,23 @@ export const addCart = (userId,itemId) => {
       },
     });
   };
+
+  export const sortByCategory = (products, categories) => (dispatch) => {
+    dispatch({
+    type: 'SORT_BY_CATEGORY',
+      payload: {
+        categories: categories,
+        products:
+        categories === ""
+            ? products
+            : products.filter(
+                (x) => x.categories===categories
+              ),
+      },
+    });
+    console.log(products,categories)
+
+  };
   export const sortProducts = (items, sort) => (dispatch) => {
     const products = items.slice();
     if (sort !== "") {

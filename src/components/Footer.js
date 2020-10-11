@@ -1,5 +1,6 @@
 import React from 'react'
 import PaymentIcon from 'react-payment-icons';
+import history from '../history'
 
 class Footer extends React.Component{
     render(){
@@ -7,10 +8,10 @@ class Footer extends React.Component{
             <div className="footer">
                 <div className='con'>
                     <ul>
-                    <p>The Company</p>
-                    <a href='/'><li>About us</li></a> 
-                    <a href='/'><li>Return Poilicy</li></a>
-                    <a href='/'><li>FAQ</li></a>
+                    <p >The Company</p>
+                    <li className='li' onClick={()=>{history.push(`/the-company/${'about'}`)}}>About us</li> 
+                    <li className='li' onClick={()=>{history.push(`/the-company/${'returns'}`)}}>Return Poilicy</li>
+                    <li className='li' onClick={()=>{history.push(`/the-company/${'faq'}`)}}>FAQ</li>
                 </ul>
 
                 <ul className='departments'>
