@@ -13,10 +13,15 @@ class CartItems extends React.Component{
         return(
             <>
             {this.props.product?
-            <div>
-                {<img src={this.props.product.images}/>}
-            {this.props.product.price}<br/>
-            </div>
+            <ul className='orderList'>
+            <li>
+            <div>{<img className='cart-img' src={this.props.product.images}/>}</div>
+            <div> <b>{this.props.product.name}</b></div>
+            <div>{this.props.product.color}</div>
+            <div>{this.props.product.price}</div>
+            </li>
+           <hr/>
+            </ul>
             
             :
             'Cart is Empty'}

@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {fetchProduct} from '../actions/index'
+import {fetchProduct,orders} from '../actions/index'
 import {addCart} from '../actions/index'
 import CursorZoom from 'react-cursor-zoom';
 
@@ -62,7 +62,7 @@ class ProductPage extends React.Component{
         <label style={{fontWeight: 'bolder',fontSize:16}}>Product Details</label>
         <br/><br/>
         <p>{this.props.products.description}</p>
-        <button className='check-btn' onClick={()=>this.props.addCart(user,this.props.products,1)}>add to cart</button>
+        <button className='check-btn' onClick={()=>{this.props.addCart(user,this.props.products,1);  this.props.orders()}}>add to cart</button>
     </div>
   
 
@@ -92,4 +92,4 @@ const mapStateToProps=(state,ownProps)=>{
 
 }
 
-export default connect(mapStateToProps,{fetchProduct,addCart})(ProductPage)
+export default connect(mapStateToProps,{fetchProduct,addCart,orders})(ProductPage)

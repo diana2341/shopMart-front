@@ -15,6 +15,7 @@ class Cart extends React.Component{
         console.log('...k',this.single)
         return(
             <>
+            <h1 className='mybag'><b>My Bag</b></h1>
             {this.props.items.items?this.props.items.items.map(element => {
                 if(element.order_id === userCart){
                     console.log(element)
@@ -25,7 +26,6 @@ class Cart extends React.Component{
                  
                 }
             }):null}
-             <div>Cart????</div>
             </>
         )
     }

@@ -18,6 +18,7 @@ li,a{
 }
 
 nav{
+  /* position: fixed; */
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -510,7 +511,27 @@ grid-row-gap: 20px;
 }
 
 
+/* CART */
+.cart-img{
+  width: 100px;
+}
 
+hr{
+  width: 65%;
+  border: 0.1px solid rgba(173, 173, 173, 0.39);
+}
+
+.orderList{
+  margin-left: 15%;
+  padding-top: 20px;
+}
+.orderList li{
+  list-style: none;
+}
+.mybag{
+  margin-left: 15%;
+
+}
 
 
 
