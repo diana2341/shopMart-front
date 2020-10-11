@@ -157,6 +157,7 @@ text-decoration: underline;
 
 }
 .btn-shop.add{
+  
   position: relative;
   top: -15rem;
   left: 6rem;
@@ -164,6 +165,7 @@ text-decoration: underline;
   width: 50%;
   transition: .5s ease;
   opacity: 0;
+  z-index: 99;
 }
 .card:hover .add {
   opacity: 1;
