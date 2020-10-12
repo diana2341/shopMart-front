@@ -8,7 +8,10 @@
   padding: 0;
   font-family: 'Open Sans Condensed', sans-serif;
 }
+h1,h3,p,div,ul,li,select{
+    text-transform: capitalize;
 
+}
 
 /* Navbar Styling */
 li,a{
@@ -220,7 +223,7 @@ width: 10rem;
   position: relative;
   left: 5rem;
   width: 90%;
-  height: 350px;
+  height: 400px;
   object-fit: cover;
 
 }

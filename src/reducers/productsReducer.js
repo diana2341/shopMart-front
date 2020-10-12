@@ -5,7 +5,9 @@ const initialState = {
   size:'',
   filteredProducts:[],
   sort:'',
-  categories:''
+  categories:'',
+  suggestions:[],
+  autoText:''
 }
 
 export default (state=initialState,action)=>{
@@ -34,7 +36,14 @@ export default (state=initialState,action)=>{
                 filteredProducts: action.payload.products,
                 categories: action.payload.categories,
               };
+              case 'SUGGESTIONS':
+                return {
+                  ...state,
+                  filteredProducts: action.payload.products,
+                  suggestions: action.payload.suggestions,
+                  autoText: action.payload.autoText,
 
+                };
 
         default:
             return state

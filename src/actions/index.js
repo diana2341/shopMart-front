@@ -139,7 +139,24 @@ export const fetchProduct=(id)=>{
 
 
 
+export const onTextChanged = (products, autoText) => (dispatch) => {
+  dispatch({
+  type: 'SUGGESTIONS',
+    payload: {
+      autoText: autoText,
+      products:
+      autoText === ""
+          ? products
+          : products.filter(
+              (x) => 
+              x.name.toLocaleLowerCase().includes(autoText.toLowerCase())
+              ||
+              x.categories.toLocaleLowerCase().includes(autoText.toLowerCase())
 
+            ),
+    },
+  });
+};
 
 
 
@@ -178,6 +195,7 @@ export const fetchProduct=(id)=>{
     console.log(products,categories)
 
   };
+  
   export const sortProducts = (items, sort) => (dispatch) => {
     const products = items.slice();
     if (sort !== "") {
