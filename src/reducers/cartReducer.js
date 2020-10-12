@@ -8,7 +8,7 @@ export default (state = {}, action) => {
 			return { ...state, order: action.payload };
 
 		  case 'DELETE_ITEM':
-			 return Object.keys(state).filter((item) => item.id !== action.payload);
+			return {...state, items:state.items.filter((item) =>{ if(item.id !== action.payload){ return item} })}
 		  default:
 		  	 return state;
 	}

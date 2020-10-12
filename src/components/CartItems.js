@@ -11,7 +11,7 @@ class CartItems extends React.Component{
 
     render(){
         // console.log('the user',this.props.currentUser?this.props.currentUser.user.id:null)
-        // console.log('the order',this.props.carts.order)
+        // console.log('the order',this.props.carts)
        
        
         return(
@@ -19,7 +19,7 @@ class CartItems extends React.Component{
             {this.props.product?
             <ul className='orderList'>
             <li>
-            <button className='delete' onClick={()=>this.props.deleteItem(this.props.orderId)}>X</button>
+            <button className='delete' onClick={()=>{this.props.deleteItem(this.props.orderId); this.props.orders(); this.props.fetchProductInCart(this.props.itemsId)}}>X</button>
 
             <div>{<img className='cart-img' src={this.props.product.images}/>}</div>
             <div className='cartItem name'> <b>{this.props.product.name}</b></div>
