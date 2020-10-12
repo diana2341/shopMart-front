@@ -8,7 +8,6 @@ import CursorZoom from 'react-cursor-zoom';
 
 class ProductPage extends React.Component{
     componentDidMount(){
-        console.log('product pagsss')
         this.props.fetchProduct(this.props.routerProps.match.params.id)
     }
     renderProduct=(user)=>{
@@ -76,7 +75,6 @@ class ProductPage extends React.Component{
     render(){
         let user=this.props.currentUser.user
 
-        console.log('show',this.props.currentUser.user)
         return(
             <>
             <div>{this.renderProduct(user)}</div>

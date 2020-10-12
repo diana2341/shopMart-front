@@ -16,7 +16,7 @@ h1,h3,p,div,ul,li,select{
 /* Navbar Styling */
 li,a{
   text-decoration: none;
-  color:  rgb(0, 204, 255);;
+  color:  rgb(0, 204, 255);
 
 }
 
@@ -160,6 +160,7 @@ text-decoration: underline;
 
 }
 .btn-shop.add{
+  
   position: relative;
   top: -15rem;
   left: 6rem;
@@ -167,6 +168,7 @@ text-decoration: underline;
   width: 50%;
   transition: .5s ease;
   opacity: 0;
+  z-index: 99;
 }
 .card:hover .add {
   opacity: 1;
@@ -233,6 +235,7 @@ width: 10rem;
   left: 12rem;
   top: 7rem;
   cursor: zoom-in;
+  
 }
 .category{
 position: relative;
@@ -573,9 +576,51 @@ hr{
   cursor: pointer;
   z-index: 5;
 }
+.delete:hover{
+  color: rgb(197, 20, 20);
+  font-weight: bolder;
+}
 
+.totalCart{
+  position: relative;
+  border: 0.5px solid rgba(128, 128, 128, 0.575);
+  float: right;
+  top: 25px;
+  left: -100px;
+  padding-left: 55px;
+  padding-right: 30px;
+padding-bottom: 65px;
+}
+.totalCart h2{
+  text-decoration: underline;
+}
+.totalCart button{
+  position: absolute;
+  
+  top: 180px;
+  left: 35px;
+  width: 225px;
+  height: 50px;
+  background-color: rgba(0, 204, 255, 0.774);
+  border-color:rgba(0, 204, 255, 0) ;
+  cursor: pointer;
+  color: white;
+  font-weight: bolder;
+ 
+}
+.totalCart button:hover{
+  background-color: rgba(4, 174, 216, 0.952);
 
+}
 
+.totalCart ul{
+  display: inline-block;
+  vertical-align: top; 
+  margin-right: 50px;
+}
+.totalCart ul li{
+  list-style: none;
+}
 
 
 

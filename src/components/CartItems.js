@@ -1,21 +1,25 @@
 import React from 'react'
-import {fetchProductInCart,deleteItem} from '../actions'
+import {fetchProductInCart,deleteItem,orders} from '../actions'
 import {connect} from 'react-redux'
 
 
 class CartItems extends React.Component{
     componentDidMount=()=>{
         this.props.fetchProductInCart(this.props.itemsId)
+        this.props.orders()
     }
 
     render(){
-        console.log('pleaseee',this.props.product?this.props.product:null)
+        // console.log('the user',this.props.currentUser?this.props.currentUser.user.id:null)
+        // console.log('the order',this.props.carts)
+       
+       
         return(
             <>
             {this.props.product?
             <ul className='orderList'>
             <li>
-            <button className='delete' onClick={()=>this.props.deleteItem(this.props.orderId)}>X</button>
+            <button className='delete' onClick={()=>{this.props.deleteItem(this.props.orderId); this.props.orders(); this.props.fetchProductInCart(this.props.itemsId)}}>X</button>
 
             <div>{<img className='cart-img' src={this.props.product.images}/>}</div>
             <div className='cartItem name'> <b>{this.props.product.name}</b></div>
@@ -27,15 +31,18 @@ class CartItems extends React.Component{
             
             :
             'Cart is Empty'}
-            </>
+          </>
+            
         )
     }
 }
 
 const mapStateToProps=(state,ownProps)=>{
     return {
-        product:state.cart[ownProps.itemsId]
+        product:state.cart[ownProps.itemsId],
+        currentUser: state.auth,
+        carts:state.cart
     }
 }
 
-export default connect(mapStateToProps,{fetchProductInCart,deleteItem})(CartItems)
+export default connect(mapStateToProps,{fetchProductInCart,deleteItem,orders})(CartItems)

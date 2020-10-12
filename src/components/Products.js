@@ -1,5 +1,5 @@
 import React from 'react';
-import { fetchProducts } from '../actions/index';
+import { fetchProducts,addCart,orders } from '../actions/index';
 import { pruductShow } from '../actions/index';
 import Filter from '../components/Filter';
 import { connect } from 'react-redux';
@@ -10,20 +10,19 @@ import history from '../history'
 class Product extends React.Component {
 	componentDidMount() {
 		this.props.fetchProducts(this.props.routerProps.match.params.product);
-		console.log(this.props.routerProps)
 
 	}
 
-	renderProducts = () => {
+	renderProducts = (user) => {
 		
 
 		return this.props.products.map((product) => {
 			return (
 				<React.Fragment key={product.id}>
-					<div  onClick={()=>pruductShow(product.id)} className='card'  >
+					<div className='card'  >
 					
 					{/* <div > */}
-					<img className='card-image'src={product.images}/>
+					<img onClick={()=>pruductShow(product.id)}   className='card-image'src={product.images}/>
 					{/* </div> */}
 					<div className='card-content'>
 					<div className=''>{product.name}</div>
@@ -31,9 +30,7 @@ class Product extends React.Component {
 					
 					<div className='btn-row'>
 						
-					<button
-					className='btn-shop add'
-					>+ add to bag</button>
+					<button className='btn-shop add' onClick={()=>{this.props.addCart(user,product, 1);  this.props.orders()}}>+ add to bag</button>
 					{/* <button
 					className='btn-shop details'
 					onClick={()=>pruductShow(product.id)}>
@@ -49,6 +46,8 @@ class Product extends React.Component {
 		});
 	};
 	render() {
+		let user=this.props.currentUser.user
+
 		return (
 			<div>
 				<br/>
@@ -73,7 +72,7 @@ class Product extends React.Component {
 	
 				
 
-				<div className="row">{this.renderProducts()}</div>
+				<div className="row">{this.renderProducts(user)}</div>
 			</div>
 		);
 	}
@@ -82,7 +81,8 @@ class Product extends React.Component {
 const mapStateToProps = (state) => {
 	return {
 		products: state.products.filteredProducts,
+         currentUser: state.auth
 	};
 };
 
-export default connect(mapStateToProps, { fetchProducts, pruductShow })(Product);
+export default connect(mapStateToProps, { fetchProducts, pruductShow,addCart,orders })(Product);

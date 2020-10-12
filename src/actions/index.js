@@ -122,7 +122,6 @@ export const fetchProductsForNav=(category,kind)=>{
   
   }
 export const pruductShow=(id)=>{
-  console.log('id')
 
     history.push(`/product/${id}`)
 
@@ -192,7 +191,6 @@ export const onTextChanged = (products, autoText) => (dispatch) => {
               ),
       },
     });
-    console.log(products,categories)
 
   };
   
@@ -249,7 +247,6 @@ export const onTextChanged = (products, autoText) => (dispatch) => {
 
     export const addCart = (user,product, quantity) => {
       let currentOrder = user.current_order
-      console.log('cart??!!', currentOrder)
       if (currentOrder === null) {
     
         return async (dispatch)=>{

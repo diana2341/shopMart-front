@@ -38,7 +38,6 @@ class Navabar extends React.Component{
     
     }
     handleSelect=(e)=>{
-        console.log('class',e.target.className)
         if(window.innerWidth <1000 && e.target.className==='home'|| e.target.className.baseVal==='home arrow one' ){
             document.querySelector('.navLinks').style.right='-100%'
             this.setState({active:!this.state.active})
@@ -101,7 +100,6 @@ class Navabar extends React.Component{
   
     handleSideNav=()=>{
         if(window.innerWidth < 1000){
-            console.log('kkkk')
         }
     }
    
@@ -112,7 +110,6 @@ render(){
         if(o.user_id === userId){
         return (o.total_qty)
     }}):null
-    console.log(this.props.currentUser.user)
     let total = totalAmount?totalAmount.map(order=>order.total_qty):null
     return(
         <>
