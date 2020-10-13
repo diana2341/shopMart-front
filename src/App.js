@@ -25,8 +25,11 @@ function App(props) {
     props.autoLogin()
   },[])
   return (
+
     <Router>
       <Navbar/>
+      <div id='page-wrapper'>
+
       <Banner/>
       <Switch>
       <Route exact path='/' render={(routerprops)=><Home routerProps={routerprops}/>}/>
@@ -42,9 +45,10 @@ function App(props) {
         <Route exact path='/:product/:kind' render={(routerprops)=><Prod routerProps={routerprops}/>}/>
 
       </Switch>
-      <br/> <br/> <br/> <br/> <br/> <br/>
+    </div>
       <Footer/>
     </Router>
+  
   );
 }
 
