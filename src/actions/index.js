@@ -204,8 +204,12 @@ export const addCart = (user, product, quantity) => {
 					},
 					{ headers: { Authorization: `Bearer ${token}` } }
 				);
-				dispatch({ type: 'UPDATE_CURRENT_USER', payload: response.data });
-				console.log(response);
+        dispatch({ type: 'UPDATE_CURRENT_USER', payload: response.data });
+
+        let responsetwo = await api.get('/orders');
+		    dispatch({ type: 'UPDATE_CART', payload: responsetwo.data })
+
+        console.log(response);
 			}
 		};
 	} else {
@@ -223,8 +227,11 @@ export const addCart = (user, product, quantity) => {
 					},
 					{ headers: { Authorization: `Bearer ${token}` } }
 				);
-				dispatch({ type: 'UPDATE_CURRENT_USER', payload: response.data });
-				console.log(response);
+        dispatch({ type: 'UPDATE_CURRENT_USER', payload: response.data });
+        let responsetwo = await api.get('/orders');
+		    dispatch({ type: 'UPDATE_CART', payload: responsetwo.data })
+
+        console.log(response);
 			}
 		};
 	}
@@ -238,7 +245,9 @@ export const deleteItem = (id) => {
 				headers: { Authorization: `Bearer ${token}` },
 			});
 
-			dispatch({ type: 'DELETE_ITEM', payload: id });
+      dispatch({ type: 'DELETE_ITEM', payload: id });
+      let responsetwo = await api.get('/orders');
+      dispatch({ type: 'UPDATE_CART', payload: responsetwo.data })
 		}
 	};
 };
