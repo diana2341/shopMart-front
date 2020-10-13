@@ -18,13 +18,16 @@ li,a{
 }
 
 nav{
-  /* position: fixed; */
+  position: fixed;
+  width: 100%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding: 5px 5%;
   border-bottom:0.2px solid rgba(218, 214, 214, 0.521) ;
   font-size: 16px;
+  z-index: 99;
+  background-color: white;
 }
 
 .logo{
@@ -224,6 +227,8 @@ width: 10rem;
   width: 90%;
   height: 350px;
   object-fit: cover;
+  top: 100px;
+  margin-bottom: 90px;
 
 }
 .show-product-pic{
@@ -240,9 +245,10 @@ position: relative;
 left: 5rem;
 top: 7rem;
 flex-wrap: wrap;
-cursor: pointer;
-
-
+/* cursor: pointer; */
+}
+.category img{
+  cursor: pointer;
 }
 
 .shop{
@@ -277,6 +283,7 @@ position: relative;
   text-transform: uppercase;
   left: 35%;
   text-decoration:  rgb(0, 174, 255) underline ;
+  cursor: default;
 }
 .wow{
   position: relative;
@@ -292,6 +299,8 @@ color: rgb(0, 174, 255);
 .beauty{
   position: relative;
   left: -2rem;
+  padding-bottom: 90px;
+
 }
 .butn{
   position: relative;
@@ -456,6 +465,7 @@ ul > p{
   text-align: center;
   font-size: 16px;
   font-weight: 700;
+  top: 90px;
 }
 .free-banner{
   /* color: pink; */

@@ -18,7 +18,7 @@ class CartItems extends React.Component{
             <>
             {this.props.product?
             <ul className='orderList'>
-            <li>
+            <li >
             <button className='delete' onClick={()=>{this.props.deleteItem(this.props.orderId); this.props.orders(); this.props.fetchProductInCart(this.props.itemsId)}}>X</button>
 
             <div>{<img className='cart-img' src={this.props.product.images}/>}</div>
