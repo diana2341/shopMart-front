@@ -192,7 +192,7 @@ render(){
 
         </div>
         </div>
-        {this.props.currentUser.user?
+        {this.props.currentUser.user? this.props.currentUser.user.id?
         <>
         <div className='right-menu'>
         <li className='menu-button'><MdKeyboardArrowLeft className='arrow five' size={35}/> Hello {this.props.currentUser.user.first_name} </li>
@@ -207,7 +207,8 @@ render(){
         </div>
         </>
         : 
-        <li><Link to='/login'>Login</Link></li>} 
+        <li><Link to='/login'>Login</Link></li>:<li><Link to='/login'>Login</Link></li>} 
+
         <li className='cart'><Link to='/cart'><MdKeyboardArrowLeft className='arrow six' size={35}/> <BiShoppingBag size={22}/>({total >0? total:0}) </Link></li> 
         </ul>
 
@@ -228,7 +229,9 @@ render(){
 
 
 const mapStateToProps = (state) => {
-	return { currentUser: state.auth,cart:state.cart };
+    return { currentUser: state.auth,
+             cart:state.cart
+     };
 };
 
 export default connect(mapStateToProps, { signOut,fetchCategory,fetchProductsForNav,orders })(Navabar);

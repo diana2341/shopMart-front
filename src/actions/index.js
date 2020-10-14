@@ -285,13 +285,17 @@ export const onTextChanged = (autoText,navProducts) => (dispatch) => {
         }
     }
 
-    export const deleteItem=(id)=>{
-      return async (dispatch)=>{
-        const token = localStorage.getItem('token')
-    if(token){
-        const response = await api.delete(`/order_items/${id}`,{headers:{Authorization:`Bearer ${token}`}})
-
-        dispatch({type:'DELETE_ITEM', payload:id})
+    export const deleteItem = (id) => {
+      return async (dispatch) => {
+        const token = localStorage.getItem('token');
+        if (token) {
+          const response = await api.delete(`/order_items/${id}`, {
+            headers: { Authorization: `Bearer ${token}` },
+          });
+    
+          dispatch({ type: 'DELETE_ITEM', payload: id });
+          let responsetwo = await api.get('/orders');
+          dispatch({ type: 'UPDATE_CART', payload: responsetwo.data })
         }
-      }
-    }
+      };
+    };

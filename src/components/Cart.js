@@ -10,7 +10,7 @@ class Cart extends React.Component{
         this.props.orders()
     }
     render(){
-        let userCart = this.props.user.user?this.props.user.user.current_order:null
+        let userCart = this.props.user.user?this.props.user.user.id:null
         let user = this.props.user.user?this.props.user.user.id:null
         let total = this.props.items.order?this.props.items.order.filter((order)=>{
             if(order.user_id === user){
@@ -41,11 +41,10 @@ class Cart extends React.Component{
 
             <h1 className='mybag'><b>My Bag</b></h1>
             {this.props.items.items?this.props.items.items.map(element => {
-                if(element.order_id === userCart){
-                 return <CartItems orderId={element.id} itemsId={element.product_id}/>
+                if(element.user_id === userCart){
+                   
+                 return <CartItems key={element.id} quantity={element.quantity} orderId={element.id} itemsId={element.product_id}/>
 
-                //  this.props.fetchProduct(element.product_id) 
-                // this.props.fetchProduct(element.product_id) 
                  
                 }
             }):null}

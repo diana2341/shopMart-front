@@ -67,8 +67,10 @@ class Product extends React.Component {
 				this.props.routerProps.match.params.product==='kids'?
 				<h1 className='title'>kids clothing & Accessories</h1>:''				
 				}
+				<div className='fil'>
 				<div className="filter-row">
 					<Filter />
+				</div>
 				</div>
 	
 				

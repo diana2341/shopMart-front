@@ -6,7 +6,8 @@ export default (state = {}, action) => {
 			return { ...state, [action.payload.id]: action.payload };
 		 case 'GET_ORDERS':
 			return { ...state, order: action.payload };
-
+		case 'UPDATE_CART':
+			return { ...state, order: action.payload };
 		  case 'DELETE_ITEM':
 			return {...state, items:state.items.filter((item) =>{ if(item.id !== action.payload){ return item} })}
 		  default:
