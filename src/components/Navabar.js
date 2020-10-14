@@ -11,6 +11,7 @@ import {BiShoppingBag} from 'react-icons/bi'
 import logo from '../img/LogoMakr_4bjfzb.png'
 import {MdKeyboardArrowLeft} from 'react-icons/md'
 import AutoComplete from './AutoCompleteText'
+import history from '../history'
 
 class Navabar extends React.Component{
 
@@ -197,7 +198,7 @@ render(){
         <li className='menu-button'><MdKeyboardArrowLeft className='arrow five' size={35}/> Hello {this.props.currentUser.user.first_name} </li>
         <div className='dropdown-menu'>
 
-        <li >Edit Profile</li>
+        <li onClick={()=>{history.push(`/edit-profile`)}} >Edit Profile</li>
 
         <li>WishList</li>
 
