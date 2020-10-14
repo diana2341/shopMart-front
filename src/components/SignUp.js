@@ -45,6 +45,7 @@ class SignUp extends React.Component{
 
     }
     render(){
+
         return(
             <>
             <form className='ui form error sec' onSubmit={this.props.handleSubmit(this.onSubmit)}>
