@@ -5,6 +5,7 @@ import Home from './components/Home'
 import Navbar from './components/Navabar'
 import Footer from './components/Footer'
 import Company from './components/Company'
+import EditAccount from './components/editAccount'
 
 import Login from './components/Login'
 import ProductPage from './components/productPage'
@@ -35,6 +36,8 @@ function App(props) {
       <Route exact path='/' render={(routerprops)=><Home routerProps={routerprops}/>}/>
 
         <Route exact path='/login'><Login/></Route>
+        <Route exact path='/edit-profile'><EditAccount/></Route>
+
         <Route exact path='/the-company/:section'><Company/></Route>
 
         <Route exact path='/signup'><SignUp/></Route>
