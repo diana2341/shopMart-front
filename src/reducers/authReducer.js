@@ -18,6 +18,8 @@ export default (state=INITIAL_STATE,action)=>{
                      
                      case 'UPDATE_CURRENT_USER':
                          return {...state, user:action.payload}
+                         case 'EDIT_USER':
+                            return {...state, [action.payload.id]:action.payload}
                       default:
                          return state
     }
