@@ -38,7 +38,13 @@ export const signOut = () => {
 		localStorage.clear();
 	};
 };
-
+export const editUser = (id, formValues)=>{
+  return async (dispatch)=>{
+      const response = await api.patch(`/users/${id}`,formValues)
+      dispatch({type:'EDIT_USER', payload:response.data})
+      history.push('/')
+  }
+} 
 export const fetchCategory = (category) => {
 	history.push(`/${category}`);
 	fetchProduct(category);
