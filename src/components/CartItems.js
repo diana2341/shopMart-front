@@ -4,15 +4,14 @@ import {connect} from 'react-redux'
 
 
 class CartItems extends React.Component{
+
+  
     componentDidMount=()=>{
         this.props.fetchProductInCart(this.props.itemsId)
         this.props.orders()
     }
 
     render(){
-        // console.log('the user',this.props.currentUser?this.props.currentUser.user.id:null)
-        // console.log('the order',this.props.carts)
-       
        
         return(
             <>
@@ -25,6 +24,8 @@ class CartItems extends React.Component{
             <div className='cartItem name'> <b>{this.props.product.name}</b></div>
             <div className='cartItem color'>{this.props.product.color}</div>
             <div className='cartItem price'>${this.props.product.price}</div>
+            <div className='cartItem quantity'>Quantity: {this.props.quantity}</div>
+
             </li>
            <hr/>
             </ul>

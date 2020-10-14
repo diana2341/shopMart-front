@@ -41,7 +41,7 @@ class Login extends React.Component{
         return(
             <>
             <form className='ui form error' onSubmit={this.props.handleSubmit(this.onSubmit)}>
-                <p className='form-title'>LogIn</p>
+                <p className='form-title'>Log In</p>
                 <Field 
                 className='input'
                 name='email'
@@ -52,11 +52,11 @@ class Login extends React.Component{
                 className='input'
                 name='password'
                 component={this.renderInput}
-                label={'Enter password'}
+                label={'Enter Password'}
                 />
 
                 <button className='ui button primary sign-in'>Submit</button>
-                <div>Don't have and account?</div>
+                <div>Don't have an account?</div>
             <Link to='/signup'>Sign Up</Link>
             <div className='log-sign'>
                     <span><BiShoppingBag size={22}/> Log in from anywhere to see what’s in your bag</span>

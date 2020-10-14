@@ -67,27 +67,27 @@ class SignUp extends React.Component{
                 <Field
                 name='password'
                 component={this.renderInput}
-                label={'Enter password'}
+                label={'Enter Password'}
                 />
                   <Field
                 name='street'
                 component={this.renderInput}
-                label={'Enter street'}
+                label={'Enter Street'}
                 />
                   <Field
                 name='state'
                 component={this.renderInput}
-                label={'Enter state'}
+                label={'Enter State'}
                 />
                   <Field
                 name='country'
                 component={this.renderInput}
-                label={'Enter country'}
+                label={'Enter Country'}
                 />
                   <Field
                 name='zip_code'
                 component={this.renderInput}
-                label={'Enter zip code'}
+                label={'Enter Zip Code'}
                 />
 
                 <button className='ui button primary sign-in'>Submit</button>

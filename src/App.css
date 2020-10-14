@@ -30,7 +30,9 @@ nav {
 	border-bottom: 0.2px solid rgba(218, 214, 214, 0.521);
 	font-size: 16px;
 	z-index: 99;
-	background-color: white;
+  background-color: white;
+  text-transform: capitalize;
+
 }
 
 .logo {
@@ -132,12 +134,16 @@ nav {
 	display: none !important;
 }
 .title {
-	margin-left: 1rem;
+  margin-left: 1rem;
+  text-transform: capitalize;
+
 }
 /* CARDS */
 .card {
 	width: 25rem;
-	padding: 10px 16px;
+  padding: 10px 12px;
+  text-transform: capitalize;
+  width: 24vw;
 }
 
 .card-image {
@@ -165,8 +171,29 @@ nav {
 	width: 50%;
 	transition: 0.5s ease;
 	opacity: 0;
-	z-index: 99;
+  z-index: 5;
+  /* display: none; */
+
 }
+
+.btn-shop.added{
+  position: relative;
+	top: -15rem;
+	left: 6rem;
+	cursor: pointer;
+	width: 50%;
+	transition: 0.5s ease;
+	opacity: 0;
+  z-index: 5;
+  background-color: rgba(13, 148, 13, 0.836);
+  color: white;
+  display: none;
+  cursor:default;
+}
+.card:hover .added {
+	opacity: 1;
+}
+
 .card:hover .add {
 	opacity: 1;
 }
@@ -185,15 +212,20 @@ nav {
 	position: relative;
 	display: grid;
 	grid-template-columns: auto auto auto auto;
-	padding-top: 5rem;
-	grid-row-gap: 4rem;
+	padding-top: 11rem;
+	grid-row-gap: 1rem;
+}
+.fil{
+  position: relative;
 }
 .filter-row {
-	position: relative;
-	/* padding-top: 1rem; */
+	position: absolute;
+	margin-top: 100px;
 	display: flex;
 	/* grid-template-columns: auto auto ; */
-	left: 30rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
 }
 
 .filter-row > div {
@@ -203,11 +235,19 @@ nav {
 }
 select {
 	padding: 1rem;
-	width: 10rem;
+  width: 10rem;
+  cursor: pointer;
+  text-transform: capitalize;
+
 }
 /* CARDS ENDSS */
 
 /* SHOW PAGEEE */
+.wholeShow{
+  position: relative;
+  top: 75px;
+
+}
 
 .banner {
 	position: relative;
@@ -218,11 +258,13 @@ select {
 	top: 100px;
 	margin-bottom: 90px;
 }
-.show-product-pic {
+.show-product-pic img {
 	position: relative;
-	width: 30%;
-	left: 12rem;
-	top: 7rem;
+  width: 25vw;
+  height: auto;
+  left: 12%;
+  /* object-fit: cover; */
+	top: -450px;
 	cursor: zoom-in;
 }
 .category {
@@ -232,7 +274,9 @@ select {
 	top: 7rem;
 	flex-wrap: wrap;
 	/* cursor: pointer; */
-	margin-bottom: 200px;
+  margin-bottom: 200px;
+  text-transform: capitalize;
+
 }
 .category img {
 	cursor: pointer;
@@ -304,16 +348,22 @@ select {
 	/* border-radius: 150px; */
 	text-align: center;
 	font-size: 16px;
-	/* border-radius: 200px 200px 200px 200px; */
+  /* border-radius: 200px 200px 200px 200px; */
+  text-transform: uppercase;
+
 }
 .show-product-name {
-	font-weight: lighter;
+  font-weight: lighter;
+  text-transform: capitalize;
+
 }
 .location {
 	position: relative;
-	top: -40rem;
+	top: 20px;
 	left: 12rem;
-	color: grey;
+  color: grey;
+  text-transform: capitalize;
+
 }
 .check-btn {
 	position: relative;
@@ -327,6 +377,15 @@ select {
 	font-weight: 900;
 	text-transform: capitalize;
 }
+.check-btn.added{
+  background-color: rgba(13, 148, 13, 0.836);
+  display: none;
+
+}
+.check-btn.added:hover{
+  background-color: rgba(13, 148, 13, 0.836);
+  cursor: default;
+}
 .check-btn:hover {
 	background-color: gray;
 	cursor: pointer;
@@ -335,28 +394,35 @@ select {
 	border: solid rgb(226, 224, 224);
 	width: 5%;
 	height: 35px;
-	border-radius: 50%;
+  border-radius: 50%;
+
+}
+.colo{
+  text-transform: capitalize;
+
 }
 .show-container {
 	position: relative;
 	width: 50%;
-	top: -40rem;
-	left: 50rem;
+	top: 20px;
+	left: 48%;
 }
 /* SHOW PAGEEE  ENDSSS*/
 
 /* footerrr */
 #page-wrapper {
 	min-height: 100%;
-	margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 .footer {
 	position: relative;
-	height: 300px;
+	height: 275px;
 	background-color: rgba(34, 33, 33, 0.096);
 	color: black;
 	text-align: center;
-	font-weight: 700;
+  font-weight: 700;
+  text-transform: capitalize;
+
 }
 .pay-card {
 	height: 0;
@@ -434,7 +500,9 @@ ul > p {
 }
 .free-banner {
 	/* color: pink; */
-	animation: free 2s linear 1s infinite alternate;
+  animation: free 2s linear 1s infinite alternate;
+  text-transform: capitalize;
+
 }
 .fr {
 	font-size: 20px;
@@ -459,7 +527,9 @@ ul > p {
 	left: 25rem;
 	padding: 5rem;
 	margin-bottom: 100px;
-	margin-top: 50px;
+  margin-top: 50px;
+  text-transform: capitalize;
+
 }
 .sec {
 	top: 5rem;
@@ -485,7 +555,13 @@ ul > p {
 	height: 0;
 	top: -5rem;
 	text-decoration: underline;
-	left: 15rem;
+  left: 15rem;
+  text-transform: capitalize;
+
+}
+form label{
+  text-transform: capitalize;
+
 }
 .log-sign {
 	position: relative;
@@ -541,7 +617,9 @@ hr {
 	left: 13%;
 	top: -150px;
 	font-size: 18px;
-	padding-bottom: 10px;
+  padding-bottom: 10px;
+  text-transform: capitalize;
+
 }
 .delete {
 	position: relative;
@@ -558,11 +636,12 @@ hr {
 }
 
 .totalCart {
-	position: relative;
-	border: 0.5px solid rgba(128, 128, 128, 0.575);
+	position: fixed;
+	border: 0.5px solid rgba(128, 128, 128, 0.459);
 	float: right;
-	margin-top: 150px;
-	left: -50px;
+  margin-top: 100px;
+  left:65%;
+  min-width: 200px;
 	padding-left: 55px;
 	padding-right: 30px;
 	padding-bottom: 65px;
