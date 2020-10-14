@@ -46,6 +46,19 @@ export const fetchCategory=(category)=>{
 }
 
 
+export const fetchNavProducts=()=>{
+    
+  return async (dispatch)=>{
+          const response = await api.get('/products')
+          dispatch({type:'FETCH_NAV_PRODUCTS', payload:response.data
+  
+    })
+   }
+  
+  
+  }
+
+
 
 export const fetchProducts=(category)=>{
     
@@ -72,6 +85,12 @@ return async (dispatch)=>{
         }
       if(category==='beauty'){
         return x.kind==='beauty' 
+      }
+      if(category==='dresses'){
+        return x.kind==='dresses' 
+      }
+      if(category==='tops'){
+        return x.kind==='tops' 
       }
             
     })
@@ -138,23 +157,22 @@ export const fetchProduct=(id)=>{
 
 
 
-export const onTextChanged = (products, autoText) => (dispatch) => {
+export const onTextChanged = (autoText,navProducts) => (dispatch) => {
+  let filtered;
+  console.log('consoleeee',autoText)
+    // const regex = new RegExp(`^${searchText}`, 'gi');
   dispatch({
-  type: 'SUGGESTIONS',
-    payload: {
-      autoText: autoText,
-      products:
-      autoText === ""
-          ? products
-          : products.filter(
-              (x) => 
-              x.name.toLocaleLowerCase().includes(autoText.toLowerCase())
-              ||
-              x.categories.toLocaleLowerCase().includes(autoText.toLowerCase())
 
-            ),
+  type: 'SUGGESTIONS',
+  autoText:autoText,
+    payload: {
+      suggestions: navProducts.filter((x) =>x.name.toLowerCase().includes(autoText.toLowerCase())),
+            
+
+
     },
   });
+  
 };
 
 
