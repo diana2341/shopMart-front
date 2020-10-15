@@ -20,65 +20,65 @@ class Footer extends React.Component{
                     <li className='li' onClick={()=>{history.push(`/girls`)}}>Girls</li>
                     <li className='li' onClick={()=>{history.push(`/boys`)}}>Boys</li>
                     <li className='li' onClick={()=>{history.push(`/men`)}}>Men</li>
-                </ul>  
-                </div>
-              <div className='pay-card'>
-            <p className='c-card'>WE ACCEPT:</p>
-              <div className='payments'>
-                    <div className='pay'>
-                    <span>
+                </ul> 
+
+                <p className='c-card'>We Accept:</p>
+                <ul className='allCards'>
+                    
+                <li>
                         <PaymentIcon
                         id="visa"
                         style={{ margin: 10, width: 70 }}
                         className="payment-icon"
                         />
-                    </span>
-                    <span>
+                    </li>
+                    <li>
                         <PaymentIcon
                         id="discover"
                         style={{ margin: 10, width: 70 }}
                         className="payment-icon"
                         />
-                    </span>
-                    <span>
+                    </li>
+                    <li>
                         <PaymentIcon
                         id="maestro"
                         style={{ margin: 10, width: 70 }}
                         className="payment-icon"
                         />
-                    </span>
-                    <span>
+                    </li>
+                    <li>
                         <PaymentIcon
                         id="paypal"
                         style={{ margin: 10, width: 70 }}
                         className="payment-icon"
                         />
-                    </span>
-                    </div>
-                    <span>
+                    </li>
+                   
+                    <li>
                         <PaymentIcon
                         id="western"
                         style={{ margin: 10, width: 70 }}
                         className="payment-icon"
                         />
-                    </span>
+                    </li>
                    
-                    <span>
+                    <li>
                         <PaymentIcon
                         id="wallet"
                         style={{ margin: 10, width: 70 }}
                         className="payment-icon"
                         />
-                    </span>
-                    <span>
+                    </li>
+                    <li>
                         <PaymentIcon
                         id="mastercard"
                         style={{ margin: 10, width: 70 }}
                         className="payment-icon"
                         />
-                    </span>
-                </div> 
-              </div>
+                    </li>
+                </ul> 
+                </div>
+              
                 <p className='rights'>© 2020 ShopMart USA, Inc. All rights reserved.</p>
             </div>
         )
