@@ -25,6 +25,7 @@ a {
 	color: rgb(0, 204, 255);
 }
 
+
 nav {
 	position: fixed;
 	width: 100%;
@@ -416,6 +417,7 @@ select {
 
 /* footerrr */
 #page-wrapper {
+  position: relative;
 	min-height: 100%;
   margin-bottom: 50px;
 }
@@ -532,29 +534,33 @@ ul > p {
 	}
 }
 .form {
-	top: 5rem;
+  position: absolute;
+	top: 25rem;
 	border: solid rgba(128, 128, 128, 0.116);
 	height: 510px;
 	border-radius: 20px;
 	position: relative;
 	width: 50%;
-	left: 25rem;
 	padding: 5rem;
-	margin-bottom: 100px;
+	/* margin-bottom: 100px; */
   margin-top: 50px;
   text-transform: capitalize;
 
 }
+form{
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
 .sec {
-	top: 5rem;
 	border: solid rgba(128, 128, 128, 0.116);
 	height: 930px;
 	border-radius: 20px;
 	position: relative;
-	width: 50%;
-	left: 30rem;
-	padding: 5rem;
-	/* text-align: center; */
+  width: 50%;
+  margin-top: 250px;
+
+
 }
 /* sign up formmmm^^^^^ */
 .sign-in {
@@ -563,14 +569,15 @@ ul > p {
 	height: 3.3rem;
 }
 .form-title {
-	position: relative;
+	position: absolute;
 	font-size: 26px;
 	font-weight: 500;
 	height: 0;
-	top: -5rem;
-	text-decoration: underline;
-  left: 15rem;
+  top: 0rem;
+  font-weight: bolder;
   text-transform: capitalize;
+  left: 50%;
+  transform: translate(-50%,-50%);
 
 }
 form label{
@@ -578,11 +585,18 @@ form label{
 
 }
 .log-sign {
-	position: relative;
+	position: absolute;
 	display: grid;
-	left: 10rem;
-	top: 1rem;
+  left: 50%;
+  transform: translate(-50%,-50%);
+	top: 30rem;
 	grid-row-gap: 20px;
+}
+.log-sign.signUp{
+  top: 60rem;
+}
+.log-sign.edit{
+  display: none
 }
 .about-banner {
 	position: relative;

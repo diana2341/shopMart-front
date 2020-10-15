@@ -17,7 +17,9 @@ this.props.editUser(this.props.currentUser.user.id,formValues)
                 <h3>Edit Profile</h3>
                 <UserForm 
                 initialValues={this.props.currentUser.user}
-                onSubmit={this.onSubmit}/>
+                onSubmit={this.onSubmit}
+                class={'edit'}
+                />
             </div>
         )
     }
