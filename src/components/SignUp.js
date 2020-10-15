@@ -22,7 +22,7 @@ class SignUp extends React.Component{
         return(
             <>
             <div>
-                <UserForm onSubmit={this.onSubmit}/>
+                <UserForm class={'signUp'} onSubmit={this.onSubmit}/>
             </div>
 
             </>

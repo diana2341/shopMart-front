@@ -17,20 +17,18 @@ class Company extends React.Component{
                 <div className='about-content'>
                   <h1>About Us</h1>
                   <p className='about-us-p'>
-                  SHOPMART is an international B2C fast fashion e-commerce platform. The company mainly 
+                  ShopMart is a fashion e-commerce platform. The company mainly 
                   focuses on women's wear, but it also offers men's apparel, children's clothes, accessories,
-                  shoes, bags and other fashion items. SHOPMART mainly targets Europe, America, Australia, and the 
-                  Middle East along with other consumer markets. The brand was founded in October 2008, and since 
-                  then it has upheld the philosophy that "everyone can enjoy the beauty of fashion." Its business covers 
-                  more than 220 countries and regions around the world.
+                  shoes, bags and other fashion items. ShopMart mainly targets the United States. We currently Do Not ship internationally. The brand was founded in September 2020, and since 
+                  then it has upheld the philosophy that "everyone can enjoy the beauty of fashion." 
                   </p>  
                   <h1>Our Mission</h1>
                   <p>
-                  SHOPMART prides itself on offering on-trend styles catering to both young women and teens, that won’t break the bank.
-                  SHOPMART adheres to the concept that "everyone can enjoy the beauty of fashion." SHOPMART is able to stay on top of the latest
+                  Shop prides itself on offering on-trend styles catering to both young women and teens, that won’t break the bank.
+                  ShopMart adheres to the concept that "everyone can enjoy the beauty of fashion." ShopMart is able to stay on top of the latest
                   fashion trends from around the globe while rapidly bringing these styles to market. So whether you're searching for boho dresses 
-                  and graphic tees or patterned blouses and chic swimwear, SHOPMART is the ultimate one-stop-shop for the modern yet economical fashionista. 
-                  It aims to promptly offer stylish quality products at appealing prices to every user in the world.
+                  and graphic tees or patterned blouses and chic swimwear, ShopMart is the ultimate one-stop-shop for the modern yet economical fashionista. 
+                  It aims to promptly offer stylish quality products at appealing prices to every user.
 
                   </p>
                 </div>
@@ -43,10 +41,10 @@ class Company extends React.Component{
                 <p>You can return items purchased in their original, unworn, unused, unopened condition for a full refund of their merchandise value. We accept returns
                  within 30 days of the original ship date.</p>
                  <ul>
-                     <strong>
+                     <p><strong>
                          Please note the following items are final sale and cannot be returned or exchanged:
 
-                    </strong>
+                    </strong></p>
                     <li>underwear, intimate apparel, lingerie, bras, panties, shapewear</li>
                     <li>bathing suits, swimsuits, bikini tops, bikini bottoms, bikini sets</li>
                     <li>earrings</li>
@@ -58,7 +56,7 @@ class Company extends React.Component{
                      by email or telephone. We will reimburse you for the cost of returning the package to us; we will not charge you for the shipping costs of replacement merchandise 
                      as long as the item is returned by mail.
                 </p>
-                <p>Items purchased from a ShopMart Store location cannot be returned to rainbowshops.com.</p>
+                <p>Items purchased from a ShopMart Store location cannot be returned to ShopMart.com.</p>
                 <p>Refunds for online purchases returned in store will be issued in the original form of payment, except for online purchases made using PayPal. 
                     <strong>At this time, all store returns of online purchases using PayPal are valid for merchandise credit only.</strong>
                 </p>
@@ -82,15 +80,15 @@ class Company extends React.Component{
                 <p>
                 Address the package to:
                 <p>ShopMart.com</p>
-                <p>2951 Grant Ave</p>
+                <p>0000 Grant Ave</p>
                 <p>Philadelphia, PA 19114</p>
                  </p>
                  <p>If you need further assistance with returns or have additional questions please do not hesitate to contact us at 1-8888-5SHOPMART  Monday - Friday from 8:30 am to 8:00 pm ET
                       and Saturday - Sunday from 10:00 am to 6:00 pm ET.</p>
-                <h1>Returns to a SHOPMART Store</h1>
+                <h1>Returns to a ShopMart Store</h1>
                 <p>Simply bring the merchandise you wish to return and the packing slip from your order when you visit the store. Please make sure that all original tags are attached to the merchandise. If you do not have all original tags and the packing slip for your order we will be unable to process your return.
 
-                Purchases made using PayPal can only be refunded via merchandise credit when returned to a SHOPMART Store. We cannot process refunds to your PayPal account from our stores.
+                Purchases made using PayPal can only be refunded via merchandise credit when returned to a ShopMart Store. We cannot process refunds to your PayPal account from our stores.
 
                 All other refunds at stores will be made to the original form of payment.
 
