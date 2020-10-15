@@ -592,17 +592,37 @@ form label{
 	height: 250px;
 	object-fit: cover;
 }
+#about{
+  position: relative;
+  top: 100px;
+  height: 800px;
+}
 .about-content,
 #return,
 #faq {
-	position: relative;
+	position: absolute;
 	text-align: center;
 	font-size: 16px;
 	width: 50%;
-	left: 25rem;
-	top: 4rem;
+  left: 50%;
+  transform: translate(-50%,-50%);
+	top: 35rem;
 }
-
+#return ul li{
+  list-style: none;
+}
+#return{
+  height: 1500px;
+  width: 75%;
+  position: relative;
+  top: 60rem;
+  margin-bottom: 7rem;
+}
+#faq{
+  position: relative;
+  top: 45rem;
+  height: 1000px;
+}
 /* CART */
 .cart-img {
 	width: 100px;
