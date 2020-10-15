@@ -21,6 +21,7 @@ class Product extends React.Component {
 	}
 
 	addedToCart=(id)=>{
+		
 		let add = document.getElementById(`button ${id}`)
 		let added = document.getElementById(`added ${id}`)
 
@@ -44,6 +45,7 @@ class Product extends React.Component {
 			return (
 				<React.Fragment key={product.id}>
 					<div className='card'  >
+						{console.log('userrrrr',user)}
 					
 					{/* <div > */}
 					<img onClick={()=>pruductShow(product.id)}   className='card-image'src={product.images}/>
@@ -54,7 +56,7 @@ class Product extends React.Component {
 					
 					<div className='btn-row'>
 						
-					<button className='btn-shop add'  id={`button ${product.id}`} onClick={()=>{this.props.addCart(user,product, 1);  this.props.orders(); this.addedToCart(product.id)}}>+ add to bag</button>
+					<button className='btn-shop add'  id={`button ${product.id}`} onClick={()=>{user===null?history.push('/login'):this.props.addCart(user,product, 1);  this.props.orders(); this.addedToCart(product.id)}}>+ add to bag</button>
 					<button ref={this.addedButton} id={`added ${product.id}`} className='btn-shop added'><FaCheck/> Added To Bag</button>
 					{/* <button
 					className='btn-shop details'

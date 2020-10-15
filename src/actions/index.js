@@ -235,7 +235,8 @@ export const orders = () => {
 };
 
 export const addCart = (user, product, quantity) => {
-	let currentOrder = user.current_order;
+  let currentOrder = user.current_order;
+ 
 	if (currentOrder === null) {
 		return async (dispatch) => {
 			const token = localStorage.getItem('token');
