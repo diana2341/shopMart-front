@@ -15,7 +15,7 @@ class ProductPage extends React.Component{
 
 
 	addedToCart=(id,user)=>{
-        if(user==null){
+        if(user===null){
 			return null
 		}
 		let add = document.getElementById(`productButton ${id}`)

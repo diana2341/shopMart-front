@@ -22,7 +22,7 @@ class AutoCompleteText extends React.Component{
     })
     // Filter the array stored in data, but never update it. 
     // Update filtered instead.
-    return this.setState({suggestions: this.props.navProducts.filter(data => data.name.toLowerCase().includes(event.target.value.toLowerCase()))})
+    return this.setState({suggestions: this.props.navProducts.filter(data => data.name.toLowerCase().startsWith(event.target.value.toLowerCase()))})
   }
     render(){
         return(

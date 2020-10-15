@@ -24,7 +24,7 @@ class Product extends React.Component {
 		
 		let add = document.getElementById(`button ${id}`)
 		let added = document.getElementById(`added ${id}`)
-		if(user==null){
+		if(user===null){
 			return null
 		}
 		

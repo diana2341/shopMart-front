@@ -16,10 +16,14 @@ export const autoLogin = () => {
 
 export const login = (formValues) => {
 	return async (dispatch) => {
-		const response = await api.post('/login', { ...formValues });
+    const response = await api.post('/login', { ...formValues });
+  
 		dispatch({ type: 'LOGIN', payload: response.data.user });
-		localStorage.setItem('token', response.data.jwt);
-	};
+    localStorage.setItem('token', response.data.jwt);
+    history.go(-1)
+
+  };
+  
 };
 
 export const signUp = (formValues) => {
@@ -27,9 +31,10 @@ export const signUp = (formValues) => {
 		const response = await api.post('/users', { ...formValues });
 		dispatch(
 			{ type: 'SIGN_UP', payload: response.data.user },
-			localStorage.setItem('token', response.data.jwt)
+			localStorage.setItem('token', response.data.jwt),
     );
     history.go(-2)
+  
 
 	};
 };

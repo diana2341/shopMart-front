@@ -12,7 +12,6 @@ import ProductPage from './components/productPage'
 import Product from './components/Products'
 import Prod from './components/Prod'
 import Banner from './components/Banner'
-import { LastLocationProvider } from 'react-router-last-location';
 
 
 import Cart from './components/Cart'
@@ -25,12 +24,12 @@ function App(props) {
 
   useEffect(()=>{
     props.autoLogin()
+   
   },[])
   return (
 
     <Router>
-    <LastLocationProvider>
-
+      
       <Navbar/>
       <div id='page-wrapper'>
 
@@ -53,8 +52,6 @@ function App(props) {
       </Switch>
     </div>
       <Footer/>
-      </LastLocationProvider>
-
     </Router>
   
   );
