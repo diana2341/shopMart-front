@@ -4,6 +4,7 @@ import {fetchProduct,orders} from '../actions/index'
 import {addCart} from '../actions/index'
 import CursorZoom from 'react-cursor-zoom';
 import {FaCheck} from 'react-icons/fa'
+import history from '../history'
 
 
 class ProductPage extends React.Component{
@@ -13,7 +14,10 @@ class ProductPage extends React.Component{
 
 
 
-	addedToCart=(id)=>{
+	addedToCart=(id,user)=>{
+        if(user==null){
+			return null
+		}
 		let add = document.getElementById(`productButton ${id}`)
 		let added = document.getElementById(`productAdded ${id}`)
 
@@ -51,7 +55,7 @@ class ProductPage extends React.Component{
         <label style={{fontWeight: 'bolder',fontSize:16}}>Product Details</label>
         <br/><br/>
         <p>{this.props.products.description}</p>
-        <button className='check-btn' id={`productButton ${this.props.products.id}`} onClick={()=>{this.props.addCart(user,this.props.products,1);  this.props.orders();this.addedToCart(this.props.products.id)}}>add to bag</button>
+        <button className='check-btn' id={`productButton ${this.props.products.id}`} onClick={()=>{user===null?history.push('/login'):this.props.addCart(user,this.props.products,1);  this.props.orders();this.addedToCart(this.props.products.id,this.props.currentUser.user)}}>add to bag</button>
         <button className='check-btn added' id={`productAdded ${this.props.products.id}`} ><FaCheck/> added to bag</button>
 
     </div>

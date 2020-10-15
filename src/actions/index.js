@@ -28,15 +28,20 @@ export const signUp = (formValues) => {
 		dispatch(
 			{ type: 'SIGN_UP', payload: response.data.user },
 			localStorage.setItem('token', response.data.jwt)
-		);
+    );
+    history.go(-2)
+
 	};
 };
 
 export const signOut = () => {
 	return (dispatch) => {
 		dispatch({ type: 'SIGN_OUT' });
-		localStorage.clear();
-	};
+    localStorage.clear();
+    history.push('/login')
+
+  };
+  
 };
 export const editUser = (id, formValues)=>{
   return async (dispatch)=>{

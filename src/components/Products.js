@@ -20,10 +20,14 @@ class Product extends React.Component {
 
 	}
 
-	addedToCart=(id)=>{
+	addedToCart=(id,user)=>{
 		
 		let add = document.getElementById(`button ${id}`)
 		let added = document.getElementById(`added ${id}`)
+		if(user==null){
+			return null
+		}
+		
 
 		add.style.display = 'none'
 		added.style.display = 'block'
@@ -56,7 +60,7 @@ class Product extends React.Component {
 					
 					<div className='btn-row'>
 						
-					<button className='btn-shop add'  id={`button ${product.id}`} onClick={()=>{user===null?history.push('/login'):this.props.addCart(user,product, 1);  this.props.orders(); this.addedToCart(product.id)}}>+ add to bag</button>
+					<button className='btn-shop add'  id={`button ${product.id}`} onClick={()=>{user===null?history.push('/login'):this.props.addCart(user,product, 1);  this.props.orders(); this.addedToCart(product.id,user)}}>+ add to bag</button>
 					<button ref={this.addedButton} id={`added ${product.id}`} className='btn-shop added'><FaCheck/> Added To Bag</button>
 					{/* <button
 					className='btn-shop details'
@@ -81,6 +85,7 @@ class Product extends React.Component {
 		return (
 			<div>
 				<br/>
+				{console.log('location',this.props.location)}
 				{this.props.routerProps.match.params.product==='women'?
 				<img className='banner' src={require('../img/womens.png')}/>:
 				this.props.routerProps.match.params.product==='men'?
@@ -111,7 +116,9 @@ class Product extends React.Component {
 const mapStateToProps = (state) => {
 	return {
 		products: state.products.filteredProducts,
-         currentUser: state.auth
+		 currentUser: state.auth,
+		 location: state.products.location,
+
 	};
 };
 
