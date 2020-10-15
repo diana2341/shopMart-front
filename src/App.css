@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap');
 * {
 	/* text-transform: capitalize; */
 
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	font-family: 'Open Sans Condensed', sans-serif;
 }
 h1,h3,p,div,ul,li,select{
     text-transform: capitalize;
@@ -14,7 +14,9 @@ h1,h3,p,div,ul,li,select{
 html,
 body,
 #root {
-	height: 100%;
+  height: 100%;
+  font-family: 'Open Sans Condensed', sans-serif;
+
 }
 /* Navbar Styling */
 li,
@@ -420,44 +422,60 @@ select {
 .footer {
 	position: relative;
 	height: 275px;
-	background-color: rgba(34, 33, 33, 0.096);
+	background-color: rgba(22, 21, 21, 0.267);
 	color: black;
 	text-align: center;
-  font-weight: 700;
+  font-weight: bolder;
   text-transform: capitalize;
-
 }
+
 .pay-card {
 	height: 0;
 }
 .rights {
 	position: relative;
 	top: 4rem;
-	left: 22rem;
+  left: 15rem;
 }
 .con {
 	position: relative;
 	top: 2rem;
 	display: flex;
-	z-index: 999;
+  z-index: 999;
+  font-size: 13px;
+  left: 8%;
+  font-family: 'Source Sans Pro', sans-serif;
+
+}
+.con ul li{
+  margin-bottom: 15px;
+
+}
+.con p {
+  font-weight: bolder;
+
 }
 a > li {
 	text-decoration: none;
-	color: black;
+  color: black;
+  
 }
 a > li:hover {
-	color: #00aeff;
+	color: white;
 }
 .li:hover {
-	color: rgb(0, 174, 255);
+	color: white;
 }
 .li {
 	cursor: pointer;
 }
+.con ul li:hover{
+  font-weight: bolder;
+}
 
 .con > ul {
-	font-size: 20px;
-	flex: 0 30%;
+	/* font-size: 20px; */
+	flex: 0 20%;
 	list-style-type: none;
 	font-weight: lighter;
 }
@@ -466,30 +484,23 @@ ul > li {
 	color: black;
 }
 ul > p {
-	text-decoration: underline;
+  /* text-decoration: underline; */
+  font-size: 17px;
 }
-.payments {
-	position: relative;
-	flex-wrap: wrap;
-	left: 25rem;
-	top: -10rem;
-}
-.pay {
-	position: relative;
-	left: 1.8rem;
-}
-.c-card {
-	position: relative;
-	top: -8.5rem;
-	left: 17rem;
-	text-decoration: underline;
-	font-size: 16px;
-}
-.payments > span {
-	flex: 0 50%;
 
-	margin: 10px;
+.allCards{
+  position: relative;
+  
+  top: 25px;
+  columns: 4;
 }
+.c-card{
+  position: relative;
+  font-size: 17px;
+  left: 50px;
+}
+
+
 /* end footerrrr */
 .shipping-banner {
 	position: relative;
