@@ -24,10 +24,12 @@ function App(props) {
 
   useEffect(()=>{
     props.autoLogin()
+   
   },[])
   return (
 
     <Router>
+      
       <Navbar/>
       <div id='page-wrapper'>
 

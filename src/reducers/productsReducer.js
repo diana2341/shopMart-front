@@ -1,4 +1,6 @@
 
+import history from '../history';
+
 const initialState = {
   navProducts:[],
   suggestions:[],
@@ -8,7 +10,8 @@ const initialState = {
   filteredProducts:[],
   sort:'',
   categories:'',
-  autoText:''
+  autoText:'',
+  location:history.location.pathname
 }
 
 export default (state=initialState,action)=>{

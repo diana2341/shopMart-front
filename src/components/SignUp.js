@@ -10,11 +10,17 @@ import {BsStar} from 'react-icons/bs'
 
 
 class SignUp extends React.Component{
-
+state={
+    errorMessage:''
+}
 
 
     onSubmit=(formValues)=>{
         this.props.signUp(formValues)
+         .catch(err => {
+             console.log(err.response.data.errors)
+            this.setState({errorMessage:err.response.data.errors});
+          })
 
     }
     render(){
@@ -22,7 +28,7 @@ class SignUp extends React.Component{
         return(
             <>
             <div>
-                <UserForm class={'signUp'} onSubmit={this.onSubmit}/>
+                <UserForm errorMessage={this.state.errorMessage}class={'signUp'} onSubmit={this.onSubmit}/>
             </div>
 
             </>

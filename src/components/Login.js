@@ -6,6 +6,9 @@ import {login} from '../actions'
 import {BiShoppingBag} from 'react-icons/bi'
 import {BsClock} from 'react-icons/bs'
 import {BsStar} from 'react-icons/bs'
+import history from '../history'
+
+
 class Login extends React.Component{
 
     renderError=({error,touched})=>{
@@ -83,8 +86,10 @@ const validate=(formValues)=>{
 }
  
 
-
-export default connect(null,{login})(reduxForm({
+const mapStateToProps=(state)=>{
+    return{location:state.products.location}
+}
+export default connect(mapStateToProps,{login})(reduxForm({
     form: 'form',
     validate,
 })(Login))
