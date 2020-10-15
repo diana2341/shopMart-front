@@ -810,17 +810,20 @@ hr {
 
 .nav-results{
   border: transparent;
+  border-top: transparent;
   width: 30%;
   overflow-y: scroll;
   position: absolute;
   z-index: 1;
   background-color: white;
+
   top: 80px;
 }
 
 input:focus~.nav-results{
-  height: 20%;
+  height: 100%;
 }
+
 .nav-rec{
   display: grid;
 }
