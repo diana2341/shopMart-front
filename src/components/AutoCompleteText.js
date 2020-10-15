@@ -8,6 +8,7 @@ class AutoCompleteText extends React.Component{
     componentDidMount(){
        this.props.fetchNavProducts();
         console.log('napro',this.props.suggestions) 
+        window.onclick=()=>document.querySelector('.nav-results').style.height='0%'
 
     }
     state={
@@ -30,6 +31,8 @@ class AutoCompleteText extends React.Component{
             {       console.log('naavpro',this.props.suggestions) 
 }
             <input 
+            onMouseOver={()=>document.querySelector('.nav-results').style.height='100%'}
+
             name='autoText'
             value={this.state.autoText}
              onChange={this.handleChange}
@@ -38,10 +41,10 @@ class AutoCompleteText extends React.Component{
 {this.state.autoText===''?
 <ul className='nav-rec push'>
 <li id='rec'>recommended</li>
-<li onClick={()=>{history.push(`/tops`)}}>Tops</li>
-<li onClick={()=>{history.push(`/jeans`)}}>Jeans</li>
-<li onClick={()=>{history.push(`/dresses`)}}>Girls Dresses</li>
-<li onClick={()=>{history.push(`/shoes`)}}>Shoes</li>
+<li className='resul'onClick={()=>{history.push(`/tops`)}}>Tops</li>
+<li className='resul'onClick={()=>{history.push(`/jeans`)}}>Jeans</li>
+<li className='resul'onClick={()=>{history.push(`/dresses`)}}>Girls Dresses</li>
+<li className='resul'onClick={()=>{history.push(`/shoes`)}}>Shoes</li>
 
 </ul>
 
