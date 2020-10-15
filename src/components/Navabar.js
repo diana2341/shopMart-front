@@ -5,11 +5,13 @@ import {signOut} from '../actions'
 import NavFilter from './NavFilter'
 import { fetchCategory,orders } from '../actions/index';
 import { fetchProductsForNav } from '../actions/index';
-
+import AutoCompleteText from '../components/AutoCompleteText'
 import '../App.css'
 import {BiShoppingBag} from 'react-icons/bi'
 import logo from '../img/LogoMakr_4bjfzb.png'
 import {MdKeyboardArrowLeft} from 'react-icons/md'
+import AutoComplete from './AutoCompleteText'
+import history from '../history'
 
 class Navabar extends React.Component{
 
@@ -116,8 +118,9 @@ render(){
         <div className='logo'><Link to='/'><img  className='logoImg' src={logo}/></Link></div>
         <ul className='navLinks' >
            <li onClick={this.handleSelect} className='all'><MdKeyboardArrowLeft onClick={this.handleSelect} className='all' siz={30}/> All</li>
-        <li><input className='search' type='text' placeholder='Search...'/></li> 
-        
+           {/*  */}
+        <li><AutoCompleteText/></li> 
+        {/*  */}
         <li onClick={this.handleSelect} className='home'><Link className='home' to='/'> <MdKeyboardArrowLeft onClick={this.handleSelect} className='home arrow one' size={35}/>Home </Link></li> 
         <div className='right-menu two'>
 
@@ -195,7 +198,7 @@ render(){
         <li className='menu-button'><MdKeyboardArrowLeft className='arrow five' size={35}/> Hello {this.props.currentUser.user.first_name} </li>
         <div className='dropdown-menu'>
 
-        <li >Edit Profile</li>
+        <li onClick={()=>{history.push(`/edit-profile`)}} >Edit Profile</li>
 
         <li>WishList</li>
 

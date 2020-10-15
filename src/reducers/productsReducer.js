@@ -1,11 +1,14 @@
 
 const initialState = {
- products:[],
+  navProducts:[],
+  suggestions:[],
+  products:[],
   cart: [],
   size:'',
   filteredProducts:[],
   sort:'',
-  categories:''
+  categories:'',
+  autoText:''
 }
 
 export default (state=initialState,action)=>{
@@ -14,6 +17,8 @@ export default (state=initialState,action)=>{
     switch(action.type){
         case 'FETCH_PRODUCTS':
                         return {...state, products:action.payload,filteredProducts:action.payload}
+                    case 'FETCH_NAV_PRODUCTS':
+                        return {...state, navProducts:action.payload}
             case 'FETCH_PRODUCT':
             return {...state, [action.payload.id]:action.payload}
             case 'SEARCH_SIZE':
@@ -34,7 +39,14 @@ export default (state=initialState,action)=>{
                 filteredProducts: action.payload.products,
                 categories: action.payload.categories,
               };
+              case 'SUGGESTIONS':
+                return {
+                  ...state,
+                  navProducts: action.payload.navProducts,
+                  suggestions: state.navProducts,
+                  autoText: action.payload.autoText,
 
+                };
 
         default:
             return state

@@ -38,43 +38,88 @@ export const signOut = () => {
 		localStorage.clear();
 	};
 };
-
+export const editUser = (id, formValues)=>{
+  return async (dispatch)=>{
+      const response = await api.patch(`/users/${id}`,formValues)
+      dispatch({type:'EDIT_USER', payload:response.data})
+      history.push('/')
+  }
+} 
 export const fetchCategory = (category) => {
 	history.push(`/${category}`);
 	fetchProduct(category);
 };
 
-export const fetchProducts = (category) => {
-	return async (dispatch) => {
-		const response = await api.get('/products');
-		dispatch({
-			type: 'FETCH_PRODUCTS',
-			payload: response.data.filter((x) => {
-				if (x.categories === category) {
-					return category;
-				}
-				if (category === 'kids') {
-					return (x.categories === 'girls') | (x.categories === 'boys');
-				}
-				if (category === 'shoes') {
-					return x.kind === 'shoes';
-				}
-				if (category === 'jackets') {
-					return x.kind === 'jackets';
-				}
+export const fetchNavProducts=()=>{
+    
+  return async (dispatch)=>{
+          const response = await api.get('/products')
+          dispatch({type:'FETCH_NAV_PRODUCTS', payload:response.data
+  
+    })
+   }
+  
+  
+  }
 
-				if (category === 'jeans') {
-					return x.kind === 'jeans';
-				}
-				if (category === 'sportswear') {
-					return x.kind === 'sportswear';
-				}
-				if (category === 'beauty') {
-					return x.kind === 'beauty';
-				}
-			}),
-		});
-	};
+
+
+export const fetchProducts=(category)=>{
+    
+return async (dispatch)=>{
+        const response = await api.get('/products')
+        dispatch({type:'FETCH_PRODUCTS', payload:response.data.filter((x) => {if(x.categories===category ){
+            return category
+        }
+            if(category==='kids'){
+                return x.categories==='girls' | x.categories==='boys'
+            }
+            if(category==='shoes'){
+              return x.kind==='shoes' 
+          }
+          if(category==='jackets'){
+            return x.kind==='jackets' 
+        }
+
+          if(category==='jeans'){
+            return x.kind==='jeans' 
+        }
+        if(category==='sportswear'){
+          return x.kind==='sportswear' 
+        }
+      if(category==='beauty'){
+        return x.kind==='beauty' 
+      }
+      if(category==='dresses'){
+        return x.kind==='dresses' 
+      }
+      if(category==='tops'){
+        return x.kind==='tops' 
+      }
+            
+    })
+
+  })
+ }
+
+
+}
+export const onTextChanged = (autoText,navProducts) => (dispatch) => {
+  let filtered;
+  console.log('consoleeee',autoText)
+    // const regex = new RegExp(`^${searchText}`, 'gi');
+  dispatch({
+
+  type: 'SUGGESTIONS',
+  autoText:autoText,
+    payload: {
+      suggestions: navProducts.filter((x) =>x.name.toLowerCase().includes(autoText.toLowerCase())),
+            
+
+
+    },
+  });
+  
 };
 export const fetchProductsFilter = (category, kind) => {
 	return async (dispatch) => {
