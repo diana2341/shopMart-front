@@ -8,7 +8,7 @@ class AutoCompleteText extends React.Component{
     componentDidMount(){
        this.props.fetchNavProducts();
         console.log('napro',this.props.suggestions) 
-        window.onclick=()=>document.querySelector('.nav-results').style.height='0%'
+        window.onmouseleave=()=>document.querySelector('.nav-results').style.height='0%'
 
     }
     state={
