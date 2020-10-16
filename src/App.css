@@ -537,10 +537,9 @@ form {
 	transform: translate(-50%, -50%);
 }
 .sec {
+	position: relative;
 	border: solid rgba(128, 128, 128, 0.116);
-	height: 930px;
-	/* max-height: 1240px; */
-
+	height: 980px;
 	border-radius: 20px;
 	position: relative;
 	width: 50%;
@@ -551,6 +550,11 @@ form {
 	position: relative;
 	width: 100%;
 	height: 3.3rem;
+}
+.error-mes{
+	font-size: 18px;
+	color: red;
+	font-weight: 800;
 }
 .form-title {
 	position: absolute;
@@ -782,24 +786,25 @@ hr {
 	}
 }
 
-.nav-results {
-	border: transparent;
-	width: 30%;
-	overflow-y: scroll;
-	position: absolute;
-	z-index: 1;
-	background-color: white;
-	top: 80px;
+
+.nav-results{
+  border: transparent;
+  border-top: transparent;
+  width: 30%;
+  overflow-y: scroll;
+  position: absolute;
+  z-index: 1;
+  background-color: white;
+
+  top: 80px;
 }
 
-input:focus ~ .nav-results {
-	height: 20%;
+input:focus~.nav-results{
+  height: 100%;
 }
-.nav-rec {
-	display: grid;
-}
-#rec {
-	text-decoration: underline;
+
+.nav-rec{
+  display: grid;
 }
 .push {
 	height: 0;

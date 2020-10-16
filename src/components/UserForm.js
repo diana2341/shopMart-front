@@ -47,7 +47,7 @@ class UserForm extends React.Component{
 
         return(
             <>
-            <form className='ui form error sec' onSubmit={this.props.handleSubmit(this.onSubmit)}>
+            <form className='ui form  sec' onSubmit={this.props.handleSubmit(this.onSubmit)}>
                 <Field
                 name='first_name'
                 component={this.renderInput}
@@ -88,13 +88,17 @@ class UserForm extends React.Component{
                 component={this.renderInput}
                 label={'Enter Zip Code'}
                 />
-
+        {this.props.errorMessage===''?null:this.props.errorMessage.map(error=><p className='error-mes'>**{error}**</p>)}
                 <button className='ui button primary sign-in'>Submit</button>
+                                    {this.props.errorMessage===''?
+
                 <div className={`log-sign ${this.props.class}`}>
                     <span><BiShoppingBag size={22}/> Log in from anywhere to see what’s in your bag</span>
                     <span><BsClock size={22}/>  Quick and easy checkout.</span>
                     <span><BsStar size={22}/>   Get the inside scoop on trend and private sales.</span>
+        
                 </div>
+           :null}     
             </form>
            
 
