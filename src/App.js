@@ -24,6 +24,8 @@ function App(props) {
 
   useEffect(()=>{
     props.autoLogin()
+    document.querySelector('#nav').onmouseleave=()=>document.querySelector('.nav-results').style.height='0%'
+
    
   },[])
   return (
