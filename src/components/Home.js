@@ -9,7 +9,8 @@ class Home extends React.Component{
     return(
       <div>
         <br/>
-       <a href='/'><img className='banner' src={require('../img/logo2.png')}/></a>
+       <a className='aTag' href='/'><img className='banner' src={require('../img/logo2.png')}></img></a>
+       
        <p className='wow'><i className='w'>WOW!</i> Finds in Store</p>
 
        <div className='category'>

@@ -56,8 +56,8 @@ class Login extends React.Component{
                 />
 
                 <button className='ui button primary sign-in'>Submit</button>
-                <div>Don't have an account?</div>
-            <Link to='/signup'>Sign Up</Link>
+                <div className='dontHave'>Don't have an account?</div>
+            <Link  className='signLink' to='/signup'>Sign Up</Link>
             <div className='log-sign'>
                     <span><BiShoppingBag size={22}/> Log in from anywhere to see what’s in your bag</span>
                     <span><BsClock size={22}/>  Quick and easy checkout.</span>
