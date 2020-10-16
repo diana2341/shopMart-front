@@ -114,7 +114,7 @@ render(){
     let total = totalAmount?totalAmount.map(order=>order.total_qty):null
     return(
         <>
-        <nav>
+        <nav id='nav'>
         <div className='logo'><Link to='/'><img  className='logoImg' src={logo}/></Link></div>
         <ul className='navLinks' >
            <li onClick={this.handleSelect} className='all'><MdKeyboardArrowLeft onClick={this.handleSelect} className='all' siz={30}/> All</li>

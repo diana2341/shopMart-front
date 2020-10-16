@@ -72,6 +72,7 @@ class UserForm extends React.Component{
                 name='street'
                 component={this.renderInput}
                 label={'Enter Street'}
+                
                 />
                   <Field
                 name='state'
