@@ -648,7 +648,7 @@ hr {
 .mybag {
 	position: relative;
 	margin-left: 15%;
-	top: 70px;
+	top: 85px;
 }
 .cartItem {
 	position: relative;
@@ -710,6 +710,14 @@ hr {
 }
 .totalCart ul li {
 	list-style: none;
+}
+
+.emptyCart{
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	top: 50%;
+	font-size: 3vw;
 }
 
 @media screen and (max-width: 1000px) {

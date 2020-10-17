@@ -112,7 +112,6 @@ render(){
         return (o.total_qty)
     }}):null
     let total = totalAmount?totalAmount.map(order=>order.total_qty):null
-    console.log('my user',this.props.currentUser.user?this.props.currentUser.user:'none')
     return(
         <>
         <nav id='nav'>

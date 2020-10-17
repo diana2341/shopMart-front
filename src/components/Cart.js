@@ -2,6 +2,8 @@ import React from 'react'
 import {fetchUserCart,fetchProduct,orders} from '../actions'
 import {connect} from 'react-redux'
 import CartItems from './CartItems'
+import {BiShoppingBag} from 'react-icons/bi'
+
 class Cart extends React.Component{
    
 
@@ -24,15 +26,17 @@ class Cart extends React.Component{
           
 
             <h1 className='mybag'><b>My Bag</b></h1>
-            {this.props.items.items?this.props.items.items.map(element => {
+            {this.props.items.items? this.props.items.items.length>0?
+            
+            <>{this.props.items.items.map(element => {
                 if(element.user_id === userCart){
                    
                  return <CartItems key={element.id} quantity={element.quantity} orderId={element.id} itemsId={element.product_id}/>
 
                  
                 }
-            }):null}
-          <div className='totalCart'>
+            })}
+            <div className='totalCart'>
                 <h2>Order Summary</h2>
                 <div className='ulCart'>
                 <ul>
@@ -51,6 +55,9 @@ class Cart extends React.Component{
                 </div>
                 <button className='checkOutBtn'>CHECKOUT</button>
             </div>
+            
+            </>:<div className='emptyCart'><h2>Cart is Empty</h2><br/><div> <BiShoppingBag/></div> </div> : <div className='emptyCart'><h2>Cart is Empty</h2><br/><div> <BiShoppingBag/></div> </div> }
+          
 
             
             </div>
