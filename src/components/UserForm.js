@@ -420,6 +420,12 @@ class UserForm extends React.Component{
                 label={'Enter Country'}
                 />
                   <Field
+                   type="text"
+                   pattern="[0-9]*"
+                   inputMode="numeric"
+                   normalize={ val => (val || "").replace(/[^\d]/g, "") }
+                  
+               
                 name='zip_code'
                 component={this.renderInput}
                 label={'Enter Zip Code'}
