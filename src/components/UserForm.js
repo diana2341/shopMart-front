@@ -420,10 +420,14 @@ class UserForm extends React.Component{
                 label={'Enter Country'}
                 />
                   <Field
-                name='zip_code'
-                component={this.renderInput}
-                label={'Enter Zip Code'}
-                />
+                   type="text"
+                   pattern="[0-9]*"
+                   inputMode="numeric"
+                   normalize={ val => (val || "").replace(/[^\d]/g, "") }     
+                   name='zip_code'
+                    component={this.renderInput}
+                    label={'Enter Zip Code'}
+                    />
         {this.props.errorMessage===''?null:this.props.errorMessage.map((error,index)=><p key={index}className='error-mes'>**{error}**</p>)}
                 <button className='ui button primary sign-in'>Submit</button>
                                     {this.props.errorMessage===''?
