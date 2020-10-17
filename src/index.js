@@ -8,12 +8,12 @@ import {Provider} from 'react-redux'
 import reduxThunk from 'redux-thunk'
 import reducers from './reducers'
 
-const composeEnchancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || composeEnchancers
+// const composeEnchancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || composeEnchancers
 
 
 const store = createStore(
 reducers,
-composeEnchancers(applyMiddleware(reduxThunk))
+applyMiddleware(reduxThunk)
 )
 
 ReactDOM.render(

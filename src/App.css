@@ -7,16 +7,25 @@
 	margin: 0;
 	padding: 0;
 }
-h1,h3,p,div,ul,li,select{
-    text-transform: capitalize;
+h1,
+h3,
+p,
+div,
+ul,
+li,
+select {
+	text-transform: capitalize;
 }
 
 html,
 body,
 #root {
-  height: 100%;
-  font-family: 'Open Sans Condensed', sans-serif;
-
+	height: 100%;
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+body,
+html {
+	overflow-x: hidden;
 }
 /* Navbar Styling */
 li,
@@ -24,7 +33,6 @@ a {
 	text-decoration: none;
 	color: rgb(0, 204, 255);
 }
-
 
 nav {
 	position: fixed;
@@ -36,9 +44,8 @@ nav {
 	border-bottom: 0.2px solid rgba(218, 214, 214, 0.521);
 	font-size: 16px;
 	z-index: 99;
-  background-color: white;
-  text-transform: capitalize;
-
+	background-color: white;
+	text-transform: capitalize;
 }
 
 .logo {
@@ -140,16 +147,15 @@ nav {
 	display: none !important;
 }
 .title {
-  margin-left: 1rem;
-  text-transform: capitalize;
-
+	margin-left: 1rem;
+	text-transform: capitalize;
 }
 /* CARDS */
 .card {
 	width: 25rem;
-  padding: 10px 12px;
-  text-transform: capitalize;
-  width: 24vw;
+	padding: 10px 12px;
+	text-transform: capitalize;
+	width: 24vw;
 }
 
 .card-image {
@@ -177,24 +183,23 @@ nav {
 	width: 50%;
 	transition: 0.5s ease;
 	opacity: 0;
-  z-index: 5;
-  /* display: none; */
-
+	z-index: 5;
+	/* display: none; */
 }
 
-.btn-shop.added{
-  position: relative;
+.btn-shop.added {
+	position: relative;
 	top: -15rem;
 	left: 6rem;
 	cursor: pointer;
 	width: 50%;
 	transition: 0.5s ease;
 	opacity: 0;
-  z-index: 5;
-  background-color: rgba(13, 148, 13, 0.836);
-  color: white;
-  display: none;
-  cursor:default;
+	z-index: 5;
+	background-color: rgba(13, 148, 13, 0.836);
+	color: white;
+	display: none;
+	cursor: default;
 }
 .card:hover .added {
 	opacity: 1;
@@ -221,17 +226,17 @@ nav {
 	padding-top: 11rem;
 	grid-row-gap: 1rem;
 }
-.fil{
-  position: relative;
+.fil {
+	position: relative;
 }
 .filter-row {
 	position: absolute;
 	margin-top: 100px;
 	display: flex;
 	/* grid-template-columns: auto auto ; */
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 5;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 5;
 }
 
 .filter-row > div {
@@ -241,18 +246,16 @@ nav {
 }
 select {
 	padding: 1rem;
-  width: 10rem;
-  cursor: pointer;
-  text-transform: capitalize;
-
+	width: 10rem;
+	cursor: pointer;
+	text-transform: capitalize;
 }
 /* CARDS ENDSS */
 
 /* SHOW PAGEEE */
-.wholeShow{
-  position: relative;
-  top: 75px;
-
+.wholeShow {
+	position: relative;
+	top: 75px;
 }
 
 .banner {
@@ -266,10 +269,10 @@ select {
 }
 .show-product-pic img {
 	position: relative;
-  width: 25vw;
-  height: auto;
-  left: 12%;
-  /* object-fit: cover; */
+	width: 25vw;
+	height: auto;
+	left: 12%;
+	/* object-fit: cover; */
 	top: -450px;
 	cursor: zoom-in;
 }
@@ -280,9 +283,8 @@ select {
 	top: 7rem;
 	flex-wrap: wrap;
 	/* cursor: pointer; */
-  margin-bottom: 200px;
-  text-transform: capitalize;
-
+	margin-bottom: 200px;
+	text-transform: capitalize;
 }
 .category img {
 	cursor: pointer;
@@ -354,22 +356,19 @@ select {
 	/* border-radius: 150px; */
 	text-align: center;
 	font-size: 16px;
-  /* border-radius: 200px 200px 200px 200px; */
-  text-transform: uppercase;
-
+	/* border-radius: 200px 200px 200px 200px; */
+	text-transform: uppercase;
 }
 .show-product-name {
-  font-weight: lighter;
-  text-transform: capitalize;
-
+	font-weight: lighter;
+	text-transform: capitalize;
 }
 .location {
 	position: relative;
 	top: 20px;
 	left: 12rem;
-  color: grey;
-  text-transform: capitalize;
-
+	color: grey;
+	text-transform: capitalize;
 }
 .check-btn {
 	position: relative;
@@ -383,14 +382,13 @@ select {
 	font-weight: 900;
 	text-transform: capitalize;
 }
-.check-btn.added{
-  background-color: rgba(13, 148, 13, 0.836);
-  display: none;
-
+.check-btn.added {
+	background-color: rgba(13, 148, 13, 0.836);
+	display: none;
 }
-.check-btn.added:hover{
-  background-color: rgba(13, 148, 13, 0.836);
-  cursor: default;
+.check-btn.added:hover {
+	background-color: rgba(13, 148, 13, 0.836);
+	cursor: default;
 }
 .check-btn:hover {
 	background-color: gray;
@@ -398,14 +396,12 @@ select {
 }
 .box {
 	border: solid rgb(226, 224, 224);
-	width: 5%;
+	width: 35px;
 	height: 35px;
-  border-radius: 50%;
-
+	border-radius: 50%;
 }
-.colo{
-  text-transform: capitalize;
-
+.colo {
+	text-transform: capitalize;
 }
 .show-container {
 	position: relative;
@@ -417,9 +413,9 @@ select {
 
 /* footerrr */
 #page-wrapper {
-  position: relative;
+	position: relative;
 	min-height: 100%;
-  margin-bottom: 50px;
+	margin-bottom: 50px;
 }
 .footer {
 	position: relative;
@@ -427,8 +423,8 @@ select {
 	background-color: rgba(22, 21, 21, 0.267);
 	color: black;
 	text-align: center;
-  font-weight: bolder;
-  text-transform: capitalize;
+	font-weight: bolder;
+	text-transform: capitalize;
 }
 
 .pay-card {
@@ -437,30 +433,25 @@ select {
 .rights {
 	position: relative;
 	top: 4rem;
-  left: 15rem;
+	left: 15rem;
 }
 .con {
 	position: relative;
 	top: 2rem;
 	display: flex;
-  z-index: 999;
-  font-size: 13px;
-  left: 8%;
-  font-family: 'Source Sans Pro', sans-serif;
-
+	font-size: 13px;
+	left: 8%;
+	font-family: 'Source Sans Pro', sans-serif;
 }
-.con ul li{
-  margin-bottom: 15px;
-
+.con ul li {
+	margin-bottom: 15px;
 }
 .con p {
-  font-weight: bolder;
-
+	font-weight: bolder;
 }
 a > li {
 	text-decoration: none;
-  color: black;
-  
+	color: black;
 }
 a > li:hover {
 	color: white;
@@ -471,8 +462,8 @@ a > li:hover {
 .li {
 	cursor: pointer;
 }
-.con ul li:hover{
-  font-weight: bolder;
+.con ul li:hover {
+	font-weight: bolder;
 }
 
 .con > ul {
@@ -486,22 +477,21 @@ ul > li {
 	color: black;
 }
 ul > p {
-  /* text-decoration: underline; */
-  font-size: 17px;
+	/* text-decoration: underline; */
+	font-size: 17px;
 }
 
-.allCards{
-  position: relative;
-  
-  top: 25px;
-  columns: 4;
-}
-.c-card{
-  position: relative;
-  font-size: 17px;
-  left: 50px;
-}
+.allCards {
+	position: relative;
 
+	top: 25px;
+	columns: 4;
+}
+.c-card {
+	position: relative;
+	font-size: 17px;
+	left: 50px;
+}
 
 /* end footerrrr */
 .shipping-banner {
@@ -516,9 +506,8 @@ ul > p {
 }
 .free-banner {
 	/* color: pink; */
-  animation: free 2s linear 1s infinite alternate;
-  text-transform: capitalize;
-
+	animation: free 2s linear 1s infinite alternate;
+	text-transform: capitalize;
 }
 .fr {
 	font-size: 20px;
@@ -534,23 +523,22 @@ ul > p {
 	}
 }
 .form {
-  position: absolute;
+	position: absolute;
 	top: 25rem;
 	border: solid rgba(128, 128, 128, 0.116);
-	height: 510px;
+	height: 555px;
 	border-radius: 20px;
 	position: relative;
 	width: 50%;
 	padding: 5rem;
 	/* margin-bottom: 100px; */
-  margin-top: 50px;
-  text-transform: capitalize;
-
+	margin-top: 50px;
+	text-transform: capitalize;
 }
-form{
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%,-50%);
+form {
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 .sec {
 	position: relative;
@@ -558,10 +546,8 @@ form{
 	height: 980px;
 	border-radius: 20px;
 	position: relative;
-  width: 50%;
-  margin-top: 250px;
-
-
+	width: 50%;
+	margin-top: 250px;
 }
 /* sign up formmmm^^^^^ */
 .sign-in {
@@ -569,7 +555,7 @@ form{
 	width: 100%;
 	height: 3.3rem;
 }
-.error-mes{
+.error-mes {
 	font-size: 18px;
 	color: red;
 	font-weight: 800;
@@ -579,30 +565,28 @@ form{
 	font-size: 26px;
 	font-weight: 500;
 	height: 0;
-  top: 0rem;
-  font-weight: bolder;
-  text-transform: capitalize;
-  left: 50%;
-  transform: translate(-50%,-50%);
-
+	top: 0rem;
+	font-weight: bolder;
+	text-transform: capitalize;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
-form label{
-  text-transform: capitalize;
-
+form label {
+	text-transform: capitalize;
 }
 .log-sign {
 	position: absolute;
 	display: grid;
-  left: 50%;
-  transform: translate(-50%,-50%);
-	top: 30rem;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	top: 32rem;
 	grid-row-gap: 20px;
 }
-.log-sign.signUp{
-  top: 60rem;
+.log-sign.signUp {
+	top: 60rem;
 }
-.log-sign.edit{
-  display: none
+.log-sign.edit {
+	display: none;
 }
 .about-banner {
 	position: relative;
@@ -612,10 +596,10 @@ form label{
 	height: 250px;
 	object-fit: cover;
 }
-#about{
-  position: relative;
-  top: 100px;
-  height: 800px;
+#about {
+	position: relative;
+	top: 100px;
+	height: 800px;
 }
 .about-content,
 #return,
@@ -624,24 +608,24 @@ form label{
 	text-align: center;
 	font-size: 16px;
 	width: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
+	left: 50%;
+	transform: translate(-50%, -50%);
 	top: 35rem;
 }
-#return ul li{
-  list-style: none;
+#return ul li {
+	list-style: none;
 }
-#return{
-  height: 1500px;
-  width: 75%;
-  position: relative;
-  top: 60rem;
-  margin-bottom: 7rem;
+#return {
+	height: 1500px;
+	width: 75%;
+	position: relative;
+	top: 60rem;
+	margin-bottom: 7rem;
 }
-#faq{
-  position: relative;
-  top: 45rem;
-  height: 1000px;
+#faq {
+	position: relative;
+	top: 43rem;
+	height: 1000px;
 }
 /* CART */
 .cart-img {
@@ -671,9 +655,8 @@ hr {
 	left: 13%;
 	top: -150px;
 	font-size: 18px;
-  padding-bottom: 10px;
-  text-transform: capitalize;
-
+	padding-bottom: 10px;
+	text-transform: capitalize;
 }
 .delete {
 	position: relative;
@@ -693,9 +676,9 @@ hr {
 	position: fixed;
 	border: 0.5px solid rgba(128, 128, 128, 0.459);
 	float: right;
-  margin-top: 100px;
-  left:65%;
-  min-width: 200px;
+	top: 165px;
+	left: 65%;
+	min-width: 200px;
 	padding-left: 55px;
 	padding-right: 30px;
 	padding-bottom: 65px;
@@ -807,126 +790,992 @@ hr {
 	}
 }
 
+.nav-results {
+	border: transparent;
+	border-top: transparent;
+	width: 30%;
+	overflow-y: scroll;
+	position: absolute;
+	z-index: 1;
+	background-color: white;
 
-.nav-results{
-  border: transparent;
-  border-top: transparent;
-  width: 30%;
-  overflow-y: scroll;
-  position: absolute;
-  z-index: 1;
-  background-color: white;
-
-  top: 80px;
+	top: 80px;
 }
 
-input:focus~.nav-results{
-  height: 100%;
+input:focus ~ .nav-results {
+	height: 100%;
 }
 
-.nav-rec{
-  display: grid;
+.nav-rec {
+	display: grid;
 }
-#rec{
-  text-decoration: underline;
+.push {
+	height: 0;
 }
-.push{
-height: 0;}
-input:focus~.nav-rec.push{
-display: inline-block;}
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media screen and (max-width:1000px){
-  body{
-    overflow-x: hidden;
-  }
-  .navLinks{
-    position: absolute; 
-    right: -1000px;
-    height: 92vh;
-    top: 15vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50%;
-    transition: right 0.4s ease-in-out;
-    border-left: 1px solid rgba(218, 214, 214, 0.521);
-    background-color: white;
-    z-index: 5;
-    overflow: scroll;
-  }
-  .navLinks li{
-    margin-bottom: 50px;
-    font-size: 23px;
-  }
- 
-  .burger{
-    display: block;
-    cursor: pointer;
-  }
-
-
-
-
-  .dropdown-menu{
-    position: absolute; 
-    right: 0;
-    left: -40%;
-    height: 92vh;
-    top: -22vh;
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgb(255, 255, 255);
-    min-width: none;
-    box-shadow: none;
-    width: 50%;
-  }
-
-  .right-menu:hover .dropdown-menu{
-    display: none;
-  }
-  
-
-  .arrow{
-    display: inline;
-    position: relative;
-  }
-  .arrow.one{
-    left:-45px;
-  }
-  .arrow.two{
-    left:-38px;
-  }
-  .arrow.three{
-    left:-38px;
-  }
-  .arrow.four{
-    left:-38px;
-  }
-  .arrow.five{
-    left:-25px;
-  }
-  .arrow.six{
-    left: -55px;
-  }
-  
-  .right-menu.two li{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
+input:focus ~ .nav-rec.push {
+	display: inline-block;
 }
 
+@media screen and (max-width: 1000px) {
+	body {
+		overflow-x: hidden;
+	}
+	.navLinks {
+		position: absolute;
+		right: -1000px;
+		height: 92vh;
+		top: 15vh;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 50%;
+		transition: right 0.4s ease-in-out;
+		border-left: 1px solid rgba(218, 214, 214, 0.521);
+		background-color: white;
+		z-index: 5;
+		overflow: scroll;
+	}
+	.navLinks li {
+		margin-bottom: 50px;
+		font-size: 23px;
+	}
 
+	.burger {
+		display: block;
+		cursor: pointer;
+	}
+
+	.dropdown-menu {
+		position: absolute;
+		right: 0;
+		left: -40%;
+		height: 92vh;
+		top: -22vh;
+		display: none;
+		flex-direction: column;
+		align-items: center;
+		background-color: rgb(255, 255, 255);
+		min-width: none;
+		box-shadow: none;
+		width: 50%;
+	}
+
+	.right-menu:hover .dropdown-menu {
+		display: none;
+	}
+
+	.arrow {
+		display: inline;
+		position: relative;
+	}
+	.arrow.one {
+		left: -45px;
+	}
+	.arrow.two {
+		left: -38px;
+	}
+	.arrow.three {
+		left: -38px;
+	}
+	.arrow.four {
+		left: -38px;
+	}
+	.arrow.five {
+		left: -25px;
+	}
+	.arrow.six {
+		left: -55px;
+	}
+
+	.right-menu.two li {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+	.card {
+		margin-bottom: -55px;
+	}
+
+	.btn-shop.add {
+		left: 25%;
+	}
+	.btn-shop.added {
+		left: 25%;
+	}
+}
+
+@media screen and (max-width: 935px) {
+	/* CART PAGEEEEEE */
+	.orderList {
+		margin-left: 10%;
+	}
+	.totalCart {
+		left: 60%;
+	}
+	.cart-img {
+		position: relative;
+		left: -25px;
+	}
+	/* FOOTER */
+	.con {
+		left: 0;
+	}
+	.c-card {
+		white-space: nowrap;
+	}
+	/* HOMEEEEE*/
+	.category {
+		left: -35px;
+		top: 25px;
+	}
+	.banner {
+		left: 0px;
+		width: 100%;
+	}
+	.category {
+		width: 120%;
+	}
+	.btn-shop.add {
+		left: 20%;
+	}
+	.btn-shop.added {
+		left: 20%;
+	}
+	/* SHOW PAGEEEEE */
+	.show-product-pic img {
+		width: 36%;
+		left: 0;
+		top: -40rem;
+	}
+
+	#return{
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 766px) {
+	/* CART PAGEEEEEEEE */
+
+	.orderList {
+		margin-left: 3%;
+	}
+
+	.totalCart {
+		left: 55%;
+	}
+	/* HOMEEEEE */
+	.beauty {
+		position: relative;
+		left: -10px;
+	}
+	.banner {
+		width: 115%;
+		left: -105px;
+	}
+	.card {
+		margin-bottom: -95px;
+	}
+
+	.about-banner{
+		width: 500px;
+		top: -20px;
+		z-index: -2;
+	}
+	.about-content{
+		width: 100%;
+		top: 480px;
+		height: 550px;
+	}
+	#faq{
+		width: 100%;
+	}
+}
+
+
+
+@media screen and (max-width: 686px) {
+	.orderList {
+		position: relative;
+		left: 25%;
+		top: 20px;
+	}
+	.cartpg {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+	}
+	.mybag {
+		position: relative;
+		left: 25%;
+		top: 95px;
+	}
+	.totalCart {
+		position: relative;
+		left: 0;
+		top: 0;
+		height: 300px;
+	}
+	.totalCart h2 {
+		position: absolute;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		top: 30px;
+	}
+	.totalCart .ulCart {
+		position: absolute;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		top: 50%;
+	}
+	.totalCart .checkOutBtn {
+		position: absolute;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		top: 85%;
+	}
+	/* FOOTERRR */
+	.con ul {
+		margin-right: 25px;
+	}
+	.allCards {
+		left: -10%;
+	}
+	.payment-icon {
+		width: 50px!important;
+		margin-right: -15px!important;
+	}
+	.rights {
+		left: 20px;
+	}
+	/* HOMEEE */
+	.wow {
+		left: 30%;
+	}
+
+	.btn-shop.add {
+		left: 0%;
+		width: 100%;
+	}
+	.btn-shop.added {
+		left: 0%;
+		width: 100%;
+	}
+
+	#return{
+		top: 71rem;
+		height:1800px ;
+	}
+}
+
+@media screen and (max-width: 624px) {
+	.orderList img {
+		left: -100px;
+	}
+	.cartItem {
+		position: relative;
+		left: 25px;
+	}
+
+	.banner {
+		width: 100%;
+		height: 250px;
+		left: 0;
+	}
+	/* SHOW PAGEEEEE */
+
+	.show-product-pic img {
+		width: 43%;
+		left: 0;
+		top: -43rem;
+	}
+
+	.form {
+		border: none!important;
+	}
+	.field {
+		position: relative;
+		width: 200px;
+		left: 0px;
+	}
+	.ui.button.sign-in {
+		width: 150px;
+		left: 0px;
+	}
+	.dontHave {
+		position: relative;
+		left: -5px;
+		width: 100px;
+		font-size: 20px;
+	}
+	.signLink {
+		position: absolute;
+		top: 285px;
+		left: 135px;
+		font-size: 20px;
+	}
+	.log-sign {
+		width: 250px;
+		left: 155px;
+	}
+}
+
+@media screen and (max-width: 585px) {
+	.beauty.banner {
+		position: relative;
+		left: -110px;
+	}
+	.b-b {
+		left: 25%;
+	}
+	.choose {
+		width: 65%;
+		height: 200px;
+		left: 55px;
+	}
+	.wow {
+		left: 20%;
+	}
+
+	.row {
+		grid-template-columns: auto auto auto;
+	}
+	.card {
+		width: 100%;
+		margin-bottom: 10px;
+	}
+	.btn-shop {
+		display: none;
+	}
+
+	.about-banner{
+		left: 20px;
+	}
+}
+
+@media screen and (max-width: 479px) {
+	.allCards {
+		left: -20%;
+	}
+	.b-b {
+		left: 17%;
+	}
+	.beauty.banner {
+		left: -155px;
+	}
+	.banner {
+		width: 130%;
+		left: -115px;
+	}
+	.location {
+		left: 5px;
+	}
+	.show-product-name {
+		position: absolute;
+		top: -36rem;
+		left: 15px;
+		width: 250px;
+		font-size: 25px;
+	}
+	.show-product-pic img {
+		position: relative;
+		width: 270px;
+		top: -63rem;
+		left: 105px;
+	}
+	.show-container {
+		position: relative;
+		top: 525px;
+		left: 105px;
+		width: 280px;
+		height: 1000px;
+	}
+	.form {
+		border: none !important;
+	}
+	.field {
+		left: -50px;
+	}
+	.ui.button.sign-in {
+		left: -50px;
+	}
+	.dontHave {
+		left: -50px;
+	}
+	.signLink {
+		
+		left: 90px;
+		
+	}
+	.log-sign {
+		left:110px ;
+	}
+
+	.about-banner{
+		left: -5%;
+	}
+
+	#return{
+		top: 78rem;
+		height:2000px ;
+	}
+}
+@media screen and (max-width: 440px) {
+	.delete {
+		left: 65%;
+	}
+	.totalCart .ulCart {
+		left: 35%;
+	}
+
+	.totalCart h2 {
+		left: 30%;
+	}
+
+	.totalCart .checkOutBtn {
+		left: 30%;
+	}
+	.payment-icon {
+		margin-right: -20px !important;
+	}
+
+	.about-banner{
+		left: -10%;
+	}
+	/* HOMEEEEE */
+}
+
+/* Media for mobile view */
+/* Iphone plus */
+@media screen and (max-width: 414px) {
+	body,
+	html {
+		overflow-x: hidden;
+	}
+
+	.banner {
+		width: 100%;
+		height: 150px;
+		left: 0;
+	}
+	.wow {
+		position: relative;
+		font-size: 30px;
+		left: 85px;
+		top: 35px;
+	}
+	.category {
+		top: -10px;
+		left: -85px;
+		margin: 0;
+	}
+	.choose {
+		width: 80%;
+		height: 180px;
+		margin-bottom: -2px!important ;
+	}
+	.shipping-banner {
+		width: 100%!important;
+	}
+	.b-b {
+		position: relative;
+		left: 25%;
+		top: 20px;
+	}
+	ul.allCards {
+		columns: 2!important;
+	}
+
+	.beauty.banner {
+		top: 20px;
+		left: 0;
+	}
+	.allCards {
+		left: -45px;
+	}
+
+	.con {
+		left: 0;
+	}
+	.con ul {
+		margin-right: 35px;
+	}
+	.payment-icon {
+		width: 50px!important;
+		margin-right: -2px!important;
+		margin-bottom: -10px!important;
+	}
+	.rights {
+		left: -90px;
+		top: 25px;
+	}
+	.c-card {
+		white-space: nowrap;
+	}
+	/* =======ALL PRODUCTS========== */
+	.title {
+		position: relative;
+		font-size: 18px;
+		left: -10px;
+		width: 250px;
+		overflow: hidden;
+	}
+	.form-control {
+		position: relative;
+		width: 100px;
+		left: -15px;
+		margin-right: -25px;
+	}
+
+	.card {
+		padding: 1px 5px;
+		width: 150px;
+		margin-bottom: 0px;
+	}
+	.btn-shop {
+		display: none;
+	}
+
+	/* SHOW PAGE */
+	.location {
+		left: 5px;
+	}
+	.show-product-name {
+		position: absolute;
+		top: -36rem;
+		left: 15px;
+		width: 250px;
+		font-size: 25px;
+	}
+	.show-product-pic img {
+		position: relative;
+		width: 250px;
+		top: -62rem;
+		left: 55px;
+	}
+	.show-container {
+		position: relative;
+		top: 525px;
+		left: 55px;
+		width: 280px;
+		height: 1000px;
+	}
+	.row {
+		grid-template-columns: auto auto auto;
+	}
+	/* FORMSSS */
+
+	.form {
+		border: none!important;
+	}
+	.field {
+		position: relative;
+		width: 200px;
+		left: -75px;
+	}
+	.ui.button.sign-in {
+		width: 150px;
+		left: -80px;
+	}
+	.dontHave {
+		position: relative;
+		left: -100px;
+		width: 100px;
+		font-size: 20px;
+	}
+	.signLink {
+		position: absolute;
+		top: 285px;
+		left: 30px;
+		font-size: 20px;
+	}
+	.log-sign {
+		width: 250px;
+	}
+
+	/* ABOOUT PAGEEEEEEE */
+	.about-banner {
+		top: -35px;
+		z-index: -2;
+		left: 0;
+	}
+	.about-content {
+		position: relative;
+		top: 210px;
+		width: 300px;
+		left: 195px;
+	}
+
+	/* RETURN PAGEEEEEEE */
+
+	#return {
+		position: relative;
+		height:2400px;
+		top: 92rem;
+	}
+
+	.about-banner{
+		left: -15%;
+	}
+}
+
+@media screen and (max-width: 411px) {
+	.footer {
+		height: 370px;
+	}
+	.about-content {
+		left: 200px;
+	}
+}
+/* IPHONE 6/7/8 /X */
+
+@media screen and (max-width: 375px) {
+	.allCards {
+		left: -75px;
+	}
+	.footer {
+		height: 355px;
+	}
+	.rights {
+		left: -75px;
+	}
+	.card {
+		padding: 1px 5px;
+		width: 130px;
+		margin-bottom: 0px;
+	}
+	.about-content {
+		left: 170px;
+	}
+
+	.about-banner{
+		left: -19%;
+	}
+}
+/* ============GALAXT S5============= */
+@media screen and (max-width: 360px) {
+	body,
+	html {
+		overflow-x: hidden;
+	}
+	/* Home Pageeee */
+	.banner {
+		width: 100%;
+		height: 175px;
+		left: -1px;
+	}
+	.wow {
+		font-size: 30px;
+		left: 75px;
+		top: 35px;
+	}
+	.category {
+		top: 15px;
+		left: -85px;
+	}
+	.choose {
+		width: 80%;
+		height: 170px;
+		margin-bottom: 0px!important;
+	}
+	.b-b {
+		top: 35px;
+		font-size: 30px;
+		left: 125px;
+	}
+	.beauty.banner {
+		top: 20px;
+		left: 0;
+	}
+
+	.con {
+		left: 0;
+	}
+	.con ul {
+		font-size: 12px;
+		margin-right: 55px;
+	}
+	.con ul p {
+		font-size: 14px;
+	}
+	.rights {
+		left: -75px;
+		font-size: 12px;
+	}
+	.allCards {
+		columns: 2;
+		left: -95px;
+	}
+	.payment-icon {
+		width: 50px!important;
+		margin-right: -2px!important;
+		margin-bottom: -10px!important;
+	}
+	.c-card {
+		position: relative;
+		height: 50px;
+		font-size: 15px;
+		white-space: nowrap;
+		left: -20px;
+	}
+
+	.ulCart {
+		position: relative;
+		/* border: solid red; */
+		left: 20rem!important;
+		width: 450px;
+	}
+	.checkOutBtn{
+		left: 10rem!important;
+	}
+	.totalCart h2{
+		/* border: solid red; */
+		left: 10rem;
+	}
+	.orderList{
+		margin-bottom: -50px;
+
+	}
+	.log-sign {
+		left:80px ;
+	}
+
+	.about-banner{
+		left: -25%;
+	}
+	
+	#faq {
+		position: relative;
+		height: 1200px;
+		top: 50rem;
+	}
+}
+
+/* IPHONE 5 */
+@media screen and (max-width: 320px) {
+	.allCards {
+		left: -90px;
+	}
+	.con ul {
+		margin-right: 40px;
+	}
+
+	.card {
+		width: 110px;
+	}
+	.show-container {
+		left: 25px;
+	}
+	.show-product-pic img {
+		left: 25px;
+	}
+	.about-content {
+		left: 150px;
+	}
+
+}
+
+/* =========== GALAXY FOLD =========== */
+@media screen and (max-width: 280px) {
+	.logoImg {
+		position: relative;
+		width: 110px;
+		left: -25px;
+	}
+	nav {
+		width: 100%;
+	}
+	.burger {
+		position: relative;
+		right: 25px;
+	}
+	.navLinks {
+		/* right: 50px !important; */
+	}
+	/* HOME PAGEEEEEEE */
+	.shipping-banner {
+		width: 90%;
+		padding: 0;
+	}
+
+	.banner {
+		width: 120%;
+		height: 50%;
+		left: -60px;
+		overflow: hidden;
+	}
+	.wow {
+		left: 45px;
+		font-size: 30px;
+		width: 70%;
+		margin: 0;
+		padding: 0;
+		padding: 0;
+		margin-top: -20px;
+		margin-bottom: -40px;
+	}
+	.con {
+		font-size: 10px;
+		left: 0;
+	}
+	.con p {
+		font-size: 10px;
+	}
+	.allCards {
+		columns: 3 !important;
+		left: 1px;
+	}
+	.c-card {
+		left: 15px;
+		font-size: 15px !important;
+	}
+	.footer {
+		overflow: hidden;
+	}
+	.footer ul {
+		margin-right: 15px;
+	}
+	.payment-icon {
+		width: 35px !important;
+		margin-left: -12px !important;
+	}
+	.rights {
+		left: -15px;
+		top: 60px;
+	}
+	.beauty.banner {
+		width: 100%;
+		left: -15px;
+	}
+	.b-b {
+		font-size: 30px;
+		left: 120px;
+		top: 20px;
+	}
+	.category {
+		/* width: 50%; */
+		padding: 0;
+		margin: 0;
+		overflow: hidden;
+		left: -75px;
+		top: 60px;
+	}
+
+	.aTag {
+		position: relative;
+		display: inline-block;
+		overflow: hidden;
+		overflow-x: hidden;
+	}
+	.choose {
+		position: relative;
+		width: 80%;
+		height: 150px;
+		margin-bottom: -10px !important;
+	}
+
+	/* ABOOUT PAGEEEEEEE */
+	.about-banner {
+		top: -35px;
+		z-index: -2;
+		left: -30%;
+	}
+	.about-content {
+		position: relative;
+		top: 210px;
+		width: 300px;
+		left: 150px;
+	}
+
+
+
+
+
+	/* ALL PRODUCTS PAGEEEEEEEEE */
+
+	.row {
+		grid-template-columns: auto auto;
+		padding-top: 10rem;
+		/* left: -5px; */
+	}
+
+	.title {
+		position: relative;
+		font-size: 18px;
+		left: -10px;
+		width: 250px;
+		overflow: hidden;
+	}
+	.form-control {
+		position: relative;
+		width: 100px;
+		left: -15px;
+		margin-right: -25px;
+	}
+
+	.card {
+		padding: 1px 5px;
+		width: 150px;
+		margin-bottom: 0px;
+	}
+	.btn-shop {
+		display: none;
+	}
+	body,
+	html {
+		overflow-x: hidden;
+	}
+
+	/* PRODUCT SHOW PAGEEEEEEE */
+	.location {
+		left: 5px;
+	}
+	.show-product-name {
+		position: absolute;
+		top: -36rem;
+		left: 15px;
+		width: 250px;
+		font-size: 25px;
+	}
+	.show-product-pic img {
+		position: relative;
+		width: 250px;
+		top: -62rem;
+		left: 15px;
+	}
+	.show-container {
+		position: relative;
+		top: 525px;
+		left: 0px;
+		width: 280px;
+		height: 1000px;
+	}
+
+	/* LOGIN FORMMMMMMM */
+	.form {
+		border: none!important;
+	}
+	.field {
+		position: relative;
+		width: 200px;
+		left: -100px;
+	}
+	.ui.button.sign-in {
+		width: 150px;
+		left: -80px;
+	}
+	.dontHave {
+		position: relative;
+		left: -100px;
+		width: 100px;
+		font-size: 20px;
+	}
+	.signLink {
+		position: absolute;
+		top: 285px;
+		left: 30px;
+		font-size: 20px;
+	}
+	.log-sign {
+		width: 250px;
+	}
+}

@@ -80,8 +80,7 @@ class Product extends React.Component {
 
 
 	render() {
-		let user=this.props.currentUser.user
-
+		let user=this.props.currentUser.user ? this.props.currentUser.user:null
 		return (
 			<div>
 				<br/>

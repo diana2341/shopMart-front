@@ -40,7 +40,7 @@ class ProductPage extends React.Component{
     
     <div className='show-container'>
         <h1 className='show-product-name'>{this.props.products.name}</h1>      
-            <h1 className='show-product-name'>
+            <h1 className='show-product-price'>
                 ${this.props.products.price % 1 === 0?this.props.products.price +'.00':this.props.products.price }
             
             </h1>
