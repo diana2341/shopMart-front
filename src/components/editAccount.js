@@ -1,9 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {editUser} from '../actions'
-import {BiShoppingBag} from 'react-icons/bi'
-import {BsClock} from 'react-icons/bs'
-import {BsStar} from 'react-icons/bs'
+
 import UserForm from './UserForm'
 import _ from 'lodash'
 class EditAccount extends React.Component{
