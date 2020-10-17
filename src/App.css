@@ -624,7 +624,7 @@ form label {
 }
 #faq {
 	position: relative;
-	top: 45rem;
+	top: 43rem;
 	height: 1000px;
 }
 /* CART */
@@ -682,7 +682,6 @@ hr {
 	padding-left: 55px;
 	padding-right: 30px;
 	padding-bottom: 65px;
-	
 }
 .totalCart h2 {
 	text-decoration: underline;
@@ -893,6 +892,16 @@ input:focus ~ .nav-rec.push {
 		flex-direction: row;
 		align-items: center;
 	}
+	.card {
+		margin-bottom: -55px;
+	}
+
+	.btn-shop.add {
+		left: 25%;
+	}
+	.btn-shop.added {
+		left: 25%;
+	}
 }
 
 @media screen and (max-width: 935px) {
@@ -908,23 +917,39 @@ input:focus ~ .nav-rec.push {
 		left: -25px;
 	}
 	/* FOOTER */
-	.con{
+	.con {
 		left: 0;
 	}
-	.c-card{
+	.c-card {
 		white-space: nowrap;
 	}
 	/* HOMEEEEE*/
-	.category{
+	.category {
 		left: -35px;
 		top: 25px;
 	}
-	.banner{
+	.banner {
 		left: 0px;
 		width: 100%;
 	}
-	.category{
+	.category {
 		width: 120%;
+	}
+	.btn-shop.add {
+		left: 20%;
+	}
+	.btn-shop.added {
+		left: 20%;
+	}
+	/* SHOW PAGEEEEE */
+	.show-product-pic img {
+		width: 36%;
+		left: 0;
+		top: -40rem;
+	}
+
+	#return{
+		width: 100%;
 	}
 }
 
@@ -939,28 +964,47 @@ input:focus ~ .nav-rec.push {
 		left: 55%;
 	}
 	/* HOMEEEEE */
-	.beauty{
+	.beauty {
 		position: relative;
 		left: -10px;
 	}
-	.banner{
+	.banner {
 		width: 115%;
 		left: -105px;
 	}
+	.card {
+		margin-bottom: -95px;
+	}
+
+	.about-banner{
+		width: 500px;
+		top: -20px;
+		z-index: -2;
+	}
+	.about-content{
+		width: 100%;
+		top: 480px;
+		height: 550px;
+	}
+	#faq{
+		width: 100%;
+	}
 }
 
+
+
 @media screen and (max-width: 686px) {
-	.orderList{
+	.orderList {
 		position: relative;
 		left: 25%;
 		top: 20px;
 	}
-	.cartpg{
+	.cartpg {
 		position: relative;
 		display: flex;
 		flex-direction: column;
 	}
-	.mybag{
+	.mybag {
 		position: relative;
 		left: 25%;
 		top: 95px;
@@ -974,90 +1018,231 @@ input:focus ~ .nav-rec.push {
 	.totalCart h2 {
 		position: absolute;
 		left: 50%;
-		transform: translate(-50%,-50%);
+		transform: translate(-50%, -50%);
 		top: 30px;
 	}
-	.totalCart .ulCart{
+	.totalCart .ulCart {
 		position: absolute;
 		left: 50%;
-		transform: translate(-50%,-50%);
+		transform: translate(-50%, -50%);
 		top: 50%;
 	}
-	.totalCart .checkOutBtn{
+	.totalCart .checkOutBtn {
 		position: absolute;
 		left: 50%;
-		transform: translate(-50%,-50%);
+		transform: translate(-50%, -50%);
 		top: 85%;
 	}
 	/* FOOTERRR */
-	.con ul{
-		margin-right:25px ;
+	.con ul {
+		margin-right: 25px;
 	}
-	.allCards{
+	.allCards {
 		left: -10%;
 	}
-	.payment-icon{
+	.payment-icon {
 		width: 50px!important;
 		margin-right: -15px!important;
 	}
-	.rights{
+	.rights {
 		left: 20px;
 	}
 	/* HOMEEE */
-	.wow{
+	.wow {
 		left: 30%;
 	}
-	
-	
+
+	.btn-shop.add {
+		left: 0%;
+		width: 100%;
+	}
+	.btn-shop.added {
+		left: 0%;
+		width: 100%;
+	}
+
+	#return{
+		top: 71rem;
+		height:1800px ;
+	}
 }
 
 @media screen and (max-width: 624px) {
-.orderList img{
-	left: -100px;
-}
-.cartItem{
-	position: relative;
-	left: 25px;
-}
-
-.banner{
-	width: 100%;
-	height: 250px;
-}
-}
-@media screen and (max-width: 479px) {
-	.allCards{
-		left: -20%;
-
+	.orderList img {
+		left: -100px;
 	}
-	
+	.cartItem {
+		position: relative;
+		left: 25px;
+	}
 
+	.banner {
+		width: 100%;
+		height: 250px;
+		left: 0;
+	}
+	/* SHOW PAGEEEEE */
+
+	.show-product-pic img {
+		width: 43%;
+		left: 0;
+		top: -43rem;
+	}
+
+	.form {
+		border: none!important;
+	}
+	.field {
+		position: relative;
+		width: 200px;
+		left: 0px;
+	}
+	.ui.button.sign-in {
+		width: 150px;
+		left: 0px;
+	}
+	.dontHave {
+		position: relative;
+		left: -5px;
+		width: 100px;
+		font-size: 20px;
+	}
+	.signLink {
+		position: absolute;
+		top: 285px;
+		left: 135px;
+		font-size: 20px;
+	}
+	.log-sign {
+		width: 250px;
+		left: 155px;
+	}
+}
+
+@media screen and (max-width: 585px) {
+	.beauty.banner {
+		position: relative;
+		left: -110px;
+	}
+	.b-b {
+		left: 25%;
+	}
+	.choose {
+		width: 65%;
+		height: 200px;
+		left: 55px;
+	}
+	.wow {
+		left: 20%;
+	}
+
+	.row {
+		grid-template-columns: auto auto auto;
+	}
+	.card {
+		width: 100%;
+		margin-bottom: 10px;
+	}
+	.btn-shop {
+		display: none;
+	}
+
+	.about-banner{
+		left: 20px;
+	}
+}
+
+@media screen and (max-width: 479px) {
+	.allCards {
+		left: -20%;
+	}
+	.b-b {
+		left: 17%;
+	}
+	.beauty.banner {
+		left: -155px;
+	}
+	.banner {
+		width: 130%;
+		left: -115px;
+	}
+	.location {
+		left: 5px;
+	}
+	.show-product-name {
+		position: absolute;
+		top: -36rem;
+		left: 15px;
+		width: 250px;
+		font-size: 25px;
+	}
+	.show-product-pic img {
+		position: relative;
+		width: 270px;
+		top: -63rem;
+		left: 105px;
+	}
+	.show-container {
+		position: relative;
+		top: 525px;
+		left: 105px;
+		width: 280px;
+		height: 1000px;
+	}
+	.form {
+		border: none !important;
+	}
+	.field {
+		left: -50px;
+	}
+	.ui.button.sign-in {
+		left: -50px;
+	}
+	.dontHave {
+		left: -50px;
+	}
+	.signLink {
+		
+		left: 90px;
+		
+	}
+	.log-sign {
+		left:110px ;
+	}
+
+	.about-banner{
+		left: -5%;
+	}
+
+	#return{
+		top: 78rem;
+		height:2000px ;
+	}
 }
 @media screen and (max-width: 440px) {
- .delete{
-	 left: 65%;
- }
- .totalCart .ulCart{
-	 left: 35%;
- }
+	.delete {
+		left: 65%;
+	}
+	.totalCart .ulCart {
+		left: 35%;
+	}
 
- .totalCart h2 {
-	left: 30%;
+	.totalCart h2 {
+		left: 30%;
+	}
+
+	.totalCart .checkOutBtn {
+		left: 30%;
+	}
+	.payment-icon {
+		margin-right: -20px !important;
+	}
+
+	.about-banner{
+		left: -10%;
+	}
+	/* HOMEEEEE */
 }
-
-.totalCart .checkOutBtn{
-	left: 30%;
-}
-.payment-icon{
-	margin-right: -20px!important;
-
-}
-/* HOMEEEEE */
-
-
-}
-
-
 
 /* Media for mobile view */
 /* Iphone plus */
@@ -1080,28 +1265,29 @@ input:focus ~ .nav-rec.push {
 	}
 	.category {
 		top: -10px;
-		left: -35px;
+		left: -85px;
 		margin: 0;
 	}
 	.choose {
-		width: 100%;
+		width: 80%;
 		height: 180px;
-		margin-bottom: -2px !important ;
+		margin-bottom: -2px!important ;
 	}
 	.shipping-banner {
-		width: 100% !important;
+		width: 100%!important;
 	}
 	.b-b {
 		position: relative;
-		left: 80px;
+		left: 25%;
 		top: 20px;
 	}
 	ul.allCards {
-		columns: 2 !important;
+		columns: 2!important;
 	}
 
 	.beauty.banner {
 		top: 20px;
+		left: 0;
 	}
 	.allCards {
 		left: -45px;
@@ -1114,9 +1300,9 @@ input:focus ~ .nav-rec.push {
 		margin-right: 35px;
 	}
 	.payment-icon {
-		width: 50px !important;
-		margin-right: -2px !important;
-		margin-bottom: -10px !important;
+		width: 50px!important;
+		margin-right: -2px!important;
+		margin-bottom: -10px!important;
 	}
 	.rights {
 		left: -90px;
@@ -1179,7 +1365,7 @@ input:focus ~ .nav-rec.push {
 	/* FORMSSS */
 
 	.form {
-		border: none !important;
+		border: none!important;
 	}
 	.field {
 		position: relative;
@@ -1223,13 +1409,12 @@ input:focus ~ .nav-rec.push {
 
 	#return {
 		position: relative;
-		height: 3000px;
-		top: 115rem;
+		height:2400px;
+		top: 92rem;
 	}
-	#faq {
-		position: relative;
-		height: 2100px;
-		top: 85rem;
+
+	.about-banner{
+		left: -15%;
 	}
 }
 
@@ -1261,6 +1446,10 @@ input:focus ~ .nav-rec.push {
 	.about-content {
 		left: 170px;
 	}
+
+	.about-banner{
+		left: -19%;
+	}
 }
 /* ============GALAXT S5============= */
 @media screen and (max-width: 360px) {
@@ -1281,20 +1470,21 @@ input:focus ~ .nav-rec.push {
 	}
 	.category {
 		top: 15px;
-		left: -35px;
+		left: -85px;
 	}
 	.choose {
-		width: 100%;
+		width: 80%;
 		height: 170px;
-		margin-bottom: 0px !important;
+		margin-bottom: 0px!important;
 	}
 	.b-b {
 		top: 35px;
 		font-size: 30px;
-		left: 100px;
+		left: 125px;
 	}
 	.beauty.banner {
 		top: 20px;
+		left: 0;
 	}
 
 	.con {
@@ -1316,9 +1506,9 @@ input:focus ~ .nav-rec.push {
 		left: -95px;
 	}
 	.payment-icon {
-		width: 50px !important;
-		margin-right: -2px !important;
-		margin-bottom: -10px !important;
+		width: 50px!important;
+		margin-right: -2px!important;
+		margin-bottom: -10px!important;
 	}
 	.c-card {
 		position: relative;
@@ -1326,6 +1516,37 @@ input:focus ~ .nav-rec.push {
 		font-size: 15px;
 		white-space: nowrap;
 		left: -20px;
+	}
+
+	.ulCart {
+		position: relative;
+		/* border: solid red; */
+		left: 20rem!important;
+		width: 450px;
+	}
+	.checkOutBtn{
+		left: 10rem!important;
+	}
+	.totalCart h2{
+		/* border: solid red; */
+		left: 10rem;
+	}
+	.orderList{
+		margin-bottom: -50px;
+
+	}
+	.log-sign {
+		left:80px ;
+	}
+
+	.about-banner{
+		left: -25%;
+	}
+	
+	#faq {
+		position: relative;
+		height: 1200px;
+		top: 50rem;
 	}
 }
 
@@ -1350,6 +1571,7 @@ input:focus ~ .nav-rec.push {
 	.about-content {
 		left: 150px;
 	}
+
 }
 
 /* =========== GALAXY FOLD =========== */
@@ -1426,7 +1648,7 @@ input:focus ~ .nav-rec.push {
 	}
 	.b-b {
 		font-size: 30px;
-		left: 50px;
+		left: 120px;
 		top: 20px;
 	}
 	.category {
@@ -1434,7 +1656,7 @@ input:focus ~ .nav-rec.push {
 		padding: 0;
 		margin: 0;
 		overflow: hidden;
-		left: -15px;
+		left: -75px;
 		top: 60px;
 	}
 
@@ -1446,7 +1668,7 @@ input:focus ~ .nav-rec.push {
 	}
 	.choose {
 		position: relative;
-		width: 100%;
+		width: 80%;
 		height: 150px;
 		margin-bottom: -10px !important;
 	}
@@ -1455,7 +1677,7 @@ input:focus ~ .nav-rec.push {
 	.about-banner {
 		top: -35px;
 		z-index: -2;
-		left: 0;
+		left: -30%;
 	}
 	.about-content {
 		position: relative;
@@ -1464,18 +1686,9 @@ input:focus ~ .nav-rec.push {
 		left: 150px;
 	}
 
-	/* RETURN PAGEEEEEEE */
 
-	#return {
-		position: relative;
-		height: 3000px;
-		top: 115rem;
-	}
-	#faq {
-		position: relative;
-		height: 2100px;
-		top: 85rem;
-	}
+
+
 
 	/* ALL PRODUCTS PAGEEEEEEEEE */
 
@@ -1539,7 +1752,7 @@ input:focus ~ .nav-rec.push {
 
 	/* LOGIN FORMMMMMMM */
 	.form {
-		border: none !important;
+		border: none!important;
 	}
 	.field {
 		position: relative;
