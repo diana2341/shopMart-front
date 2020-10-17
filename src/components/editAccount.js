@@ -7,15 +7,22 @@ import {BsStar} from 'react-icons/bs'
 import UserForm from './UserForm'
 import _ from 'lodash'
 class EditAccount extends React.Component{
+    state={
+        errorMessage:''
+    }
     onSubmit=(formValues)=>{
-        console.log()
 this.props.editUser(this.props.currentUser.user.id,formValues)
+.catch(err => {
+    console.log(err.response.data.errors)
+   this.setState({errorMessage:err.response.data.errors});
+ })
     }
     render(){
         return(
             <div>
                 <h3>Edit Profile</h3>
                 <UserForm 
+                errorMessage={this.state.errorMessage}
                 initialValues={this.props.currentUser.user}
                 onSubmit={this.onSubmit}
                 class={'edit'}
