@@ -23,6 +23,10 @@ body,
 	height: 100%;
 	font-family: 'Open Sans Condensed', sans-serif;
 }
+body,
+html {
+	overflow-x: hidden;
+}
 /* Navbar Styling */
 li,
 a {
@@ -551,7 +555,7 @@ form {
 	width: 100%;
 	height: 3.3rem;
 }
-.error-mes{
+.error-mes {
 	font-size: 18px;
 	color: red;
 	font-weight: 800;
@@ -672,12 +676,13 @@ hr {
 	position: fixed;
 	border: 0.5px solid rgba(128, 128, 128, 0.459);
 	float: right;
-	margin-top: 100px;
+	top: 165px;
 	left: 65%;
 	min-width: 200px;
 	padding-left: 55px;
 	padding-right: 30px;
 	padding-bottom: 65px;
+	
 }
 .totalCart h2 {
 	text-decoration: underline;
@@ -786,25 +791,24 @@ hr {
 	}
 }
 
+.nav-results {
+	border: transparent;
+	border-top: transparent;
+	width: 30%;
+	overflow-y: scroll;
+	position: absolute;
+	z-index: 1;
+	background-color: white;
 
-.nav-results{
-  border: transparent;
-  border-top: transparent;
-  width: 30%;
-  overflow-y: scroll;
-  position: absolute;
-  z-index: 1;
-  background-color: white;
-
-  top: 80px;
+	top: 80px;
 }
 
-input:focus~.nav-results{
-  height: 100%;
+input:focus ~ .nav-results {
+	height: 100%;
 }
 
-.nav-rec{
-  display: grid;
+.nav-rec {
+	display: grid;
 }
 .push {
 	height: 0;
@@ -891,312 +895,462 @@ input:focus ~ .nav-rec.push {
 	}
 }
 
-/* Media for mobile view */
-/* Iphone plus */
-@media screen and (max-width: 414px) {
-  body,html{
-    overflow-x: hidden;
-  }
+@media screen and (max-width: 935px) {
+	/* CART PAGEEEEEE */
+	.orderList {
+		margin-left: 10%;
+	}
+	.totalCart {
+		left: 60%;
+	}
+	.cart-img {
+		position: relative;
+		left: -25px;
+	}
+	/* FOOTER */
+	.con{
+		left: 0;
+	}
+	.c-card{
+		white-space: nowrap;
+	}
+	/* HOMEEEEE*/
+	.category{
+		left: -35px;
+		top: 25px;
+	}
+	.banner{
+		left: 0px;
+		width: 100%;
+	}
+	.category{
+		width: 120%;
+	}
+}
 
-  .banner{
-    width: 100%;
-    height: 150px;
-    left: 0;
-  }
-  .wow{
-    position: relative;
-    font-size: 30px;
-    left: 85px ;
-    top: 35px;
-  }
-  .category{
-    top: -10px;
-    left: -35px;
-    margin: 0;
-  }
-  .choose{
-    width: 100%;
-    height: 180px ;
-    margin-bottom: -2px !important ;
-  }
-  .shipping-banner{
-    width: 100% !important;
-  }
-  .b-b{
-    position: relative;
-    left: 80px ;
-    top: 20px;
-  }
-  ul.allCards{
-    columns: 2 !important;
-  }
+@media screen and (max-width: 766px) {
+	/* CART PAGEEEEEEEE */
 
-  .beauty.banner{
-    top:20px ;
-  }
-  .allCards{
-    left: -45px;
-  }
+	.orderList {
+		margin-left: 3%;
+	}
 
-  .con{
-    left: 0;
-  }
-  .con ul{
-    margin-right:35px ;
-  }
-  .payment-icon{
-    width: 50px !important;
-    margin-right: -2px !important;
-    margin-bottom: -10px !important;
-  }
-  .rights{
-    left:-90px ;
-    top: 25px;
-  }
-  .c-card{
-    white-space: nowrap;
-  }
-/* =======ALL PRODUCTS========== */
-  .title{
-    position: relative;
-    font-size: 18px;
-    left: -10px;
-    width: 250px;
-    overflow: hidden;
-   
-  }
-  .form-control{
-    position: relative;
-    width: 100px;
-    left: -15px;
-    margin-right: -25px;
-  }
+	.totalCart {
+		left: 55%;
+	}
+	/* HOMEEEEE */
+	.beauty{
+		position: relative;
+		left: -10px;
+	}
+	.banner{
+		width: 115%;
+		left: -105px;
+	}
+}
 
-  .card {
-    padding: 1px 5px;
-    width: 150px;
-    margin-bottom: 0px;
-  }
-  .btn-shop{
-    display: none;
-  }
+@media screen and (max-width: 686px) {
+	.orderList{
+		position: relative;
+		left: 25%;
+		top: 20px;
+	}
+	.cartpg{
+		position: relative;
+		display: flex;
+		flex-direction: column;
+	}
+	.mybag{
+		position: relative;
+		left: 25%;
+		top: 95px;
+	}
+	.totalCart {
+		position: relative;
+		left: 0;
+		top: 0;
+		height: 300px;
+	}
+	.totalCart h2 {
+		position: absolute;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		top: 30px;
+	}
+	.totalCart .ulCart{
+		position: absolute;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		top: 50%;
+	}
+	.totalCart .checkOutBtn{
+		position: absolute;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		top: 85%;
+	}
+	/* FOOTERRR */
+	.con ul{
+		margin-right:25px ;
+	}
+	.allCards{
+		left: -10%;
+	}
+	.payment-icon{
+		width: 50px!important;
+		margin-right: -15px!important;
+	}
+	.rights{
+		left: 20px;
+	}
+	/* HOMEEE */
+	.wow{
+		left: 30%;
+	}
+	
+	
+}
 
-  /* SHOW PAGE */
-  .location{
-    left: 5px;
-  }
-  .show-product-name{
-    position: absolute;
-    top: -36rem;
-    left:15px;
-    width: 250px;
-    font-size: 25px;
-  }
-  .show-product-pic img{
-    position: relative;
-    width: 250px;
-    top: -62rem;
-    left: 55px;
-  }
-  .show-container{
-    position: relative;
-    top: 525px;
-    left: 55px;
-    width: 280px;
-    height: 1000px;
-  }
-  .row{
-    grid-template-columns: auto auto auto;
+@media screen and (max-width: 624px) {
+.orderList img{
+	left: -100px;
+}
+.cartItem{
+	position: relative;
+	left: 25px;
+}
 
-  }
-  /* FORMSSS */
+.banner{
+	width: 100%;
+	height: 250px;
+}
+}
+@media screen and (max-width: 479px) {
+	.allCards{
+		left: -20%;
 
-  .form{
-    border: none !important;
-  }
-  .field{
-    position: relative;
-width: 200px;
-left: -75px;
-  }
-  .ui.button.sign-in{
-    width: 150px;
-    left: -80px;
+	}
+	
 
-  }
-  .dontHave{
-    position: relative;
-    left: -100px;
-    width: 100px;
-    font-size: 20px;
+}
+@media screen and (max-width: 440px) {
+ .delete{
+	 left: 65%;
+ }
+ .totalCart .ulCart{
+	 left: 35%;
+ }
 
-  }
-  .signLink{
-    position: absolute;
-    top: 285px;
-    left: 30px;
-    font-size: 20px;
-  }
-  .log-sign{
-    width: 250px;
-  }
+ .totalCart h2 {
+	left: 30%;
+}
 
+.totalCart .checkOutBtn{
+	left: 30%;
+}
+.payment-icon{
+	margin-right: -20px!important;
 
-  /* ABOOUT PAGEEEEEEE */
-  .about-banner{
-    top: -35px;
-    z-index: -2;
-    left: 0;
-  }
-  .about-content{
-    position: relative;
-  top: 210px;
-  width: 300px;
-  left: 195px;
-  }
-
-  /* RETURN PAGEEEEEEE */
-
-  #return{
-    position: relative;
-    height: 3000px ;
-    top: 115rem;
-  }
-  #faq{
-    position: relative;
-    height: 2100px ;
-    top: 85rem;
-  }
+}
+/* HOMEEEEE */
 
 
 }
 
-@media screen and (max-width:411px){
-  .footer{
-    height: 370px;
 
-  }
-  .about-content{
-    left: 200px;
-  }
-  
+
+/* Media for mobile view */
+/* Iphone plus */
+@media screen and (max-width: 414px) {
+	body,
+	html {
+		overflow-x: hidden;
+	}
+
+	.banner {
+		width: 100%;
+		height: 150px;
+		left: 0;
+	}
+	.wow {
+		position: relative;
+		font-size: 30px;
+		left: 85px;
+		top: 35px;
+	}
+	.category {
+		top: -10px;
+		left: -35px;
+		margin: 0;
+	}
+	.choose {
+		width: 100%;
+		height: 180px;
+		margin-bottom: -2px !important ;
+	}
+	.shipping-banner {
+		width: 100% !important;
+	}
+	.b-b {
+		position: relative;
+		left: 80px;
+		top: 20px;
+	}
+	ul.allCards {
+		columns: 2 !important;
+	}
+
+	.beauty.banner {
+		top: 20px;
+	}
+	.allCards {
+		left: -45px;
+	}
+
+	.con {
+		left: 0;
+	}
+	.con ul {
+		margin-right: 35px;
+	}
+	.payment-icon {
+		width: 50px !important;
+		margin-right: -2px !important;
+		margin-bottom: -10px !important;
+	}
+	.rights {
+		left: -90px;
+		top: 25px;
+	}
+	.c-card {
+		white-space: nowrap;
+	}
+	/* =======ALL PRODUCTS========== */
+	.title {
+		position: relative;
+		font-size: 18px;
+		left: -10px;
+		width: 250px;
+		overflow: hidden;
+	}
+	.form-control {
+		position: relative;
+		width: 100px;
+		left: -15px;
+		margin-right: -25px;
+	}
+
+	.card {
+		padding: 1px 5px;
+		width: 150px;
+		margin-bottom: 0px;
+	}
+	.btn-shop {
+		display: none;
+	}
+
+	/* SHOW PAGE */
+	.location {
+		left: 5px;
+	}
+	.show-product-name {
+		position: absolute;
+		top: -36rem;
+		left: 15px;
+		width: 250px;
+		font-size: 25px;
+	}
+	.show-product-pic img {
+		position: relative;
+		width: 250px;
+		top: -62rem;
+		left: 55px;
+	}
+	.show-container {
+		position: relative;
+		top: 525px;
+		left: 55px;
+		width: 280px;
+		height: 1000px;
+	}
+	.row {
+		grid-template-columns: auto auto auto;
+	}
+	/* FORMSSS */
+
+	.form {
+		border: none !important;
+	}
+	.field {
+		position: relative;
+		width: 200px;
+		left: -75px;
+	}
+	.ui.button.sign-in {
+		width: 150px;
+		left: -80px;
+	}
+	.dontHave {
+		position: relative;
+		left: -100px;
+		width: 100px;
+		font-size: 20px;
+	}
+	.signLink {
+		position: absolute;
+		top: 285px;
+		left: 30px;
+		font-size: 20px;
+	}
+	.log-sign {
+		width: 250px;
+	}
+
+	/* ABOOUT PAGEEEEEEE */
+	.about-banner {
+		top: -35px;
+		z-index: -2;
+		left: 0;
+	}
+	.about-content {
+		position: relative;
+		top: 210px;
+		width: 300px;
+		left: 195px;
+	}
+
+	/* RETURN PAGEEEEEEE */
+
+	#return {
+		position: relative;
+		height: 3000px;
+		top: 115rem;
+	}
+	#faq {
+		position: relative;
+		height: 2100px;
+		top: 85rem;
+	}
+}
+
+@media screen and (max-width: 411px) {
+	.footer {
+		height: 370px;
+	}
+	.about-content {
+		left: 200px;
+	}
 }
 /* IPHONE 6/7/8 /X */
 
 @media screen and (max-width: 375px) {
-  .allCards{
-    left: -75px;
-  }
-  .footer{
-    height: 355px;
-
-  }
-  .rights{
-    left: -75px;
-  }
-  .card {
-    padding: 1px 5px;
-    width: 130px;
-    margin-bottom: 0px;
-  }
-  .about-content{
-    left: 170px;
-  }
-
+	.allCards {
+		left: -75px;
+	}
+	.footer {
+		height: 355px;
+	}
+	.rights {
+		left: -75px;
+	}
+	.card {
+		padding: 1px 5px;
+		width: 130px;
+		margin-bottom: 0px;
+	}
+	.about-content {
+		left: 170px;
+	}
 }
 /* ============GALAXT S5============= */
 @media screen and (max-width: 360px) {
-  body,html{
-    overflow-x: hidden;
-  }
-  /* Home Pageeee */
-  .banner{
-    width: 100%;
-    height: 175px;
-    left: -1px;
-  }
-  .wow{
-    font-size: 30px;
-    left: 75px;
-    top: 35px;
-  }
-  .category{
-    top: 15px;
-    left: -35px;
-  }
-  .choose{
-    width: 100%;
-    height: 170px;
-    margin-bottom: 0px !important;
-  }
-  .b-b{
-    top: 35px;
-    font-size: 30px;
-    left: 100px;
-  }
-  .beauty.banner{
-    top:20px ;
-  }
-  
-  .con{
-    left: 0;
-  }
-.con ul{
-  
-  font-size: 12px;
-  margin-right: 55px;
-}
-.con ul p {
-  font-size: 14px;
-}
-.rights{
-  left: -75px;
-  font-size: 12px;
-}
-.allCards{
-  columns: 2;
-  left: -95px;
-}
-.payment-icon{
-  width: 50px !important;
-  margin-right: -2px !important;
-  margin-bottom: -10px !important;
-}
-.c-card{
-  position: relative;
-  height: 50px;
-  font-size: 15px;
-  white-space: nowrap;
-  left: -20px;
-}
+	body,
+	html {
+		overflow-x: hidden;
+	}
+	/* Home Pageeee */
+	.banner {
+		width: 100%;
+		height: 175px;
+		left: -1px;
+	}
+	.wow {
+		font-size: 30px;
+		left: 75px;
+		top: 35px;
+	}
+	.category {
+		top: 15px;
+		left: -35px;
+	}
+	.choose {
+		width: 100%;
+		height: 170px;
+		margin-bottom: 0px !important;
+	}
+	.b-b {
+		top: 35px;
+		font-size: 30px;
+		left: 100px;
+	}
+	.beauty.banner {
+		top: 20px;
+	}
 
+	.con {
+		left: 0;
+	}
+	.con ul {
+		font-size: 12px;
+		margin-right: 55px;
+	}
+	.con ul p {
+		font-size: 14px;
+	}
+	.rights {
+		left: -75px;
+		font-size: 12px;
+	}
+	.allCards {
+		columns: 2;
+		left: -95px;
+	}
+	.payment-icon {
+		width: 50px !important;
+		margin-right: -2px !important;
+		margin-bottom: -10px !important;
+	}
+	.c-card {
+		position: relative;
+		height: 50px;
+		font-size: 15px;
+		white-space: nowrap;
+		left: -20px;
+	}
 }
 
 /* IPHONE 5 */
 @media screen and (max-width: 320px) {
-.allCards{
-  left: -90px;
-}
-.con ul{
-margin-right:40px ;
-}
+	.allCards {
+		left: -90px;
+	}
+	.con ul {
+		margin-right: 40px;
+	}
 
-.card {
-  width: 110px;
+	.card {
+		width: 110px;
+	}
+	.show-container {
+		left: 25px;
+	}
+	.show-product-pic img {
+		left: 25px;
+	}
+	.about-content {
+		left: 150px;
+	}
 }
-.show-container{
-  left: 25px;
-}
-.show-product-pic img{
-  left: 25px;
-}
-.about-content{
-  left: 150px;
-}
-}
-
-
-
 
 /* =========== GALAXY FOLD =========== */
 @media screen and (max-width: 280px) {
@@ -1214,8 +1368,8 @@ margin-right:40px ;
 	}
 	.navLinks {
 		/* right: 50px !important; */
-  }
-  /* HOME PAGEEEEEEE */
+	}
+	/* HOME PAGEEEEEEE */
 	.shipping-banner {
 		width: 90%;
 		padding: 0;
@@ -1224,9 +1378,8 @@ margin-right:40px ;
 	.banner {
 		width: 120%;
 		height: 50%;
-    left: -60px;
-    overflow: hidden;
-
+		left: -60px;
+		overflow: hidden;
 	}
 	.wow {
 		left: 45px;
@@ -1234,9 +1387,9 @@ margin-right:40px ;
 		width: 70%;
 		margin: 0;
 		padding: 0;
-    padding: 0;
-    margin-top: -20px;
-    margin-bottom: -40px;
+		padding: 0;
+		margin-top: -20px;
+		margin-bottom: -40px;
 	}
 	.con {
 		font-size: 10px;
@@ -1244,29 +1397,28 @@ margin-right:40px ;
 	}
 	.con p {
 		font-size: 10px;
-  }
-  .allCards{
-    columns: 3 !important;
-    left: 1px;
-
-  }
-  .c-card{
-    left: 15px;
-    font-size: 15px !important;
-  }
-  .footer{
-    overflow: hidden;
-  }
-  .footer ul{
-    margin-right: 15px;
-  }
+	}
+	.allCards {
+		columns: 3 !important;
+		left: 1px;
+	}
+	.c-card {
+		left: 15px;
+		font-size: 15px !important;
+	}
+	.footer {
+		overflow: hidden;
+	}
+	.footer ul {
+		margin-right: 15px;
+	}
 	.payment-icon {
 		width: 35px !important;
-    margin-left: -12px !important;
+		margin-left: -12px !important;
 	}
 	.rights {
-    left: -15px;
-    top: 60px;
+		left: -15px;
+		top: 60px;
 	}
 	.beauty.banner {
 		width: 100%;
@@ -1274,17 +1426,16 @@ margin-right:40px ;
 	}
 	.b-b {
 		font-size: 30px;
-    left: 50px;
-    top: 20px;
+		left: 50px;
+		top: 20px;
 	}
 	.category {
 		/* width: 50%; */
 		padding: 0;
-    margin: 0;
-    overflow: hidden;
-    left: -15px;
-    top: 60px;
-
+		margin: 0;
+		overflow: hidden;
+		left: -15px;
+		top: 60px;
 	}
 
 	.aTag {
@@ -1292,132 +1443,126 @@ margin-right:40px ;
 		display: inline-block;
 		overflow: hidden;
 		overflow-x: hidden;
-  }
-  .choose{
-    position: relative;
-    width: 100%;
-    height: 150px;
-    margin-bottom: -10px !important;
-  }
+	}
+	.choose {
+		position: relative;
+		width: 100%;
+		height: 150px;
+		margin-bottom: -10px !important;
+	}
 
-  /* ABOOUT PAGEEEEEEE */
-  .about-banner{
-    top: -35px;
-    z-index: -2;
-    left: 0;
-  }
-  .about-content{
-    position: relative;
-  top: 210px;
-  width: 300px;
-  left: 150px;
-  }
+	/* ABOOUT PAGEEEEEEE */
+	.about-banner {
+		top: -35px;
+		z-index: -2;
+		left: 0;
+	}
+	.about-content {
+		position: relative;
+		top: 210px;
+		width: 300px;
+		left: 150px;
+	}
 
-  /* RETURN PAGEEEEEEE */
+	/* RETURN PAGEEEEEEE */
 
-  #return{
-    position: relative;
-    height: 3000px ;
-    top: 115rem;
-  }
-  #faq{
-    position: relative;
-    height: 2100px ;
-    top: 85rem;
-  }
+	#return {
+		position: relative;
+		height: 3000px;
+		top: 115rem;
+	}
+	#faq {
+		position: relative;
+		height: 2100px;
+		top: 85rem;
+	}
 
-  /* ALL PRODUCTS PAGEEEEEEEEE */
+	/* ALL PRODUCTS PAGEEEEEEEEE */
 
-  .row{
- 
-	grid-template-columns: auto auto;
-  padding-top: 10rem;
-  /* left: -5px; */
-  
-  }
+	.row {
+		grid-template-columns: auto auto;
+		padding-top: 10rem;
+		/* left: -5px; */
+	}
 
-  .title{
-    position: relative;
-    font-size: 18px;
-    left: -10px;
-    width: 250px;
-    overflow: hidden;
-   
-  }
-  .form-control{
-    position: relative;
-    width: 100px;
-    left: -15px;
-    margin-right: -25px;
-  }
+	.title {
+		position: relative;
+		font-size: 18px;
+		left: -10px;
+		width: 250px;
+		overflow: hidden;
+	}
+	.form-control {
+		position: relative;
+		width: 100px;
+		left: -15px;
+		margin-right: -25px;
+	}
 
-  .card {
-    padding: 1px 5px;
-    width: 150px;
-    margin-bottom: 0px;
-  }
-  .btn-shop{
-    display: none;
-  }
-  body,html{
-    overflow-x: hidden;
+	.card {
+		padding: 1px 5px;
+		width: 150px;
+		margin-bottom: 0px;
+	}
+	.btn-shop {
+		display: none;
+	}
+	body,
+	html {
+		overflow-x: hidden;
+	}
 
-  }
+	/* PRODUCT SHOW PAGEEEEEEE */
+	.location {
+		left: 5px;
+	}
+	.show-product-name {
+		position: absolute;
+		top: -36rem;
+		left: 15px;
+		width: 250px;
+		font-size: 25px;
+	}
+	.show-product-pic img {
+		position: relative;
+		width: 250px;
+		top: -62rem;
+		left: 15px;
+	}
+	.show-container {
+		position: relative;
+		top: 525px;
+		left: 0px;
+		width: 280px;
+		height: 1000px;
+	}
 
-  /* PRODUCT SHOW PAGEEEEEEE */
-  .location{
-    left: 5px;
-  }
-  .show-product-name{
-    position: absolute;
-    top: -36rem;
-    left:15px;
-    width: 250px;
-    font-size: 25px;
-  }
-  .show-product-pic img{
-    position: relative;
-    width: 250px;
-    top: -62rem;
-    left: 15px;
-  }
-  .show-container{
-    position: relative;
-    top: 525px;
-    left: 0px;
-    width: 280px;
-    height: 1000px;
-  }
-
-  /* LOGIN FORMMMMMMM */
-  .form{
-    border: none !important;
-  }
-  .field{
-    position: relative;
-width: 200px;
-left: -100px;
-  }
-  .ui.button.sign-in{
-    width: 150px;
-    left: -80px;
-
-  }
-  .dontHave{
-    position: relative;
-    left: -100px;
-    width: 100px;
-    font-size: 20px;
-
-  }
-  .signLink{
-    position: absolute;
-    top: 285px;
-    left: 30px;
-    font-size: 20px;
-  }
-  .log-sign{
-    width: 250px;
-  }
-
+	/* LOGIN FORMMMMMMM */
+	.form {
+		border: none !important;
+	}
+	.field {
+		position: relative;
+		width: 200px;
+		left: -100px;
+	}
+	.ui.button.sign-in {
+		width: 150px;
+		left: -80px;
+	}
+	.dontHave {
+		position: relative;
+		left: -100px;
+		width: 100px;
+		font-size: 20px;
+	}
+	.signLink {
+		position: absolute;
+		top: 285px;
+		left: 30px;
+		font-size: 20px;
+	}
+	.log-sign {
+		width: 250px;
+	}
 }
