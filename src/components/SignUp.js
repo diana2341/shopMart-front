@@ -18,6 +18,7 @@ state={
     onSubmit=(formValues)=>{
         // console.log('form values:',formValues)
         this.props.signUp(formValues)
+
          .catch(err => {
             //  console.log(err.response.data.errors)
             this.setState({errorMessage:err.response.data.errors});

@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux';
 import {onTextChanged} from '../actions/index'
-import { fetchNavProducts} from '../actions/index';
+import { fetchNavProducts,pruductShow} from '../actions/index';
 import history from '../history'
 
 class AutoCompleteText extends React.Component{
@@ -47,7 +47,7 @@ class AutoCompleteText extends React.Component{
 </ul>
 
 
-:this.state.suggestions.map(item=><ul className='nav-rec'><li key={item.id}>{item.name}</li></ul>)}
+:this.state.suggestions.map(item=><ul className='nav-rec'><li onClick={()=>pruductShow(item.id)}key={item.id}>{item.name}</li></ul>)}
             </div>
             </>
         )
@@ -64,4 +64,4 @@ const mapStateToProps = (state) => {
 	};
 };
 
-export default connect(mapStateToProps,{onTextChanged,fetchNavProducts})(AutoCompleteText);
+export default connect(mapStateToProps,{onTextChanged,fetchNavProducts,pruductShow})(AutoCompleteText);

@@ -47,6 +47,7 @@ class Cart extends React.Component{
    
 
         return(
+
             <div  className='cartpg'>
 
             
@@ -55,12 +56,14 @@ class Cart extends React.Component{
             <>
             <h1 className='mybag'><b>My Bag</b></h1>
             {this.props.items.items.map(element => {
+
                 if(element.user_id === userCart){
                    
                  return <CartItems key={element.id} quantity={element.quantity} orderId={element.id} itemsId={element.product_id}/>
 
                  
                 }
+
             })}
             <div className='totalCart'>
                 <h2>Order Summary</h2>
@@ -81,9 +84,10 @@ class Cart extends React.Component{
                 </div>
                 <button className='checkOutBtn'>CHECKOUT</button>
             </div>
-            
+    
             </>:<div className='emptyCart'><h2>Cart is Empty</h2><br/><div> <BiShoppingBag/></div> </div>  }
           
+
 
             
             </div>
