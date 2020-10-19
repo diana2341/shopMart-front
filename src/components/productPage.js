@@ -8,9 +8,26 @@ import history from '../history'
 
 
 class ProductPage extends React.Component{
+
+    state={
+        
+        width: 0,
+         height: 0
+    }
+
     componentDidMount(){
         this.props.fetchProduct(this.props.routerProps.match.params.id)
+        this.updateWindowDimensions();
+        window.addEventListener('resize', this.updateWindowDimensions);
     }
+
+      componentWillUnmount() {
+        window.removeEventListener('resize', this.updateWindowDimensions);
+      }
+      
+      updateWindowDimensions=()=> {
+        this.setState({ width: window.innerWidth, height: window.innerHeight });
+      }
 
 
 
@@ -45,7 +62,7 @@ class ProductPage extends React.Component{
     <span className='show-product-pic'>
 
      {/* <img className='show-product-pic'src={this.props.products.images}/> */}
-     <CursorZoom
+    {this.state.width > 1000? <CursorZoom
                 image={{
                     className:'show-product-pic',
 
@@ -59,7 +76,10 @@ class ProductPage extends React.Component{
                     height: 1200
                 }}
                 cursorOffset={{ x: 10, y: 0 }}
-            />
+            />: <img className='show-product-pic'src={this.props.products.images} />
+
+
+    }
             {/* <span className='show-product-pic'> */}
                {/* <Zoom
             

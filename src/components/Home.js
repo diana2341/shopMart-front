@@ -3,6 +3,9 @@ import {connect} from 'react-redux'
 import { fetchCategory } from '../actions/index';
 
 class Home extends React.Component{
+  componentDidMount(){
+    window.scrollTo(0, 0);
+  }
 
   render(){
     let choices=['shoes','jeans','sportswear','jackets']

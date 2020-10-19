@@ -3,13 +3,25 @@ import {fetchUserCart,fetchProduct,orders} from '../actions'
 import {connect} from 'react-redux'
 import CartItems from './CartItems'
 import {BiShoppingBag} from 'react-icons/bi'
+import DynamicScrollToTop from './ScrollToTop'
 
 class Cart extends React.Component{
-   
+
+    constructor(props){
+        super(props)
+        this.myRef = React.createRef()  
+    }
+    
 
     componentDidMount=()=>{
         this.props.fetchUserCart()
-        this.props.orders()
+        this.props.orders();
+        window.scrollTo(0, 0);
+    }
+
+    start=()=>{
+        return <DynamicScrollToTop/>
+
     }
     render(){
 
@@ -35,8 +47,7 @@ class Cart extends React.Component{
    
 
         return(
-            <div className='cartpg'>
-          
+            <div  className='cartpg'>
 
             
             {getLength>0?
