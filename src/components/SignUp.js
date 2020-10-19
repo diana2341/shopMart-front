@@ -18,10 +18,9 @@ state={
     onSubmit=(formValues)=>{
         console.log('form values:',formValues)
         this.props.signUp(formValues)
-         .catch(err => {
-             console.log(err.response.data.errors)
-            this.setState({errorMessage:err.response.data.errors});
-          })
+        if(formValues.password.length<8){
+            this.setState({errorMessage:'password is too short, must be 8 characters or more!'})
+        }
 
     }
     render(){
