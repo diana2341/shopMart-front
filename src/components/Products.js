@@ -20,25 +20,6 @@ class Product extends React.Component {
 
 	}
 
-	addedToCart=(id,user)=>{
-		
-		let add = document.getElementById(`button ${id}`)
-		let added = document.getElementById(`added ${id}`)
-		if(user===null){
-			return null
-		}
-		
-
-		add.style.display = 'none'
-		added.style.display = 'block'
-		setInterval(()=>{
-			add.style.display = 'block'
-			added.style.display = 'none'
-		}, 2000)
-		
-
-
-	}
 
 
 
@@ -49,7 +30,6 @@ class Product extends React.Component {
 			return (
 				<React.Fragment key={product.id}>
 					<div className='card'  >
-						{console.log('userrrrr',user)}
 					
 					{/* <div > */}
 					<img onClick={()=>pruductShow(product.id)}   className='card-image'src={product.images}/>
@@ -60,7 +40,7 @@ class Product extends React.Component {
 					
 					<div className='btn-row'>
 						
-					<button className='btn-shop add'  id={`button ${product.id}`} onClick={()=>{user===null?history.push('/login'):this.props.addCart(user,product, 1);  this.props.orders(); this.addedToCart(product.id,user)}}>+ add to bag</button>
+					<button className='btn-shop add'  id={`button ${product.id}`} onClick={()=>{user===null?history.push('/login'):this.props.addCart(user,product, 1);  this.props.orders(); }}>+ add to bag</button>
 					<button ref={this.addedButton} id={`added ${product.id}`} className='btn-shop added'><FaCheck/> Added To Bag</button>
 					{/* <button
 					className='btn-shop details'
@@ -84,7 +64,6 @@ class Product extends React.Component {
 		return (
 			<div>
 				<br/>
-				{console.log('location',this.props.location)}
 				{this.props.routerProps.match.params.product==='women'?
 				<img className='banner' src={require('../img/womens.png')}/>:
 				this.props.routerProps.match.params.product==='men'?

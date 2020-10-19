@@ -9,6 +9,7 @@ class CartItems extends React.Component{
     componentDidMount=()=>{
         this.props.fetchProductInCart(this.props.itemsId)
         this.props.orders()
+        window.scrollTo(0, 0);
     }
 
     render(){

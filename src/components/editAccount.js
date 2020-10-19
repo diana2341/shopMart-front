@@ -11,11 +11,13 @@ class EditAccount extends React.Component{
     onSubmit=(formValues)=>{
 this.props.editUser(this.props.currentUser.user.id,formValues)
 
+
 if(formValues.password.length<8){
     console.log(formValues.password)
 
     this.setState({errorMessage:'password is too short, must be 8 characters or more!'})
 }
+
     }
     render(){
         return(

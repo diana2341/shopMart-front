@@ -8,29 +8,29 @@ import history from '../history'
 
 
 class ProductPage extends React.Component{
-    componentDidMount(){
-        this.props.fetchProduct(this.props.routerProps.match.params.id)
+
+    state={
+        
+        width: 0,
+         height: 0
     }
 
+    componentDidMount(){
+        this.props.fetchProduct(this.props.routerProps.match.params.id)
+        this.updateWindowDimensions();
+        window.addEventListener('resize', this.updateWindowDimensions);
+    }
+
+      componentWillUnmount() {
+        window.removeEventListener('resize', this.updateWindowDimensions);
+      }
+      
+      updateWindowDimensions=()=> {
+        this.setState({ width: window.innerWidth, height: window.innerHeight });
+      }
 
 
-	addedToCart=(id,user)=>{
-        if(user===null){
-			return null
-		}
-		let add = document.getElementById(`productButton ${id}`)
-		let added = document.getElementById(`productAdded ${id}`)
 
-		add.style.display = 'none'
-		added.style.display = 'block'
-		setInterval(()=>{
-			add.style.display = 'block'
-			added.style.display = 'none'
-		}, 2500)
-		
-
-
-	}
 
 
     renderProduct=(user)=>{
@@ -55,14 +55,14 @@ class ProductPage extends React.Component{
         <label style={{fontWeight: 'bolder',fontSize:16}}>Product Details</label>
         <br/><br/>
         <p>{this.props.products.description}</p>
-        <button className='check-btn' id={`productButton ${this.props.products.id}`} onClick={()=>{user===null?history.push('/login'):this.props.addCart(user,this.props.products,1);  this.props.orders();this.addedToCart(this.props.products.id,this.props.currentUser.user)}}>add to bag</button>
+        <button className='check-btn' id={`productButton ${this.props.products.id}`} onClick={()=>{user===null?history.push('/login'):this.props.addCart(user,this.props.products,1);  this.props.orders();}}>add to bag</button>
         <button className='check-btn added' id={`productAdded ${this.props.products.id}`} ><FaCheck/> added to bag</button>
 
     </div>
     <span className='show-product-pic'>
 
      {/* <img className='show-product-pic'src={this.props.products.images}/> */}
-     <CursorZoom
+    {this.state.width > 1000? <CursorZoom
                 image={{
                     className:'show-product-pic',
 
@@ -76,7 +76,10 @@ class ProductPage extends React.Component{
                     height: 1200
                 }}
                 cursorOffset={{ x: 10, y: 0 }}
-            />
+            />: <img className='show-product-pic'src={this.props.products.images} />
+
+
+    }
             {/* <span className='show-product-pic'> */}
                {/* <Zoom
             

@@ -2,6 +2,45 @@ import api from '../apis/Store';
 import history from '../history';
 import { formValues } from 'redux-form';
 
+
+
+let alladdedToCart=(id,user)=>{
+		
+	let add = document.getElementById(`button ${id}`)
+	let added = document.getElementById(`added ${id}`)
+	if(user===null){
+		return null
+	}
+	
+	if(add && added){
+	add.style.display = 'none'
+	added.style.display = 'block'
+	setInterval(()=>{
+		add.style.display = 'block'
+		added.style.display = 'none'
+	}, 2000)
+}
+}
+
+const addedToCart=(id,user)=>{
+	if(user===null){
+		return null
+	}
+	let add = document.getElementById(`productButton ${id}`)
+	let added = document.getElementById(`productAdded ${id}`)
+
+	if(add && added){
+	add.style.display = 'none'
+	added.style.display = 'block'
+	setInterval(()=>{
+		add.style.display = 'block'
+		added.style.display = 'none'
+	}, 2500)
+}
+
+
+}
+
 export const autoLogin = () => {
 	return async (dispatch) => {
 		const token = localStorage.getItem('token');
@@ -259,11 +298,16 @@ export const addCart = (user, product, quantity) => {
 						quantity: quantity,
 					},
 					{ headers: { Authorization: `Bearer ${token}` } }
-				);
+				)
+				
         dispatch({ type: 'UPDATE_CURRENT_USER', payload: response.data });
-					console.log('the data',response.data)
+
+					
         const responsetwo = await api.get('/orders');
-		    dispatch({ type: 'UPDATE_CART', payload: responsetwo.data })
+			dispatch({ type: 'UPDATE_CART', payload: responsetwo.data })
+			if (response.status == 200){addedToCart(product.id,user)}
+			
+
 
 			}
 		};
@@ -281,10 +325,15 @@ export const addCart = (user, product, quantity) => {
 						user_id: user.id,
 					},
 					{ headers: { Authorization: `Bearer ${token}` } }
-				);
+				)
+				
         dispatch({ type: 'UPDATE_CURRENT_USER', payload: response.data });
         const responsetwo = await api.get('/orders');
-		    dispatch({ type: 'UPDATE_CART', payload: responsetwo.data })
+
+			dispatch({ type: 'UPDATE_CART', payload: responsetwo.data })
+			
+			if (response.status == 200){addedToCart(product.id,user);alladdedToCart(product.id,user)}
+
 
 			}
 		};

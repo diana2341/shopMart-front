@@ -7,7 +7,6 @@ import history from '../history'
 class AutoCompleteText extends React.Component{
     componentDidMount(){
        this.props.fetchNavProducts();
-        console.log('napro',this.props.suggestions) 
         window.onmouseleave=()=>document.querySelector('.nav-results').style.height='0%'
 
     }
@@ -16,7 +15,6 @@ class AutoCompleteText extends React.Component{
         suggestions:this.props.navProducts
     }
       handleChange = (event) => {
-    console.log(event.target.value);
     const {name, value} = event.target
     this.setState({
       [name]: value
@@ -28,8 +26,8 @@ class AutoCompleteText extends React.Component{
     render(){
         return(
             <>
-            {       console.log('naavpro',this.props.suggestions) 
-}
+            {/* {       console.log('naavpro',this.props.suggestions) 
+} */}
             <input 
             onMouseOver={()=>document.querySelector('.nav-results').style.height='100%'}
 

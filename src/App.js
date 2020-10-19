@@ -18,6 +18,7 @@ import Cart from './components/Cart'
 import SignUp from './components/SignUp';
 import {autoLogin} from './actions'
 import {connect} from 'react-redux'
+import ScrollToTop from './components/ScrollToTop';
 
 function App(props) {
 
@@ -28,15 +29,19 @@ function App(props) {
 
    
   },[])
+
+  
   return (
 
-    <Router>
+    <Router >
       
       <Navbar/>
       <div id='page-wrapper'>
 
       <Banner/>
+
       <Switch>
+
       <Route exact path='/' render={(routerprops)=><Home routerProps={routerprops}/>}/>
 
         <Route exact path='/login'><Login/></Route>
@@ -52,6 +57,7 @@ function App(props) {
         <Route exact path='/:product/:kind' render={(routerprops)=><Prod routerProps={routerprops}/>}/>
 
       </Switch>
+      
     </div>
       <Footer/>
     </Router>

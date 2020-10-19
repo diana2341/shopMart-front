@@ -16,12 +16,28 @@ import history from '../history'
 class Navabar extends React.Component{
 
     state={
-        active:false
+        active:false,
+        width: 0,
+         height: 0
     }
 
-    componentDidMount=()=>{
+
+      
+      componentDidMount() {
         this.props.orders()
-    }
+        this.updateWindowDimensions();
+        window.addEventListener('resize', this.updateWindowDimensions);
+        
+      }
+      
+      componentWillUnmount() {
+        window.removeEventListener('resize', this.updateWindowDimensions);
+      }
+      
+      updateWindowDimensions=()=> {
+        this.setState({ width: window.innerWidth, height: window.innerHeight });
+      }
+
  
 
     handleLogOut=()=>{
@@ -39,20 +55,33 @@ class Navabar extends React.Component{
     
     }
     handleSelect=(e)=>{
-        if(window.innerWidth <1000 && e.target.className==='home'|| e.target.className.baseVal==='home arrow one' ){
+        console.log(e.target.className)
+        if(window.innerWidth <1000 && e.target.className==='home'|| e.target.className.baseVal==='home arrow one' || e.target.className === 'cart' ||  e.target.className.baseVal=== 'arrow five'|| e.target.className.baseVal=== 'arrow six'||  e.target.className === 'menu-button' || e.target.className === 'svgBag' || e.target.className.baseVal === 'svgBag' || e.target.className.baseVal === '' || e.target.className === 'logsout' ){
             document.querySelector('.navLinks').style.right='-100%'
             this.setState({active:!this.state.active})
         }
-        if(window.innerWidth < 1000 && e.target.className !=='home' && e.target.className.baseVal !=='home arrow one' && e.target.className.baseVal !==''){
+        if(this.state.width < 1000 && e.target.className !=='home' && e.target.className.baseVal !=='home arrow one' && e.target.className !== 'cart'&& e.target.className.baseVal !=='cart'&& e.target.className.baseVal!== 'arrow five'&& e.target.className.baseVal !== 'arrow six' && e.target.className !== 'menu-button' && e.target.className !== 'svgBag' && e.target.className.baseVal !=='' && e.target.className.baseVal !=='svgBag' && e.target.className !== 'menu-button edit' && e.target.className !== 'logsout'){
             this.renderList(e)
             document.querySelector('.dropdown-menu').style.display='flex'
-            document.querySelector('.search').style.display = 'none'
+            // document.querySelector('.search').style.display = 'none'
             document.querySelectorAll('.all').forEach(all=>all.style.setProperty('display', 'flex', 'important'))
         }
-        if(e.target.className === 'all'){
+
+        if(e.target.className === 'menu-button edit'){
+            document.querySelector('.dropdown-menu.edit').style.display='block'
+            // document.querySelector('.search').style.display = 'none'
+            document.querySelectorAll('.all').forEach(all=>all.style.setProperty('display', 'flex', 'important'))
+        }
+        if(e.target.className === 'all' || e.target.id === 'alli' || e.target.id === 'arr'){
             document.querySelector('.dropdown-menu').style.display='none'
-            document.querySelector('.search').style.display = 'block'
+            
+            // document.querySelector('.search').style.display = 'block'
             document.querySelectorAll('.all').forEach(all=>all.style.setProperty('display', 'none', 'important'))
+        }
+
+        if(document.querySelector('.dropdown-menu.edit') !== null && document.querySelector('.dropdown-menu.edit') && e.target.className === 'all' || e.target.id === 'alli' || e.target.id === 'arr'){
+           return document.querySelector('.dropdown-menu.edit')?document.querySelector('.dropdown-menu.edit').style.display='none':null
+
         }
     }
     category=undefined
@@ -112,22 +141,24 @@ render(){
         return (o.total_qty)
     }}):null
     let total = totalAmount?totalAmount.map(order=>order.total_qty):null
-    console.log('my user',this.props.currentUser.user?this.props.currentUser.user:'none')
+
+
+
     return(
         <>
         <nav id='nav'>
         <div className='logo'><Link to='/'><img  className='logoImg' src={logo}/></Link></div>
         <ul className='navLinks' >
-           <li onClick={this.handleSelect} className='all'><MdKeyboardArrowLeft onClick={this.handleSelect} className='all' siz={30}/> All</li>
+           <li onClick={this.handleSelect} className='all'><div><MdKeyboardArrowLeft onClick={this.handleSelect} id='arr' className='all' siz={45}/></div><div id='alli'>All</div></li>
            {/*  */}
         <li><AutoCompleteText/></li> 
         {/*  */}
         <li onClick={this.handleSelect} className='home'><Link className='home' to='/'> <MdKeyboardArrowLeft onClick={this.handleSelect} className='home arrow one' size={35}/>Home </Link></li> 
         <div className='right-menu two'>
 
-        <li onClick={window.innerWidth > 1000?()=>this.props.fetchCategory('women'):this.handleSelect} onMouseOver={this.renderList}id='women'className='menu-button women'><Link to=''/> <MdKeyboardArrowLeft onClick={this.handleSelect} className='arrow two' size={35}/>Women </li> 
-        <li onClick={window.innerWidth > 1000?()=>this.props.fetchCategory('men')  :this.handleSelect}   onMouseOver={this.renderList}id='men'className='menu-button men'><Link to=''/><MdKeyboardArrowLeft onClick={this.handleSelect} className='arrow three' size={35}/>Men</li> 
-        <li onClick={window.innerWidth > 1000?()=>this.props.fetchCategory('kids') :this.handleSelect}   onMouseOver={this.renderList}id='kids'className='menu-button kids'><Link to=''/><MdKeyboardArrowLeft onClick={this.handleSelect} className='arrow four' size={35}/>Kids</li> 
+        <li onClick={this.state.width > 1000?()=>this.props.fetchCategory('women'):this.handleSelect} onMouseOver={this.renderList}id='women'className='menu-button women'><Link to=''/> <MdKeyboardArrowLeft onClick={this.handleSelect} className='arrow two' size={35}/>Women </li> 
+        <li onClick={this.state.width > 1000?()=>this.props.fetchCategory('men')  :this.handleSelect}   onMouseOver={this.renderList}id='men'className='menu-button men'><Link to=''/><MdKeyboardArrowLeft onClick={this.handleSelect} className='arrow three' size={35}/>Men</li> 
+        <li onClick={this.state.width > 1000?()=>this.props.fetchCategory('kids') :this.handleSelect}   onMouseOver={this.renderList}id='kids'className='menu-button kids'><Link to=''/><MdKeyboardArrowLeft onClick={this.handleSelect} className='arrow four' size={35}/>Kids</li> 
 
         {/* <li onClick={this.handleSelect} onMouseOver={this.renderList}id='women'className='menu-button women'><Link to=''/><MdKeyboardArrowLeft onClick={this.handleSelect} className='arrow two' size={35}/> Women </li> 
         <li onClick={this.handleSelect} onMouseOver={this.renderList}id='men'className='menu-button men'><Link to=''/><MdKeyboardArrowLeft onClick={this.handleSelect} className='arrow three' size={35}/> Men  </li> 
@@ -195,11 +226,11 @@ render(){
         </div>
         {this.props.currentUser.user? this.props.currentUser.user.id?
         <>
-        <div className='right-menu'>
-        <li className='menu-button'><MdKeyboardArrowLeft className='arrow five' size={35}/> Hello {this.props.currentUser.user.first_name} </li>
-        <div className='dropdown-menu'>
+        <div className='right-menu edit'>
+        <li className='menu-button edit' onClick={this.state.width<1000?this.handleSelect:null}><MdKeyboardArrowLeft onClick={this.state.width<1000?this.handleSelect:null} className='arrow five' size={35}/> Hello {this.props.currentUser.user.first_name} </li>
+        <div className='dropdown-menu edit'>
 
-        <li onClick={()=>{history.push(`/edit-profile`)}} >Edit Profile</li>
+        <li onClick={()=>{history.push(`/edit-profile`); this.handleSelect();}} >Edit Profile</li>
 
         <li>WishList</li>
 
@@ -208,9 +239,9 @@ render(){
         </div>
         </>
         : 
-        <li><Link to='/login'>Login</Link></li>:<li><Link to='/login'>Login</Link></li>} 
+        <li><Link  onClick={this.state.width<1000?this.handleSelect:null} className='logsout' to='/login'>Login</Link></li>:<li><Link onClick={this.state.width<1000?this.handleSelect:null} className='logsout'  to='/login'>Login</Link></li>} 
 
-        <li className='cart'><Link to='/cart'><MdKeyboardArrowLeft className='arrow six' size={35}/> <BiShoppingBag size={22}/>({total >0? total:0}) </Link></li> 
+        <li className='cart' onClick={this.handleSelect}><Link className='svgBag'  onClick={this.handleSelect} to='/cart'><MdKeyboardArrowLeft onClick={this.handleSelect} className='arrow six' size={35}/> <BiShoppingBag className='svgBag' onClick={this.handleSelect} size={22}/>({total >0? total:0}) </Link></li> 
         </ul>
 
             <div onClick={this.toggle}  className='burger'>
