@@ -405,7 +405,6 @@ class UserForm extends React.Component{
                 name='password'
                 component={this.renderInput}
                 label={'Enter Password'}
-                validate={length({ min: 2, max: 8 })            }
 
                
                 />
