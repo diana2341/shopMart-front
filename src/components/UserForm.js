@@ -379,7 +379,7 @@ class UserForm extends React.Component{
 
     }
     render(){
-
+        
         return(
             <>
             <form className='ui form  sec' onSubmit={this.props.handleSubmit(this.onSubmit)}>
@@ -395,6 +395,7 @@ class UserForm extends React.Component{
                 />
                 <Field
                 name='email'
+
                 component={this.renderInput}
                 label={'Enter Email'}
                 />
@@ -428,9 +429,11 @@ class UserForm extends React.Component{
                     component={this.renderInput}
                     label={'Enter Zip Code'}
                     />
-        {this.props.errorMessage===''?null:this.props.errorMessage.map((error,index)=><p key={index}className='error-mes'>**{error}**</p>)}
+        {this.props.errorMessage===''||this.props.errorMessage===null?null:this.props.errorMessage.map((error,index)=><p key={index}className='error-mes'>**{error}**</p>)}
+        {this.props.errorMessage!==''?null:this.props.backError===''||this.props.backError===null?null:this.props.backError.map((error,index)=><p key={index}className='error-mes'>**{error}**</p>)}
+
                 <button className='ui button primary sign-in'>Submit</button>
-                                    {this.props.errorMessage===''?
+                                    {this.props.backError===''?
 
                 <div className={`log-sign ${this.props.class}`}>
                     <span><BiShoppingBag size={22}/> Log in from anywhere to see what’s in your bag</span>
