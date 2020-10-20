@@ -12,6 +12,7 @@ const initialState = {
   categories:'',
   autoText:'',
   location:history.location.pathname
+  
 }
 
 export default (state=initialState,action)=>{
