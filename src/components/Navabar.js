@@ -142,7 +142,8 @@ render(){
     }}):null
     let total = totalAmount?totalAmount.map(order=>order.total_qty):null
 
-    console.log(this.state.width)
+
+
     return(
         <>
         <nav id='nav'>

@@ -301,11 +301,13 @@ export const addCart = (user, product, quantity) => {
 				)
 				
         dispatch({ type: 'UPDATE_CURRENT_USER', payload: response.data });
+
 					
         const responsetwo = await api.get('/orders');
 			dispatch({ type: 'UPDATE_CART', payload: responsetwo.data })
 			if (response.status == 200){addedToCart(product.id,user)}
 			
+
 
 			}
 		};
@@ -327,9 +329,11 @@ export const addCart = (user, product, quantity) => {
 				
         dispatch({ type: 'UPDATE_CURRENT_USER', payload: response.data });
         const responsetwo = await api.get('/orders');
+
 			dispatch({ type: 'UPDATE_CART', payload: responsetwo.data })
 			
 			if (response.status == 200){addedToCart(product.id,user);alladdedToCart(product.id,user)}
+
 
 			}
 		};

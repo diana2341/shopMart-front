@@ -856,20 +856,23 @@ input:focus ~ .nav-rec.push {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+
 		width: 100%;
+
 		transition: right 0.4s ease-in-out;
 		border-left: 1px solid rgba(218, 214, 214, 0.521);
 		background-color: white;
 		z-index: 5;
 		overflow: scroll;
+
 		margin-top: -25px;
+
 	}
 	.navLinks li {
 		margin-bottom: 50px;
 		font-size: 23px;
 	}
 
-	
 
 	.burger {
 		display: block;
@@ -888,6 +891,7 @@ input:focus ~ .nav-rec.push {
 		background-color: rgb(255, 255, 255);
 		min-width: none;
 		box-shadow: none;
+
 		width: 100%;
 	}
 
@@ -953,6 +957,7 @@ input:focus ~ .nav-rec.push {
 	.btn-shop.added {
 		left: 25%;
 	}
+
 	.search{
 		display: none;
 	}
@@ -960,6 +965,7 @@ input:focus ~ .nav-rec.push {
 	.show-product-pic{
 		cursor: default!important;
 	}
+
 }
 
 @media screen and (max-width: 935px) {
@@ -1047,15 +1053,18 @@ input:focus ~ .nav-rec.push {
 	#faq{
 		width: 100%;
 	}
+
 	.delete{
 		position: relative;
 		top: 1px;
 	}
+
 }
 
 
 
 @media screen and (max-width: 686px) {
+
 
 	.emptyCart{
 		position: relative;
@@ -1073,6 +1082,7 @@ input:focus ~ .nav-rec.push {
 		left: 50%;
 		transform: translate(-50%,-50%);
 	}
+
 
 	.orderList {
 		position: relative;
@@ -1156,6 +1166,7 @@ input:focus ~ .nav-rec.push {
 		left: 25px;
 	}
 
+
 	.banner {
 		width: 100%;
 		height: 250px;
@@ -1168,6 +1179,8 @@ input:focus ~ .nav-rec.push {
 		left: 0;
 		top: -43rem;
 	}
+
+
 
 	.form {
 		border: none!important;
@@ -1365,6 +1378,7 @@ input:focus ~ .nav-rec.push {
 		columns: 2!important;
 	}
 
+
 	.beauty.banner {
 		top: 20px;
 		left: 0;
@@ -1443,6 +1457,7 @@ input:focus ~ .nav-rec.push {
 		grid-template-columns: auto auto auto;
 	}
 	/* FORMSSS */
+
 
 	.form {
 		border: none!important;
@@ -1772,6 +1787,7 @@ input:focus ~ .nav-rec.push {
 
 	/* ALL PRODUCTS PAGEEEEEEEEE */
 
+
 	.row {
 		grid-template-columns: auto auto;
 		padding-top: 10rem;
@@ -1791,6 +1807,7 @@ input:focus ~ .nav-rec.push {
 		left: -15px;
 		margin-right: -25px;
 	}
+
 
 	.card {
 		padding: 1px 5px;

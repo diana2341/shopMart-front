@@ -1,9 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux';
 import {onTextChanged} from '../actions/index'
-import { fetchNavProducts} from '../actions/index';
+import { fetchNavProducts,pruductShow} from '../actions/index';
 import history from '../history'
-import { pruductShow } from '../actions/index';
 
 
 class AutoCompleteText extends React.Component{

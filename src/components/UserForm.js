@@ -378,11 +378,13 @@ class UserForm extends React.Component{
         
 
     }
+    
     render(){
-        
+        const required = (val) => val && val.length;
+        const length = (val) => val.length > 8;
         return(
             <>
-            <form className='ui form  sec' onSubmit={this.props.handleSubmit(this.onSubmit)}>
+            <form className='ui form sec' onSubmit={this.props.handleSubmit(this.onSubmit)}>
                 <Field
                 name='first_name'
                 component={this.renderInput}
@@ -403,6 +405,9 @@ class UserForm extends React.Component{
                 name='password'
                 component={this.renderInput}
                 label={'Enter Password'}
+                validate={length({ min: 2, max: 8 })            }
+
+               
                 />
                   <Field
                 name='street'
@@ -461,6 +466,7 @@ const validate=(formValues)=>{
     if(!formValues.email){
         errors.email = 'You must enter an email'
     }
+   
     if(!formValues.password){
         errors.password = 'You must enter a password'
     }
