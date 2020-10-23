@@ -5,18 +5,26 @@ import Filter from '../components/Filter';
 import { connect } from 'react-redux';
 import history from '../history'
 import {FaCheck} from 'react-icons/fa'
+import FadeLoader from "react-spinners/FadeLoader";
+import { css } from "@emotion/core";
+
 
 
 class Product extends React.Component {
+	state={
+		loading:true
+	}
 
 	constructor(props){
 		 super(props);
-        this.addedButton = React.createRef();
+		this.addedButton = React.createRef();
+		
     }
 
 
 	componentDidMount() {
-		this.props.fetchProducts(this.props.routerProps.match.params.product);
+		this.props.fetchProducts(this.props.routerProps.match.params.product)
+		.then(this.setState({loading:false	}))
 
 	}
 
@@ -60,6 +68,12 @@ class Product extends React.Component {
 
 
 	render() {
+		const override = css`
+  display: block;
+  margin: 0 auto;
+  border-color: red;
+`;
+
 		let user=this.props.currentUser.user ? this.props.currentUser.user:null
 		return (
 			<div>
@@ -84,8 +98,18 @@ class Product extends React.Component {
 				</div>
 	
 				
+{this.state.loading?  
+				<div className='loader'>
+					<FadeLoader
+					css={override}
 
-				<div className="row">{this.renderProducts(user)}</div>
+					size={150}
+					color={"#00CCFF"}
+					loading={this.state.loading}
+				/>
+				</div>:
+		
+				<div className="row">{this.renderProducts(user)}</div>}
 			</div>
 		);
 	}
@@ -96,6 +120,7 @@ const mapStateToProps = (state) => {
 		products: state.products.filteredProducts,
 		 currentUser: state.auth,
 		 location: state.products.location,
+		 loading:state.products.loading
 
 	};
 };

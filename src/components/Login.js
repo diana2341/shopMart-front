@@ -10,7 +10,9 @@ import history from '../history'
 
 
 class Login extends React.Component{
-
+    state={
+        errorMessage:''
+    }
     renderError=({error,touched})=>{
         if(touched && error){
             return(
@@ -38,7 +40,12 @@ class Login extends React.Component{
     }
 
     onSubmit=(formValues)=>{
+
         this.props.login(formValues)
+        .catch(err => {
+            // console.log(err.response.data.errors)
+           this.setState({errorMessage:err.response.data.errors});
+         })
     }
     render(){
         return(
@@ -46,6 +53,7 @@ class Login extends React.Component{
             <form className='ui form error' onSubmit={this.props.handleSubmit(this.onSubmit)}>
                 <p className='form-title'>Log In</p>
                 <Field 
+
                 className='input'
                 name='email'
                 component={this.renderInput}
@@ -57,6 +65,7 @@ class Login extends React.Component{
                 component={this.renderInput}
                 label={'Enter Password'}
                 />
+        {this.state.errorMessage===''||<p className='error-mes'>**Email or password is invalid**</p>}
 
                 <button className='ui button primary sign-in'>Submit</button>
                 <div className='dontHave'>Don't have an account?</div>

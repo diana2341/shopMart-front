@@ -4,6 +4,7 @@ import {onTextChanged} from '../actions/index'
 import { fetchNavProducts,pruductShow} from '../actions/index';
 import history from '../history'
 
+
 class AutoCompleteText extends React.Component{
     componentDidMount(){
        this.props.fetchNavProducts();

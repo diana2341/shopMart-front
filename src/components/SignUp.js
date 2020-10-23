@@ -11,18 +11,24 @@ import {BsStar} from 'react-icons/bs'
 
 class SignUp extends React.Component{
 state={
-    errorMessage:''
+    errorMessage:'',
+    backError:''
 }
 
 
     onSubmit=(formValues)=>{
+        var pattern =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
         // console.log('form values:',formValues)
         this.props.signUp(formValues)
+        .catch(err => {
+            this.setState({backError:err.response.data.errors})
+        })
+        if(pattern.test(formValues.email.formValues===false)){
+            // console.log(err.response.data.errors)
+           this.setState({errorMessage:'email is invalid'});
+         }
 
-         .catch(err => {
-            //  console.log(err.response.data.errors)
-            this.setState({errorMessage:err.response.data.errors});
-          })
 
     }
     render(){
@@ -30,7 +36,8 @@ state={
         return(
             <>
             <div>
-                <UserForm errorMessage={this.state.errorMessage}class={'signUp'} onSubmit={this.onSubmit}/>
+                <UserForm backError={this.state.backError}errorMessage={this.state.errorMessage}class={'signUp'} onSubmit={this.onSubmit}/>
+
             </div>
 
             </>
