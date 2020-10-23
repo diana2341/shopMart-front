@@ -29,7 +29,7 @@ class AutoCompleteText extends React.Component{
             {/* {       console.log('naavpro',this.props.suggestions) 
 } */}
             <input 
-            onMouseOver={()=>document.querySelector('.nav-results').style.height='100%'}
+            onMouseOver={()=>document.querySelector('.nav-results').style.height='200%'}
 
             name='autoText'
             value={this.state.autoText}

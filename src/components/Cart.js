@@ -45,7 +45,7 @@ class Cart extends React.Component{
 
         let getLength = size?size.length:null
    
-
+        console.log(this.props.items.items)
         return(
 
             <div  className='cartpg'>
