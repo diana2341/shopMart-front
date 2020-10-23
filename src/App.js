@@ -59,6 +59,7 @@ function App(props) {
       </Switch>
       
     </div>
+   
       <Footer/>
     </Router>
   

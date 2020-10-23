@@ -438,6 +438,7 @@ select {
 	position: relative;
 	min-height: 100%;
 	margin-bottom: 50px;
+
 }
 .footer {
 	position: relative;
@@ -447,6 +448,7 @@ select {
 	text-align: center;
 	font-weight: bolder;
 	text-transform: capitalize;
+	display: block;
 }
 
 .pay-card {
@@ -524,7 +526,7 @@ ul > p {
 	text-align: center;
 	font-size: 16px;
 	font-weight: 700;
-	top: 90px;
+	top: 83px;
 }
 .free-banner {
 	/* color: pink; */
@@ -547,7 +549,7 @@ ul > p {
 .form {
 	position: absolute;
 	top: 25rem;
-	border: solid rgba(128, 128, 128, 0.116);
+	/* border: solid rgba(128, 128, 128, 0.116); */
 	height: 555px;
 	border-radius: 20px;
 	position: relative;
@@ -698,12 +700,15 @@ hr {
 	position: fixed;
 	border: 0.5px solid rgba(128, 128, 128, 0.459);
 	float: right;
-	top: 165px;
+	top: 135px;
 	left: 65%;
 	min-width: 200px;
 	padding-left: 55px;
 	padding-right: 30px;
 	padding-bottom: 65px;
+	background-color: white;
+	z-index: 5;
+	
 }
 .totalCart h2 {
 	text-decoration: underline;
@@ -1093,12 +1098,14 @@ input:focus ~ .nav-rec.push {
 	.orderList {
 		position: relative;
 		left: 25%;
+
 		top: 20px;
 	}
 	.cartpg {
 		position: relative;
 		display: flex;
 		flex-direction: column;
+		
 	}
 	.mybag {
 		position: relative;
@@ -1161,6 +1168,12 @@ input:focus ~ .nav-rec.push {
 		top: 71rem;
 		height:1800px ;
 	}
+	.error-mes{
+		font-size: 12px;
+		display: inline;
+		white-space: nowrap;
+	}
+
 }
 
 @media screen and (max-width: 624px) {
@@ -1199,16 +1212,18 @@ input:focus ~ .nav-rec.push {
 	.ui.button.sign-in {
 		width: 150px;
 		left: 0px;
+		top: 20px;
 	}
 	.dontHave {
 		position: relative;
+		top: 20px;
 		left: -5px;
 		width: 100px;
 		font-size: 20px;
 	}
 	.signLink {
 		position: absolute;
-		top: 285px;
+		top: 325px;
 		left: 135px;
 		font-size: 20px;
 	}
@@ -1339,6 +1354,11 @@ input:focus ~ .nav-rec.push {
 
 	.about-banner{
 		left: -10%;
+	}
+
+	.error-mes{
+		position: relative;
+		left: -35px;
 	}
 	/* HOMEEEEE */
 }
@@ -1482,10 +1502,11 @@ input:focus ~ .nav-rec.push {
 		left: -100px;
 		width: 100px;
 		font-size: 20px;
+		top: 30px;
 	}
 	.signLink {
 		position: absolute;
-		top: 285px;
+		top: 335px;
 		left: 30px;
 		font-size: 20px;
 	}
@@ -1859,12 +1880,14 @@ input:focus ~ .nav-rec.push {
 	}
 	.field {
 		position: relative;
+
 		width: 200px;
 		left: -100px;
 	}
 	.ui.button.sign-in {
 		width: 150px;
 		left: -80px;
+		
 	}
 	.dontHave {
 		position: relative;
@@ -1874,7 +1897,7 @@ input:focus ~ .nav-rec.push {
 	}
 	.signLink {
 		position: absolute;
-		top: 285px;
+		top: 340px;
 		left: 30px;
 		font-size: 20px;
 	}

@@ -89,8 +89,9 @@ class Cart extends React.Component{
           
 
 
-            
+            <br/>
             </div>
+            
         )
     }
 }
