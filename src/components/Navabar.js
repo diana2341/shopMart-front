@@ -232,7 +232,6 @@ render(){
 
         <li onClick={()=>{history.push(`/edit-profile`); this.handleSelect();}} >Edit Profile</li>
 
-        <li>WishList</li>
 
         <li  onClick={this.handleLogOut}>Log Out</li>
         </div>
