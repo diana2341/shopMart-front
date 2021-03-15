@@ -1,5 +1,6 @@
 import axios from 'axios'
 
 export default axios.create({
-    baseURL:' https://shopmartback.herokuapp.com'
+    baseURL:'http://localhost:3001/'
+    // baseURL:' https://shopmartback.herokuapp.com'
 })

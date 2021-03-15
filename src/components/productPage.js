@@ -10,9 +10,8 @@ import history from '../history'
 class ProductPage extends React.Component{
 
     state={
-        
         width: 0,
-         height: 0
+        height: 0
     }
 
     componentDidMount(){
@@ -65,7 +64,6 @@ class ProductPage extends React.Component{
     {this.state.width > 1000? <CursorZoom
                 image={{
                     className:'show-product-pic',
-
                     src: this.props.products.images,
                     width: 400,
                     height: 600
@@ -76,10 +74,8 @@ class ProductPage extends React.Component{
                     height: 1200
                 }}
                 cursorOffset={{ x: 10, y: 0 }}
-            />: <img className='show-product-pic'src={this.props.products.images} />
+            />: <img className='show-product-pic'src={this.props.products.images} /> }
 
-
-    }
             {/* <span className='show-product-pic'> */}
                {/* <Zoom
             
@@ -91,15 +87,9 @@ class ProductPage extends React.Component{
 
             />   */}
             </span>
-    
-  
-
-    
-
-
     </div>
     
-    :<h1>Error</h1>
+        :<h1>Error</h1>
     }
     render(){
         let user=this.props.currentUser.user

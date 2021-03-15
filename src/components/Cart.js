@@ -68,11 +68,12 @@ class Cart extends React.Component{
             <div className='totalCart'>
                 <h2>Order Summary</h2>
                 <div className='ulCart'>
+
                 <ul>
-                <li>Subtotal</li>
-                <li>Discount</li>
-                <li>Shipping</li>
-                <li><h1>Total:</h1></li>
+                    <li>Subtotal</li>
+                    <li>Discount</li>
+                    <li>Shipping</li>
+                    <li><h1>Total:</h1></li>
                 </ul>
 
                 <ul>
@@ -81,7 +82,9 @@ class Cart extends React.Component{
                     <li>FREE</li>
                     <li><h1>${actualTotal}</h1></li>
                 </ul>
+
                 </div>
+
                 <button className='checkOutBtn'>CHECKOUT</button>
             </div>
     
@@ -89,7 +92,7 @@ class Cart extends React.Component{
           
 
 
-            <br/>
+                <br/>
             </div>
             
         )

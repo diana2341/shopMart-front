@@ -6,19 +6,22 @@ import history from '../history'
 
 
 class AutoCompleteText extends React.Component{
+  
     componentDidMount(){
        this.props.fetchNavProducts();
         window.onmouseleave=()=>document.querySelector('.nav-results').style.height='0%'
 
     }
+
     state={
         autoText:'',
         suggestions:this.props.navProducts
     }
+
       handleChange = (event) => {
-    const {name, value} = event.target
-    this.setState({
-      [name]: value
+          const {name, value} = event.target
+          this.setState({
+          [name]: value
     })
     // Filter the array stored in data, but never update it. 
     // Update filtered instead.
@@ -27,8 +30,7 @@ class AutoCompleteText extends React.Component{
     render(){
         return(
             <>
-            {/* {       console.log('naavpro',this.props.suggestions) 
-} */}
+            
             <input 
             onMouseOver={()=>document.querySelector('.nav-results').style.height='200%'}
 
@@ -37,18 +39,18 @@ class AutoCompleteText extends React.Component{
              onChange={this.handleChange}
             className='search' type='text' placeholder='Search...'/>
             <div className='nav-results'>
-{this.state.autoText===''?
-<ul className='nav-rec push'>
-<li id='rec'>recommended</li>
-<li className='resul'onClick={()=>{history.push(`/tops`)}}>Tops</li>
-<li className='resul'onClick={()=>{history.push(`/jeans`)}}>Jeans</li>
-<li className='resul'onClick={()=>{history.push(`/dresses`)}}>Girls Dresses</li>
-<li className='resul'onClick={()=>{history.push(`/shoes`)}}>Shoes</li>
+                {this.state.autoText===''?
+                <ul className='nav-rec push'>
+                <li id='rec'>recommended</li>
+                <li className='resul'onClick={()=>{history.push(`/tops`)}}>Tops</li>
+                <li className='resul'onClick={()=>{history.push(`/jeans`)}}>Jeans</li>
+                <li className='resul'onClick={()=>{history.push(`/dresses`)}}>Girls Dresses</li>
+                <li className='resul'onClick={()=>{history.push(`/shoes`)}}>Shoes</li>
 
-</ul>
+                </ul>
 
 
-:this.state.suggestions.map(item=><ul className='nav-rec'><li onClick={()=>pruductShow(item.id)}key={item.id}>{item.name}</li></ul>)}
+                :this.state.suggestions.map(item=><ul className='nav-rec'><li onClick={()=>pruductShow(item.id)}key={item.id}>{item.name}</li></ul>)}
             </div>
             </>
         )

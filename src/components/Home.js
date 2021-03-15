@@ -30,8 +30,6 @@ class Home extends React.Component{
    
          <img onClick={()=>this.props.fetchCategory('beauty')}className='beauty banner' src={require(`../img/beauty.png`)}/>
 
-
-
       </div>
   
       

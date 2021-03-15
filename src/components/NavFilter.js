@@ -10,12 +10,12 @@ class NavFilter extends React.Component{
         <li>Jackets & Outerwear</li>
         <li>Jeans</li>
         <li>SportsWear</li>
-{e.target===document.getElementById('women')?
-<li>Lingerie & Sleep</li>:
-e.target===document.getElementById('kids')?
-<li>toys</li>:
-e.target===document.getElementById('men')?
-null:null
+        {e.target===document.getElementById('women')?
+        <li>Lingerie & Sleep</li>:
+        e.target===document.getElementById('kids')?
+        <li>toys</li>:
+        e.target===document.getElementById('men')?
+        null:null
 
 
 }

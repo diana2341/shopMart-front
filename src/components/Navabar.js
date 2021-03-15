@@ -134,13 +134,13 @@ class Navabar extends React.Component{
     }
    
 
-render(){
-    let userId = this.props.currentUser.user? this.props.currentUser.user.id : null
-    let totalAmount = this.props.cart.order? this.props.cart.order.filter((o)=>{
-        if(o.user_id === userId){
-        return (o.total_qty)
-    }}):null
-    let total = totalAmount?totalAmount.map(order=>order.total_qty):null
+    render(){
+        let userId = this.props.currentUser.user? this.props.currentUser.user.id : null
+        let totalAmount = this.props.cart.order? this.props.cart.order.filter((o)=>{
+            if(o.user_id === userId){
+            return (o.total_qty)
+        }}):null
+        let total = totalAmount?totalAmount.map(order=>order.total_qty):null
 
 
 

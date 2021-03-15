@@ -69,10 +69,10 @@ class Product extends React.Component {
 
 	render() {
 		const override = css`
-  display: block;
-  margin: 0 auto;
-  border-color: red;
-`;
+ 							 display: block;
+ 							 margin: 0 auto;
+ 							 border-color: red;
+							`;
 
 		let user=this.props.currentUser.user ? this.props.currentUser.user:null
 		return (

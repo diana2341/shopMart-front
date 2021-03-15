@@ -65,7 +65,7 @@ class Login extends React.Component{
                 component={this.renderInput}
                 label={'Enter Password'}
                 />
-        {this.state.errorMessage===''||<p className='error-mes'>**Email or password is invalid**</p>}
+             {this.state.errorMessage===''||<p className='error-mes'>**Email or password is invalid**</p>}
 
                 <button className='ui button primary sign-in'>Submit</button>
                 <div className='dontHave'>Don't have an account?</div>

@@ -10,8 +10,8 @@ class EditAccount extends React.Component{
         backError:''
     }
     onSubmit=(formValues)=>{
-this.props.editUser(this.props.currentUser.user.id,formValues)
-.catch(err => {
+        this.props.editUser(this.props.currentUser.user.id,formValues)
+        .catch(err => {
     // console.log(err.response.data.errors)
    this.setState({backError:err.response.data.errors});
  })
